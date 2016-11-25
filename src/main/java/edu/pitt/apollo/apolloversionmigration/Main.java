@@ -3,6 +3,7 @@ package edu.pitt.apollo.apolloversionmigration;
 
 import edu.pitt.apollo.javaclassmigrator.Migrator;
 import edu.pitt.apollo.javaclassmigrator.util.MigrationUtility;
+import edu.pitt.apollo.types.v3_1_0.BayesianNetwork;
 import edu.pitt.apollo.types.v4_0.Duration;
 
 /**
@@ -18,14 +19,15 @@ public class Main {
 	public static void main(String args[]) throws Exception {
         MigrationUtility.classHasSubclasses(Duration.class);
 
-		Class newClass = edu.pitt.apollo.types.v4_0.DischargePathAndProbability.class;
-		Class oldClass = edu.pitt.apollo.types.v3_1_0.DischargePathAndProbability.class;
+        BayesianNetwork netowkr;
+		Class newClass = edu.pitt.apollo.types.v4_0.Epidemic.class;
+		Class oldClass = edu.pitt.apollo.types.v3_1_0.Epidemic.class;
 
         String packageName = "edu.pitt.apollo.apolloversionmigration.output";
 		String outputDirectory = "./src/main/java/edu/pitt/apollo/apolloversionmigration/output";
 		String testOutputDirectory = "";
 
 		Migrator migrator = new Migrator(outputDirectory, testOutputDirectory, packageName);
-		migrator.createMigrationFilesForClass("edu.pitt.apollo.types.v4_0.DischargePathAndProbability", "edu.pitt.apollo.types.v3_1_0.DischargePathAndProbability");
+		migrator.createMigrationFilesForClass(newClass, oldClass);
 	}
 }
