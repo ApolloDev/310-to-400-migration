@@ -1,31 +1,33 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class InfectionAcquisitionFromColonizedHostSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0.InfectionAcquisitionFromColonizedHost,edu.pitt.apollo.types.v3_1_0.InfectionAcquisitionFromColonizedHost> {
+public class InfectionAcquisitionFromColonizedHostSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0.InfectionAcquisitionFromColonizedHost> {
 
-	public InfectionAcquisitionFromColonizedHostSetter(Class<edu.pitt.apollo.types.v4_0.InfectionAcquisitionFromColonizedHost> newTypeClass, edu.pitt.apollo.types.v3_1_0.InfectionAcquisitionFromColonizedHost oldTypeInstance) throws MigrationException {
+	public InfectionAcquisitionFromColonizedHostSetter(Class<edu.pitt.apollo.types.v4_0.InfectionAcquisitionFromColonizedHost> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}
 
-	private void setColonizedHost() throws MigrationException {
-		newTypeInstance.setColonizedHost(oldTypeInstance.getColonizedHost());
+	protected void setColonizedHost() throws MigrationException {
+		newTypeInstance.setColonizedHost(((edu.pitt.apollo.types.v3_1_0.InfectionAcquisitionFromColonizedHost) oldTypeInstance).getColonizedHost());
 	}
 
-	private void setTransmissionProbability() throws MigrationException {
-		ProbabilisticParameterSetter setter = new ProbabilisticParameterSetter(edu.pitt.apollo.types.v4_0.ProbabilisticParameter.class,oldTypeInstance.getTransmissionProbability());
+	protected void setTransmissionProbability() throws MigrationException {
+		ProbabilisticParameterSetter setter = new ProbabilisticParameterSetter(edu.pitt.apollo.types.v4_0.ProbabilisticParameter.class,((edu.pitt.apollo.types.v3_1_0.InfectionAcquisitionFromColonizedHost) oldTypeInstance).getTransmissionProbability());
 		setter.set();
 		newTypeInstance.setTransmissionProbability(setter.getNewTypeInstance());
 	}
 
-	private void setBeta() throws MigrationException {
-		newTypeInstance.setBeta(oldTypeInstance.getBeta());
+	protected void setBeta() throws MigrationException {
+		newTypeInstance.setBeta(((edu.pitt.apollo.types.v3_1_0.InfectionAcquisitionFromColonizedHost) oldTypeInstance).getBeta());
 	}
 
 	@Override
 	public void set() throws MigrationException {
-		setColonizedHost();
-		setTransmissionProbability();
-		setBeta();
+		if (oldTypeInstance != null) {
+			setColonizedHost();
+			setTransmissionProbability();
+			setBeta();
+		}
 	}
 
 }

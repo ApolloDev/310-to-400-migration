@@ -1,44 +1,49 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class CaseQuarantineControlMeasureSetter extends InfectiousDiseaseControlMeasureSetter<edu.pitt.apollo.types.v4_0.CaseQuarantineControlMeasure,edu.pitt.apollo.types.v3_1_0.CaseQuarantineControlMeasure> {
+public class CaseQuarantineControlMeasureSetter extends InfectiousDiseaseControlMeasureSetter<edu.pitt.apollo.types.v4_0.CaseQuarantineControlMeasure> {
 
-	public CaseQuarantineControlMeasureSetter(Class<edu.pitt.apollo.types.v4_0.CaseQuarantineControlMeasure> newTypeClass, edu.pitt.apollo.types.v3_1_0.CaseQuarantineControlMeasure oldTypeInstance) throws MigrationException {
+	public CaseQuarantineControlMeasureSetter(Class<edu.pitt.apollo.types.v4_0.CaseQuarantineControlMeasure> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}
 
-	private void setQuarantinePeriod() throws MigrationException {
-		DurationSetter setter = DurationSetterFactory.getSetter(oldTypeInstance.getQuarantinePeriod());
-		setter.set();
-		newTypeInstance.setQuarantinePeriod(setter.getNewTypeInstance());
+	protected void setQuarantinePeriod() throws MigrationException {
+		if (((edu.pitt.apollo.types.v3_1_0.CaseQuarantineControlMeasure) oldTypeInstance).getQuarantinePeriod() != null) {
+			DurationSetter setter = DurationSetterFactory.getSetter(((edu.pitt.apollo.types.v3_1_0.CaseQuarantineControlMeasure) oldTypeInstance).getQuarantinePeriod());
+			setter.set();
+			newTypeInstance.setQuarantinePeriod(setter.getNewTypeInstance());
+		}
+
 	}
 
-	private void setCompliance() throws MigrationException {
-		ProbabilisticParameterSetter setter = new ProbabilisticParameterSetter(edu.pitt.apollo.types.v4_0.ProbabilisticParameter.class,oldTypeInstance.getCompliance());
+	protected void setCompliance() throws MigrationException {
+		ProbabilisticParameterSetter setter = new ProbabilisticParameterSetter(edu.pitt.apollo.types.v4_0.ProbabilisticParameter.class,((edu.pitt.apollo.types.v3_1_0.CaseQuarantineControlMeasure) oldTypeInstance).getCompliance());
 		setter.set();
 		newTypeInstance.setCompliance(setter.getNewTypeInstance());
 	}
 
-	private void setHouseholdTransmissionMultiplier() throws MigrationException {
-		newTypeInstance.setHouseholdTransmissionMultiplier(oldTypeInstance.getHouseholdTransmissionMultiplier());
+	protected void setHouseholdTransmissionMultiplier() throws MigrationException {
+		newTypeInstance.setHouseholdTransmissionMultiplier(((edu.pitt.apollo.types.v3_1_0.CaseQuarantineControlMeasure) oldTypeInstance).getHouseholdTransmissionMultiplier());
 	}
 
-	private void setSchoolTransmissionMultiplier() throws MigrationException {
-		newTypeInstance.setSchoolTransmissionMultiplier(oldTypeInstance.getSchoolTransmissionMultiplier());
+	protected void setSchoolTransmissionMultiplier() throws MigrationException {
+		newTypeInstance.setSchoolTransmissionMultiplier(((edu.pitt.apollo.types.v3_1_0.CaseQuarantineControlMeasure) oldTypeInstance).getSchoolTransmissionMultiplier());
 	}
 
-	private void setWorkplaceTransmissionMultiplier() throws MigrationException {
-		newTypeInstance.setWorkplaceTransmissionMultiplier(oldTypeInstance.getWorkplaceTransmissionMultiplier());
+	protected void setWorkplaceTransmissionMultiplier() throws MigrationException {
+		newTypeInstance.setWorkplaceTransmissionMultiplier(((edu.pitt.apollo.types.v3_1_0.CaseQuarantineControlMeasure) oldTypeInstance).getWorkplaceTransmissionMultiplier());
 	}
 
 	@Override
 	public void set() throws MigrationException {
-		super.set();
-		setQuarantinePeriod();
-		setCompliance();
-		setHouseholdTransmissionMultiplier();
-		setSchoolTransmissionMultiplier();
-		setWorkplaceTransmissionMultiplier();
+		if (oldTypeInstance != null) {
+			super.set();
+			setQuarantinePeriod();
+			setCompliance();
+			setHouseholdTransmissionMultiplier();
+			setSchoolTransmissionMultiplier();
+			setWorkplaceTransmissionMultiplier();
+		}
 	}
 
 }

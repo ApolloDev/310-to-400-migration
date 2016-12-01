@@ -1,54 +1,56 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class ReferenceSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0.Reference,edu.pitt.apollo.types.v3_1_0.Reference> {
+public class ReferenceSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0.Reference> {
 
-	public ReferenceSetter(Class<edu.pitt.apollo.types.v4_0.Reference> newTypeClass, edu.pitt.apollo.types.v3_1_0.Reference oldTypeInstance) throws MigrationException {
+	public ReferenceSetter(Class<edu.pitt.apollo.types.v4_0.Reference> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}
 
-	private void setId() throws MigrationException {
-		newTypeInstance.setId(oldTypeInstance.getId());
+	protected void setId() throws MigrationException {
+		newTypeInstance.setId(((edu.pitt.apollo.types.v3_1_0.Reference) oldTypeInstance).getId());
 	}
 
-	private void setTitle() throws MigrationException {
-		newTypeInstance.setTitle(oldTypeInstance.getTitle());
+	protected void setTitle() throws MigrationException {
+		newTypeInstance.setTitle(((edu.pitt.apollo.types.v3_1_0.Reference) oldTypeInstance).getTitle());
 	}
 
-	private void setAuthors() throws MigrationException {
-		newTypeInstance.setAuthors(oldTypeInstance.getAuthors());
+	protected void setAuthors() throws MigrationException {
+		newTypeInstance.setAuthors(((edu.pitt.apollo.types.v3_1_0.Reference) oldTypeInstance).getAuthors());
 	}
 
-	private void setPublication() throws MigrationException {
-		newTypeInstance.setPublication(oldTypeInstance.getPublication());
+	protected void setPublication() throws MigrationException {
+		newTypeInstance.setPublication(((edu.pitt.apollo.types.v3_1_0.Reference) oldTypeInstance).getPublication());
 	}
 
-	private void setUrl() throws MigrationException {
-		newTypeInstance.setUrl(oldTypeInstance.getUrl());
+	protected void setUrl() throws MigrationException {
+		newTypeInstance.setUrl(((edu.pitt.apollo.types.v3_1_0.Reference) oldTypeInstance).getUrl());
 	}
 
-	private void setPubMedId() throws MigrationException {
-		newTypeInstance.setPubMedId(oldTypeInstance.getPubMedId());
+	protected void setPubMedId() throws MigrationException {
+		newTypeInstance.setPubMedId(((edu.pitt.apollo.types.v3_1_0.Reference) oldTypeInstance).getPubMedId());
 	}
 
-	private void setOrcId() throws MigrationException {
-		newTypeInstance.setOrcId(oldTypeInstance.getOrcId());
+	protected void setOrcId() throws MigrationException {
+		newTypeInstance.setOrcId(((edu.pitt.apollo.types.v3_1_0.Reference) oldTypeInstance).getOrcId());
 	}
 
-	private void setObcIdeId() throws MigrationException {
-		newTypeInstance.setObcIdeId(oldTypeInstance.getObcIdeId());
+	protected void setObcIdeId() throws MigrationException {
+		newTypeInstance.setObcIdeId(((edu.pitt.apollo.types.v3_1_0.Reference) oldTypeInstance).getObcIdeId());
 	}
 
 	@Override
 	public void set() throws MigrationException {
-		setId();
-		setTitle();
-		setAuthors();
-		setPublication();
-		setUrl();
-		setPubMedId();
-		setOrcId();
-		setObcIdeId();
+		if (oldTypeInstance != null) {
+			setId();
+			setTitle();
+			setAuthors();
+			setPublication();
+			setUrl();
+			setPubMedId();
+			setOrcId();
+			setObcIdeId();
+		}
 	}
 
 }

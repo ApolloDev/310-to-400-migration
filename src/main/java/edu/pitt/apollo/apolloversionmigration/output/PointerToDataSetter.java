@@ -1,29 +1,31 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class PointerToDataSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0.PointerToData,edu.pitt.apollo.types.v3_1_0.PointerToData> {
+public class PointerToDataSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0.PointerToData> {
 
-	public PointerToDataSetter(Class<edu.pitt.apollo.types.v4_0.PointerToData> newTypeClass, edu.pitt.apollo.types.v3_1_0.PointerToData oldTypeInstance) throws MigrationException {
+	public PointerToDataSetter(Class<edu.pitt.apollo.types.v4_0.PointerToData> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}
 
-	private void setDataType() throws MigrationException {
-		newTypeInstance.setDataType(edu.pitt.apollo.types.v4_0.DataTypeEnum.fromValue(oldTypeInstance.getDataType().toString()));
+	protected void setDataType() throws MigrationException {
+		newTypeInstance.setDataType(edu.pitt.apollo.types.v4_0.DataTypeEnum.valueOf(((edu.pitt.apollo.types.v3_1_0.PointerToData) oldTypeInstance).getDataType().toString()));
 	}
 
-	private void setXmlFormat() throws MigrationException {
-		newTypeInstance.setXmlFormat(oldTypeInstance.getXmlFormat());
+	protected void setXmlFormat() throws MigrationException {
+		newTypeInstance.setXmlFormat(((edu.pitt.apollo.types.v3_1_0.PointerToData) oldTypeInstance).getXmlFormat());
 	}
 
-	private void setCsvFormat() throws MigrationException {
-		newTypeInstance.setCsvFormat(oldTypeInstance.getCsvFormat());
+	protected void setCsvFormat() throws MigrationException {
+		newTypeInstance.setCsvFormat(((edu.pitt.apollo.types.v3_1_0.PointerToData) oldTypeInstance).getCsvFormat());
 	}
 
 	@Override
 	public void set() throws MigrationException {
-		setDataType();
-		setXmlFormat();
-		setCsvFormat();
+		if (oldTypeInstance != null) {
+			setDataType();
+			setXmlFormat();
+			setCsvFormat();
+		}
 	}
 
 }

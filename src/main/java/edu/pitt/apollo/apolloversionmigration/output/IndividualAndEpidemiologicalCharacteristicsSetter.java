@@ -1,14 +1,14 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class IndividualAndEpidemiologicalCharacteristicsSetter extends IndividualSetter<edu.pitt.apollo.types.v4_0.IndividualAndEpidemiologicalCharacteristics,edu.pitt.apollo.types.v3_1_0.IndividualAndEpidemiologicalCharacteristics> {
+public class IndividualAndEpidemiologicalCharacteristicsSetter extends IndividualSetter<edu.pitt.apollo.types.v4_0.IndividualAndEpidemiologicalCharacteristics> {
 
-	public IndividualAndEpidemiologicalCharacteristicsSetter(Class<edu.pitt.apollo.types.v4_0.IndividualAndEpidemiologicalCharacteristics> newTypeClass, edu.pitt.apollo.types.v3_1_0.IndividualAndEpidemiologicalCharacteristics oldTypeInstance) throws MigrationException {
+	public IndividualAndEpidemiologicalCharacteristicsSetter(Class<edu.pitt.apollo.types.v4_0.IndividualAndEpidemiologicalCharacteristics> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}
 
-	private void setIndividualInfection() throws MigrationException {
-		for (edu.pitt.apollo.types.v3_1_0.IndividualInfection oldObj : oldTypeInstance.getIndividualInfection()) {
+	protected void setIndividualInfection() throws MigrationException {
+		for (edu.pitt.apollo.types.v3_1_0.IndividualInfection oldObj : ((edu.pitt.apollo.types.v3_1_0.IndividualAndEpidemiologicalCharacteristics) oldTypeInstance).getIndividualInfection()) {
 			IndividualInfectionSetter setter = new IndividualInfectionSetter(edu.pitt.apollo.types.v4_0.IndividualInfection.class,oldObj);
 			setter.set();
 			edu.pitt.apollo.types.v4_0.IndividualInfection newObj = setter.getNewTypeInstance();
@@ -17,8 +17,8 @@ public class IndividualAndEpidemiologicalCharacteristicsSetter extends Individua
 
 	}
 
-	private void setIndividualDisease() throws MigrationException {
-		for (edu.pitt.apollo.types.v3_1_0.IndividualDisease oldObj : oldTypeInstance.getIndividualDisease()) {
+	protected void setIndividualDisease() throws MigrationException {
+		for (edu.pitt.apollo.types.v3_1_0.IndividualDisease oldObj : ((edu.pitt.apollo.types.v3_1_0.IndividualAndEpidemiologicalCharacteristics) oldTypeInstance).getIndividualDisease()) {
 			IndividualDiseaseSetter setter = new IndividualDiseaseSetter(edu.pitt.apollo.types.v4_0.IndividualDisease.class,oldObj);
 			setter.set();
 			edu.pitt.apollo.types.v4_0.IndividualDisease newObj = setter.getNewTypeInstance();
@@ -27,29 +27,29 @@ public class IndividualAndEpidemiologicalCharacteristicsSetter extends Individua
 
 	}
 
-	private void setExposurePeriodContacts() throws MigrationException {
-		for (java.math.BigInteger oldObj : oldTypeInstance.getExposurePeriodContacts()) {
+	protected void setExposurePeriodContacts() throws MigrationException {
+		for (java.math.BigInteger oldObj : ((edu.pitt.apollo.types.v3_1_0.IndividualAndEpidemiologicalCharacteristics) oldTypeInstance).getExposurePeriodContacts()) {
 			newTypeInstance.getExposurePeriodContacts().add(oldObj);
 		}
 
 	}
 
-	private void setExposurePeriodDefinition() throws MigrationException {
-		for (java.math.BigInteger oldObj : oldTypeInstance.getExposurePeriodDefinition()) {
+	protected void setExposurePeriodDefinition() throws MigrationException {
+		for (java.math.BigInteger oldObj : ((edu.pitt.apollo.types.v3_1_0.IndividualAndEpidemiologicalCharacteristics) oldTypeInstance).getExposurePeriodDefinition()) {
 			newTypeInstance.getExposurePeriodDefinition().add(oldObj);
 		}
 
 	}
 
-	private void setTransmissionPeriodContacts() throws MigrationException {
-		for (java.math.BigInteger oldObj : oldTypeInstance.getTransmissionPeriodContacts()) {
+	protected void setTransmissionPeriodContacts() throws MigrationException {
+		for (java.math.BigInteger oldObj : ((edu.pitt.apollo.types.v3_1_0.IndividualAndEpidemiologicalCharacteristics) oldTypeInstance).getTransmissionPeriodContacts()) {
 			newTypeInstance.getTransmissionPeriodContacts().add(oldObj);
 		}
 
 	}
 
-	private void setTransmissionPeriodDefinition() throws MigrationException {
-		for (java.math.BigInteger oldObj : oldTypeInstance.getTransmissionPeriodDefinition()) {
+	protected void setTransmissionPeriodDefinition() throws MigrationException {
+		for (java.math.BigInteger oldObj : ((edu.pitt.apollo.types.v3_1_0.IndividualAndEpidemiologicalCharacteristics) oldTypeInstance).getTransmissionPeriodDefinition()) {
 			newTypeInstance.getTransmissionPeriodDefinition().add(oldObj);
 		}
 
@@ -57,13 +57,15 @@ public class IndividualAndEpidemiologicalCharacteristicsSetter extends Individua
 
 	@Override
 	public void set() throws MigrationException {
-		super.set();
-		setIndividualInfection();
-		setIndividualDisease();
-		setExposurePeriodContacts();
-		setExposurePeriodDefinition();
-		setTransmissionPeriodContacts();
-		setTransmissionPeriodDefinition();
+		if (oldTypeInstance != null) {
+			super.set();
+			setIndividualInfection();
+			setIndividualDisease();
+			setExposurePeriodContacts();
+			setExposurePeriodDefinition();
+			setTransmissionPeriodContacts();
+			setTransmissionPeriodDefinition();
+		}
 	}
 
 }

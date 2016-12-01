@@ -1,34 +1,36 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class SoftwareLicenseIdentificationSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0.SoftwareLicenseIdentification,edu.pitt.apollo.types.v3_1_0.SoftwareLicenseIdentification> {
+public class SoftwareLicenseIdentificationSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0.SoftwareLicenseIdentification> {
 
-	public SoftwareLicenseIdentificationSetter(Class<edu.pitt.apollo.types.v4_0.SoftwareLicenseIdentification> newTypeClass, edu.pitt.apollo.types.v3_1_0.SoftwareLicenseIdentification oldTypeInstance) throws MigrationException {
+	public SoftwareLicenseIdentificationSetter(Class<edu.pitt.apollo.types.v4_0.SoftwareLicenseIdentification> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}
 
-	private void setLicenseLocation() throws MigrationException {
-		newTypeInstance.setLicenseLocation(oldTypeInstance.getLicenseLocation());
+	protected void setLicenseLocation() throws MigrationException {
+		newTypeInstance.setLicenseLocation(((edu.pitt.apollo.types.v3_1_0.SoftwareLicenseIdentification) oldTypeInstance).getLicenseLocation());
 	}
 
-	private void setLicenseVersion() throws MigrationException {
-		newTypeInstance.setLicenseVersion(oldTypeInstance.getLicenseVersion());
+	protected void setLicenseVersion() throws MigrationException {
+		newTypeInstance.setLicenseVersion(((edu.pitt.apollo.types.v3_1_0.SoftwareLicenseIdentification) oldTypeInstance).getLicenseVersion());
 	}
 
-	private void setLicenseName() throws MigrationException {
-		newTypeInstance.setLicenseName(oldTypeInstance.getLicenseName());
+	protected void setLicenseName() throws MigrationException {
+		newTypeInstance.setLicenseName(((edu.pitt.apollo.types.v3_1_0.SoftwareLicenseIdentification) oldTypeInstance).getLicenseName());
 	}
 
-	private void setAttributionNotice() throws MigrationException {
-		newTypeInstance.setAttributionNotice(oldTypeInstance.getAttributionNotice());
+	protected void setAttributionNotice() throws MigrationException {
+		newTypeInstance.setAttributionNotice(((edu.pitt.apollo.types.v3_1_0.SoftwareLicenseIdentification) oldTypeInstance).getAttributionNotice());
 	}
 
 	@Override
 	public void set() throws MigrationException {
-		setLicenseLocation();
-		setLicenseVersion();
-		setLicenseName();
-		setAttributionNotice();
+		if (oldTypeInstance != null) {
+			setLicenseLocation();
+			setLicenseVersion();
+			setLicenseName();
+			setAttributionNotice();
+		}
 	}
 
 }

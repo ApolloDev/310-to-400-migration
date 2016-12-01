@@ -1,42 +1,32 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-import edu.pitt.apollo.types.v3_1_0.UnconditionalProbabilityDistribution;
+public abstract class CategoryValueNodeSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0.CategoryValueNode> {
 
-public class CategoryValueNodeSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0.CategoryValueNode,edu.pitt.apollo.types.v3_1_0.Category> {
-
-	public CategoryValueNodeSetter(Class<edu.pitt.apollo.types.v4_0.CategoryValueNode> newTypeClass, edu.pitt.apollo.types.v3_1_0.Category oldTypeInstance) throws MigrationException {
+	public CategoryValueNodeSetter(Class<edu.pitt.apollo.types.v4_0.CategoryValueNode> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}
 
-	private void setCategoryDefinition() throws MigrationException {
-		CategoryDefinitionSetter setter = CategoryDefinitionSetterFactory.getSetter(oldTypeInstance.getCategoryDefinition());
-		setter.set();
-		newTypeInstance.setCategoryDefinition(setter.getNewTypeInstance());
+	protected void setCategoryDefinition() throws MigrationException {
+		if (((edu.pitt.apollo.types.v3_1_0.Category) oldTypeInstance).getCategoryDefinition() != null) {
+			CategoryDefinitionSetter setter = CategoryDefinitionSetterFactory.getSetter(((edu.pitt.apollo.types.v3_1_0.Category) oldTypeInstance).getCategoryDefinition());
+			setter.set();
+			newTypeInstance.setCategoryDefinition(setter.getNewTypeInstance());
+		}
+
 	}
 
-	private void setValue() throws MigrationException {
-		newTypeInstance.setValue(null);
-	}
-
-	private void setUnconditionalProbabilityDistribution() throws MigrationException {
-		UnconditionalProbabilityDistributionSetter setter = UnconditionalProbabilityDistributionSetterFactory.getSetter(oldTypeInstance.getUnconditionalProbabilityDistribution());
-		setter.set();
-		newTypeInstance.setUnconditionalProbabilityDistribution(setter.getNewTypeInstance());
-	}
-
-	private void setNextCategoricalVariable() throws MigrationException {
-		CategoricalVariableNodeSetter setter = new CategoricalVariableNodeSetter(edu.pitt.apollo.types.v4_0.CategoricalVariableNode.class,oldTypeInstance.getConditioningVariable());
-		setter.set();
-		newTypeInstance.setNextCategoricalVariable(setter.getNewTypeInstance());
-	}
-
+	protected abstract void setValue() throws MigrationException;
+	protected abstract void setUnconditionalProbabilityDistribution() throws MigrationException;
+	protected abstract void setNextCategoricalVariable() throws MigrationException;
 	@Override
 	public void set() throws MigrationException {
-		setCategoryDefinition();
-		setValue();
-		setUnconditionalProbabilityDistribution();
-		setNextCategoricalVariable();
+		if (oldTypeInstance != null) {
+			setCategoryDefinition();
+			setValue();
+			setUnconditionalProbabilityDistribution();
+			setNextCategoricalVariable();
+		}
 	}
 
 }

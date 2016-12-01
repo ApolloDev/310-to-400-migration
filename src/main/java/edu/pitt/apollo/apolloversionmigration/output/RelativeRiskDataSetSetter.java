@@ -1,40 +1,42 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class RelativeRiskDataSetSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0.RelativeRiskDataSet,edu.pitt.apollo.types.v3_1_0.RelativeRiskDataSet> {
+public class RelativeRiskDataSetSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0.RelativeRiskDataSet> {
 
-	public RelativeRiskDataSetSetter(Class<edu.pitt.apollo.types.v4_0.RelativeRiskDataSet> newTypeClass, edu.pitt.apollo.types.v3_1_0.RelativeRiskDataSet oldTypeInstance) throws MigrationException {
+	public RelativeRiskDataSetSetter(Class<edu.pitt.apollo.types.v4_0.RelativeRiskDataSet> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}
 
-	private void setTextualDescription() throws MigrationException {
-		newTypeInstance.setTextualDescription(oldTypeInstance.getTextualDescription());
+	protected void setTextualDescription() throws MigrationException {
+		newTypeInstance.setTextualDescription(((edu.pitt.apollo.types.v3_1_0.RelativeRiskDataSet) oldTypeInstance).getTextualDescription());
 	}
 
-	private void setCaseCountArray() throws MigrationException {
-		VariableCategoryValueTreeSetter setter = new VariableCategoryValueTreeSetter(edu.pitt.apollo.types.v4_0.VariableCategoryValueTree.class,oldTypeInstance.getCaseCountArray());
+	protected void setCaseCountArray() throws MigrationException {
+		VariableCategoryValueTreeSetter setter = new VariableCategoryValueTreeSetterImpl(edu.pitt.apollo.types.v4_0.VariableCategoryValueTree.class,((edu.pitt.apollo.types.v3_1_0.RelativeRiskDataSet) oldTypeInstance).getCaseCountArray());
 		setter.set();
 		newTypeInstance.setCaseCountArray(setter.getNewTypeInstance());
 	}
 
-	private void setControlCountArray() throws MigrationException {
-		VariableCategoryValueTreeSetter setter = new VariableCategoryValueTreeSetter(edu.pitt.apollo.types.v4_0.VariableCategoryValueTree.class,oldTypeInstance.getControlCountArray());
+	protected void setControlCountArray() throws MigrationException {
+		VariableCategoryValueTreeSetter setter = new VariableCategoryValueTreeSetterImpl(edu.pitt.apollo.types.v4_0.VariableCategoryValueTree.class,((edu.pitt.apollo.types.v3_1_0.RelativeRiskDataSet) oldTypeInstance).getControlCountArray());
 		setter.set();
 		newTypeInstance.setControlCountArray(setter.getNewTypeInstance());
 	}
 
-	private void setReferenceId() throws MigrationException {
-		ReferenceSetter setter = new ReferenceSetter(edu.pitt.apollo.types.v4_0.Reference.class,oldTypeInstance.getReferenceId());
+	protected void setReferenceId() throws MigrationException {
+		ReferenceSetter setter = new ReferenceSetter(edu.pitt.apollo.types.v4_0.Reference.class,((edu.pitt.apollo.types.v3_1_0.RelativeRiskDataSet) oldTypeInstance).getReferenceId());
 		setter.set();
 		newTypeInstance.setReferenceId(setter.getNewTypeInstance());
 	}
 
 	@Override
 	public void set() throws MigrationException {
-		setTextualDescription();
-		setCaseCountArray();
-		setControlCountArray();
-		setReferenceId();
+		if (oldTypeInstance != null) {
+			setTextualDescription();
+			setCaseCountArray();
+			setControlCountArray();
+			setReferenceId();
+		}
 	}
 
 }

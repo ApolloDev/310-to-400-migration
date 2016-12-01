@@ -1,18 +1,18 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class VaccinationEfficacyConditionedOnTimeSinceDoseSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0.VaccinationEfficacyConditionedOnTimeSinceDose,edu.pitt.apollo.types.v3_1_0.VaccinationEfficacyConditionedOnTimeSinceDose> {
+public class VaccinationEfficacyConditionedOnTimeSinceDoseSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0.VaccinationEfficacyConditionedOnTimeSinceDose> {
 
-	public VaccinationEfficacyConditionedOnTimeSinceDoseSetter(Class<edu.pitt.apollo.types.v4_0.VaccinationEfficacyConditionedOnTimeSinceDose> newTypeClass, edu.pitt.apollo.types.v3_1_0.VaccinationEfficacyConditionedOnTimeSinceDose oldTypeInstance) throws MigrationException {
+	public VaccinationEfficacyConditionedOnTimeSinceDoseSetter(Class<edu.pitt.apollo.types.v4_0.VaccinationEfficacyConditionedOnTimeSinceDose> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}
 
-	private void setNumberOfDosesAdministered() throws MigrationException {
-		newTypeInstance.setNumberOfDosesAdministered(oldTypeInstance.getNumberOfDosesAdministered());
+	protected void setNumberOfDosesAdministered() throws MigrationException {
+		newTypeInstance.setNumberOfDosesAdministered(((edu.pitt.apollo.types.v3_1_0.VaccinationEfficacyConditionedOnTimeSinceDose) oldTypeInstance).getNumberOfDosesAdministered());
 	}
 
-	private void setTimeIntervalLabelDefinitions() throws MigrationException {
-		for (edu.pitt.apollo.types.v3_1_0.TimeAxisCategoryLabels oldObj : oldTypeInstance.getTimeIntervalLabelDefinitions()) {
+	protected void setTimeIntervalLabelDefinitions() throws MigrationException {
+		for (edu.pitt.apollo.types.v3_1_0.TimeAxisCategoryLabels oldObj : ((edu.pitt.apollo.types.v3_1_0.VaccinationEfficacyConditionedOnTimeSinceDose) oldTypeInstance).getTimeIntervalLabelDefinitions()) {
 			TimeAxisCategoryLabelsSetter setter = new TimeAxisCategoryLabelsSetter(edu.pitt.apollo.types.v4_0.TimeAxisCategoryLabels.class,oldObj);
 			setter.set();
 			edu.pitt.apollo.types.v4_0.TimeAxisCategoryLabels newObj = setter.getNewTypeInstance();
@@ -21,8 +21,8 @@ public class VaccinationEfficacyConditionedOnTimeSinceDoseSetter extends Abstrac
 
 	}
 
-	private void setVaccinationEfficacyConditionedOnTimeSinceMostRecentDose() throws MigrationException {
-		for (java.lang.Double oldObj : oldTypeInstance.getVaccinationEfficacyConditionedOnTimeSinceMostRecentDose()) {
+	protected void setVaccinationEfficacyConditionedOnTimeSinceMostRecentDose() throws MigrationException {
+		for (java.lang.Double oldObj : ((edu.pitt.apollo.types.v3_1_0.VaccinationEfficacyConditionedOnTimeSinceDose) oldTypeInstance).getVaccinationEfficacyConditionedOnTimeSinceMostRecentDose()) {
 			newTypeInstance.getVaccinationEfficacyConditionedOnTimeSinceMostRecentDose().add(oldObj);
 		}
 
@@ -30,9 +30,11 @@ public class VaccinationEfficacyConditionedOnTimeSinceDoseSetter extends Abstrac
 
 	@Override
 	public void set() throws MigrationException {
-		setNumberOfDosesAdministered();
-		setTimeIntervalLabelDefinitions();
-		setVaccinationEfficacyConditionedOnTimeSinceMostRecentDose();
+		if (oldTypeInstance != null) {
+			setNumberOfDosesAdministered();
+			setTimeIntervalLabelDefinitions();
+			setVaccinationEfficacyConditionedOnTimeSinceMostRecentDose();
+		}
 	}
 
 }

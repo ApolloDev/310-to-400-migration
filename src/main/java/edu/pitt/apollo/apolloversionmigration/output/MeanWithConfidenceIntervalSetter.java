@@ -1,40 +1,42 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class MeanWithConfidenceIntervalSetter extends UncertainValueSetter<edu.pitt.apollo.types.v4_0.MeanWithConfidenceInterval,edu.pitt.apollo.types.v3_1_0.MeanWithConfidenceInterval> {
+public class MeanWithConfidenceIntervalSetter extends UncertainValueSetter<edu.pitt.apollo.types.v4_0.MeanWithConfidenceInterval> {
 
-	public MeanWithConfidenceIntervalSetter(Class<edu.pitt.apollo.types.v4_0.MeanWithConfidenceInterval> newTypeClass, edu.pitt.apollo.types.v3_1_0.MeanWithConfidenceInterval oldTypeInstance) throws MigrationException {
+	public MeanWithConfidenceIntervalSetter(Class<edu.pitt.apollo.types.v4_0.MeanWithConfidenceInterval> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}
 
-	private void setMean() throws MigrationException {
-		newTypeInstance.setMean(oldTypeInstance.getMean());
+	protected void setMean() throws MigrationException {
+		newTypeInstance.setMean(((edu.pitt.apollo.types.v3_1_0.MeanWithConfidenceInterval) oldTypeInstance).getMean());
 	}
 
-	private void setLowerBound() throws MigrationException {
-		newTypeInstance.setLowerBound(oldTypeInstance.getLowerBound());
+	protected void setLowerBound() throws MigrationException {
+		newTypeInstance.setLowerBound(((edu.pitt.apollo.types.v3_1_0.MeanWithConfidenceInterval) oldTypeInstance).getLowerBound());
 	}
 
-	private void setUpperBound() throws MigrationException {
-		newTypeInstance.setUpperBound(oldTypeInstance.getUpperBound());
+	protected void setUpperBound() throws MigrationException {
+		newTypeInstance.setUpperBound(((edu.pitt.apollo.types.v3_1_0.MeanWithConfidenceInterval) oldTypeInstance).getUpperBound());
 	}
 
-	private void setConfidence() throws MigrationException {
-		newTypeInstance.setConfidence(oldTypeInstance.getConfidence());
+	protected void setConfidence() throws MigrationException {
+		newTypeInstance.setConfidence(((edu.pitt.apollo.types.v3_1_0.MeanWithConfidenceInterval) oldTypeInstance).getConfidence());
 	}
 
-	private void setSampleSize() throws MigrationException {
-		newTypeInstance.setSampleSize(oldTypeInstance.getSampleSize());
+	protected void setSampleSize() throws MigrationException {
+		newTypeInstance.setSampleSize(((edu.pitt.apollo.types.v3_1_0.MeanWithConfidenceInterval) oldTypeInstance).getSampleSize());
 	}
 
 	@Override
 	public void set() throws MigrationException {
-		super.set();
-		setMean();
-		setLowerBound();
-		setUpperBound();
-		setConfidence();
-		setSampleSize();
+		if (oldTypeInstance != null) {
+			super.set();
+			setMean();
+			setLowerBound();
+			setUpperBound();
+			setConfidence();
+			setSampleSize();
+		}
 	}
 
 }

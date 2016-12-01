@@ -6,22 +6,22 @@ public class TreatmentSetterFactory {
 
 		if (oldTypeInstance instanceof edu.pitt.apollo.types.v4_0.Vaccination) {
 
-			return new VaccinationSetter(edu.pitt.apollo.types.v4_0.Vaccination.class, (edu.pitt.apollo.types.v3_1_0.Vaccination) oldTypeInstance);
-		}
-
-		if (oldTypeInstance instanceof edu.pitt.apollo.types.v4_0.AntiviralTreatment) {
-
-			return new AntiviralTreatmentSetter(edu.pitt.apollo.types.v4_0.AntiviralTreatment.class, (edu.pitt.apollo.types.v3_1_0.AntiviralTreatment) oldTypeInstance);
+			return new VaccinationSetter(edu.pitt.apollo.types.v4_0.Vaccination.class, oldTypeInstance);
 		}
 
 		if (oldTypeInstance instanceof edu.pitt.apollo.types.v4_0.IndividualDecolonization) {
 
-			return new IndividualDecolonizationSetter(edu.pitt.apollo.types.v4_0.IndividualDecolonization.class, (edu.pitt.apollo.types.v3_1_0.IndividualDecolonization) oldTypeInstance);
+			return new IndividualDecolonizationSetter(edu.pitt.apollo.types.v4_0.IndividualDecolonization.class, oldTypeInstance);
+		}
+
+		if (oldTypeInstance instanceof edu.pitt.apollo.types.v4_0.AntiviralTreatment) {
+
+			return new AntiviralTreatmentSetter(edu.pitt.apollo.types.v4_0.AntiviralTreatment.class, oldTypeInstance);
 		}
 
 		if (oldTypeInstance instanceof edu.pitt.apollo.types.v4_0.DrugTreatment) {
 
-			return new DrugTreatmentSetter(edu.pitt.apollo.types.v4_0.DrugTreatment.class, (edu.pitt.apollo.types.v3_1_0.DrugTreatment) oldTypeInstance);
+			return new DrugTreatmentSetter(edu.pitt.apollo.types.v4_0.DrugTreatment.class, oldTypeInstance);
 		}
 
 		throw new UnsupportedTypeException("Type " + oldTypeInstance.getClass().getCanonicalName() + " is not supported");

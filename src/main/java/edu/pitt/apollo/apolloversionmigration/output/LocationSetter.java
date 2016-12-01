@@ -1,38 +1,40 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class LocationSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0.Location,edu.pitt.apollo.types.v3_1_0.Location> {
+public class LocationSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0.Location> {
 
-	public LocationSetter(Class<edu.pitt.apollo.types.v4_0.Location> newTypeClass, edu.pitt.apollo.types.v3_1_0.Location oldTypeInstance) throws MigrationException {
+	public LocationSetter(Class<edu.pitt.apollo.types.v4_0.Location> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}
 
-	private void setApolloLocationCode() throws MigrationException {
-		newTypeInstance.setApolloLocationCode(oldTypeInstance.getApolloLocationCode());
+	protected void setApolloLocationCode() throws MigrationException {
+		newTypeInstance.setApolloLocationCode(((edu.pitt.apollo.types.v3_1_0.Location) oldTypeInstance).getApolloLocationCode());
 	}
 
-	private void setLocationDefinition() throws MigrationException {
-		LocationDefinitionSetter setter = new LocationDefinitionSetter(edu.pitt.apollo.types.v4_0.LocationDefinition.class,oldTypeInstance.getLocationDefinition());
+	protected void setLocationDefinition() throws MigrationException {
+		LocationDefinitionSetter setter = new LocationDefinitionSetter(edu.pitt.apollo.types.v4_0.LocationDefinition.class,((edu.pitt.apollo.types.v3_1_0.Location) oldTypeInstance).getLocationDefinition());
 		setter.set();
 		newTypeInstance.setLocationDefinition(setter.getNewTypeInstance());
 	}
 
-	private void setCartesianCircleLocationDefinition() throws MigrationException {
-		CartesianCircleLocationDefinitionSetter setter = new CartesianCircleLocationDefinitionSetter(edu.pitt.apollo.types.v4_0.CartesianCircleLocationDefinition.class,oldTypeInstance.getCartesianCircleLocationDefinition());
+	protected void setCartesianCircleLocationDefinition() throws MigrationException {
+		CartesianCircleLocationDefinitionSetter setter = new CartesianCircleLocationDefinitionSetter(edu.pitt.apollo.types.v4_0.CartesianCircleLocationDefinition.class,((edu.pitt.apollo.types.v3_1_0.Location) oldTypeInstance).getCartesianCircleLocationDefinition());
 		setter.set();
 		newTypeInstance.setCartesianCircleLocationDefinition(setter.getNewTypeInstance());
 	}
 
-	private void setTextualDescription() throws MigrationException {
-		newTypeInstance.setTextualDescription(oldTypeInstance.getTextualDescription());
+	protected void setTextualDescription() throws MigrationException {
+		newTypeInstance.setTextualDescription(((edu.pitt.apollo.types.v3_1_0.Location) oldTypeInstance).getTextualDescription());
 	}
 
 	@Override
 	public void set() throws MigrationException {
-		setApolloLocationCode();
-		setLocationDefinition();
-		setCartesianCircleLocationDefinition();
-		setTextualDescription();
+		if (oldTypeInstance != null) {
+			setApolloLocationCode();
+			setLocationDefinition();
+			setCartesianCircleLocationDefinition();
+			setTextualDescription();
+		}
 	}
 
 }

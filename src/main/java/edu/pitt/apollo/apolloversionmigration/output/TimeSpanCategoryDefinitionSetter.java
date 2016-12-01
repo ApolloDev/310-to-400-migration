@@ -1,35 +1,37 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class TimeSpanCategoryDefinitionSetter extends CategoryDefinitionSetter<edu.pitt.apollo.types.v4_0.TimeSpanCategoryDefinition,edu.pitt.apollo.types.v3_1_0.TimeSpanCategoryDefinition> {
+public class TimeSpanCategoryDefinitionSetter extends CategoryDefinitionSetter<edu.pitt.apollo.types.v4_0.TimeSpanCategoryDefinition> {
 
-	public TimeSpanCategoryDefinitionSetter(Class<edu.pitt.apollo.types.v4_0.TimeSpanCategoryDefinition> newTypeClass, edu.pitt.apollo.types.v3_1_0.TimeSpanCategoryDefinition oldTypeInstance) throws MigrationException {
+	public TimeSpanCategoryDefinitionSetter(Class<edu.pitt.apollo.types.v4_0.TimeSpanCategoryDefinition> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}
 
-	private void setUnitOfTime() throws MigrationException {
-		newTypeInstance.setUnitOfTime(edu.pitt.apollo.types.v4_0.UnitOfTimeEnum.fromValue(oldTypeInstance.getUnitOfTime().toString()));
+	protected void setUnitOfTime() throws MigrationException {
+		newTypeInstance.setUnitOfTime(edu.pitt.apollo.types.v4_0.UnitOfTimeEnum.valueOf(((edu.pitt.apollo.types.v3_1_0.TimeSpanCategoryDefinition) oldTypeInstance).getUnitOfTime().toString()));
 	}
 
-	private void setTimeZeroReference() throws MigrationException {
-		newTypeInstance.setTimeZeroReference(edu.pitt.apollo.types.v4_0.TimeScaleEnum.fromValue(oldTypeInstance.getTimeZeroReference().toString()));
+	protected void setTimeZeroReference() throws MigrationException {
+		newTypeInstance.setTimeZeroReference(edu.pitt.apollo.types.v4_0.TimeScaleEnum.valueOf(((edu.pitt.apollo.types.v3_1_0.TimeSpanCategoryDefinition) oldTypeInstance).getTimeZeroReference().toString()));
 	}
 
-	private void setStartOfTimeSpan() throws MigrationException {
-		newTypeInstance.setStartOfTimeSpan(oldTypeInstance.getStartOfTimeSpan());
+	protected void setStartOfTimeSpan() throws MigrationException {
+		newTypeInstance.setStartOfTimeSpan(((edu.pitt.apollo.types.v3_1_0.TimeSpanCategoryDefinition) oldTypeInstance).getStartOfTimeSpan());
 	}
 
-	private void setDurationInTimeUnits() throws MigrationException {
-		newTypeInstance.setDurationInTimeUnits(oldTypeInstance.getDurationInTimeUnits());
+	protected void setDurationInTimeUnits() throws MigrationException {
+		newTypeInstance.setDurationInTimeUnits(((edu.pitt.apollo.types.v3_1_0.TimeSpanCategoryDefinition) oldTypeInstance).getDurationInTimeUnits());
 	}
 
 	@Override
 	public void set() throws MigrationException {
-		super.set();
-		setUnitOfTime();
-		setTimeZeroReference();
-		setStartOfTimeSpan();
-		setDurationInTimeUnits();
+		if (oldTypeInstance != null) {
+			super.set();
+			setUnitOfTime();
+			setTimeZeroReference();
+			setStartOfTimeSpan();
+			setDurationInTimeUnits();
+		}
 	}
 
 }

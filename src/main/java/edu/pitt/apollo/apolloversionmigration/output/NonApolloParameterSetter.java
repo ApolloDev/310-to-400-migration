@@ -1,39 +1,41 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class NonApolloParameterSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0.NonApolloParameter,edu.pitt.apollo.types.v3_1_0.NonApolloParameter> {
+public class NonApolloParameterSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0.NonApolloParameter> {
 
-	public NonApolloParameterSetter(Class<edu.pitt.apollo.types.v4_0.NonApolloParameter> newTypeClass, edu.pitt.apollo.types.v3_1_0.NonApolloParameter oldTypeInstance) throws MigrationException {
+	public NonApolloParameterSetter(Class<edu.pitt.apollo.types.v4_0.NonApolloParameter> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}
 
-	private void setDescription() throws MigrationException {
-		newTypeInstance.setDescription(oldTypeInstance.getDescription());
+	protected void setDescription() throws MigrationException {
+		newTypeInstance.setDescription(((edu.pitt.apollo.types.v3_1_0.NonApolloParameter) oldTypeInstance).getDescription());
 	}
 
-	private void setParameterName() throws MigrationException {
-		newTypeInstance.setParameterName(oldTypeInstance.getParameterName());
+	protected void setParameterName() throws MigrationException {
+		newTypeInstance.setParameterName(((edu.pitt.apollo.types.v3_1_0.NonApolloParameter) oldTypeInstance).getParameterName());
 	}
 
-	private void setParameterIntValue() throws MigrationException {
-		newTypeInstance.setParameterIntValue(oldTypeInstance.getParameterIntValue());
+	protected void setParameterIntValue() throws MigrationException {
+		newTypeInstance.setParameterIntValue(((edu.pitt.apollo.types.v3_1_0.NonApolloParameter) oldTypeInstance).getParameterIntValue());
 	}
 
-	private void setParameterFloatValue() throws MigrationException {
-		newTypeInstance.setParameterFloatValue(oldTypeInstance.getParameterFloatValue());
+	protected void setParameterFloatValue() throws MigrationException {
+		newTypeInstance.setParameterFloatValue(((edu.pitt.apollo.types.v3_1_0.NonApolloParameter) oldTypeInstance).getParameterFloatValue());
 	}
 
-	private void setParameterTokenValue() throws MigrationException {
-		newTypeInstance.setParameterTokenValue(oldTypeInstance.getParameterTokenValue());
+	protected void setParameterTokenValue() throws MigrationException {
+		newTypeInstance.setParameterTokenValue(((edu.pitt.apollo.types.v3_1_0.NonApolloParameter) oldTypeInstance).getParameterTokenValue());
 	}
 
 	@Override
 	public void set() throws MigrationException {
-		setDescription();
-		setParameterName();
-		setParameterIntValue();
-		setParameterFloatValue();
-		setParameterTokenValue();
+		if (oldTypeInstance != null) {
+			setDescription();
+			setParameterName();
+			setParameterIntValue();
+			setParameterFloatValue();
+			setParameterTokenValue();
+		}
 	}
 
 }

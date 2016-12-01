@@ -4,19 +4,19 @@ public class ProbabilityDistributionSetterFactory {
 
 	public static ProbabilityDistributionSetter getSetter(Object oldTypeInstance) throws MigrationException {
 
-		if (oldTypeInstance instanceof edu.pitt.apollo.types.v4_0.UnconditionalProbabilityDistribution) {
+		if (oldTypeInstance instanceof edu.pitt.apollo.types.v4_0.ConditionalProbabilityDistribution) {
 
-			return UnconditionalProbabilityDistributionSetterFactory.getSetter(oldTypeInstance);
+			return new ConditionalProbabilityDistributionSetter(edu.pitt.apollo.types.v4_0.ConditionalProbabilityDistribution.class, oldTypeInstance);
 		}
 
 		if (oldTypeInstance instanceof edu.pitt.apollo.types.v4_0.BayesianNetwork) {
 
-			return new BayesianNetworkSetter(edu.pitt.apollo.types.v4_0.BayesianNetwork.class, (edu.pitt.apollo.types.v3_1_0.BayesianNetwork) oldTypeInstance);
+			return new BayesianNetworkSetter(edu.pitt.apollo.types.v4_0.BayesianNetwork.class, oldTypeInstance);
 		}
 
-		if (oldTypeInstance instanceof edu.pitt.apollo.types.v4_0.ConditionalProbabilityDistribution) {
+		if (oldTypeInstance instanceof edu.pitt.apollo.types.v4_0.UnconditionalProbabilityDistribution) {
 
-			return new ConditionalProbabilityDistributionSetter(edu.pitt.apollo.types.v4_0.ConditionalProbabilityDistribution.class, (edu.pitt.apollo.types.v3_1_0.ConditionalProbabilityDistribution) oldTypeInstance);
+			return UnconditionalProbabilityDistributionSetterFactory.getSetter(oldTypeInstance);
 		}
 
 		throw new UnsupportedTypeException("Type " + oldTypeInstance.getClass().getCanonicalName() + " is not supported");

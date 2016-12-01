@@ -6,12 +6,12 @@ public class DurationSetterFactory {
 
 		if (oldTypeInstance instanceof edu.pitt.apollo.types.v4_0.FixedDuration) {
 
-			return new FixedDurationSetter(edu.pitt.apollo.types.v4_0.FixedDuration.class, (edu.pitt.apollo.types.v3_1_0.FixedDuration) oldTypeInstance);
+			return new FixedDurationSetter(edu.pitt.apollo.types.v4_0.FixedDuration.class, oldTypeInstance);
 		}
 
 		if (oldTypeInstance instanceof edu.pitt.apollo.types.v4_0.UncertainDuration) {
 
-			return new UncertainDurationSetter(edu.pitt.apollo.types.v4_0.UncertainDuration.class, (edu.pitt.apollo.types.v3_1_0.UncertainDuration) oldTypeInstance);
+			return new UncertainDurationSetter(edu.pitt.apollo.types.v4_0.UncertainDuration.class, oldTypeInstance);
 		}
 
 		throw new UnsupportedTypeException("Type " + oldTypeInstance.getClass().getCanonicalName() + " is not supported");

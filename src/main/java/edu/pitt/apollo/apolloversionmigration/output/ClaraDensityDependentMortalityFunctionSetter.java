@@ -1,30 +1,32 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class ClaraDensityDependentMortalityFunctionSetter extends MortalityFunctionSetter<edu.pitt.apollo.types.v4_0.ClaraDensityDependentMortalityFunction,edu.pitt.apollo.types.v3_1_0.ClaraDensityDependentMortalityFunction> {
+public class ClaraDensityDependentMortalityFunctionSetter extends MortalityFunctionSetter<edu.pitt.apollo.types.v4_0.ClaraDensityDependentMortalityFunction> {
 
-	public ClaraDensityDependentMortalityFunctionSetter(Class<edu.pitt.apollo.types.v4_0.ClaraDensityDependentMortalityFunction> newTypeClass, edu.pitt.apollo.types.v3_1_0.ClaraDensityDependentMortalityFunction oldTypeInstance) throws MigrationException {
+	public ClaraDensityDependentMortalityFunctionSetter(Class<edu.pitt.apollo.types.v4_0.ClaraDensityDependentMortalityFunction> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}
 
-	private void setDescription() throws MigrationException {
-		newTypeInstance.setDescription(oldTypeInstance.getDescription());
+	protected void setDescription() throws MigrationException {
+		newTypeInstance.setDescription(((edu.pitt.apollo.types.v3_1_0.ClaraDensityDependentMortalityFunction) oldTypeInstance).getDescription());
 	}
 
-	private void setOmega() throws MigrationException {
-		newTypeInstance.setOmega(oldTypeInstance.getOmega());
+	protected void setOmega() throws MigrationException {
+		newTypeInstance.setOmega(((edu.pitt.apollo.types.v3_1_0.ClaraDensityDependentMortalityFunction) oldTypeInstance).getOmega());
 	}
 
-	private void setSigma() throws MigrationException {
-		newTypeInstance.setSigma(oldTypeInstance.getSigma());
+	protected void setSigma() throws MigrationException {
+		newTypeInstance.setSigma(((edu.pitt.apollo.types.v3_1_0.ClaraDensityDependentMortalityFunction) oldTypeInstance).getSigma());
 	}
 
 	@Override
 	public void set() throws MigrationException {
-		super.set();
-		setDescription();
-		setOmega();
-		setSigma();
+		if (oldTypeInstance != null) {
+			super.set();
+			setDescription();
+			setOmega();
+			setSigma();
+		}
 	}
 
 }

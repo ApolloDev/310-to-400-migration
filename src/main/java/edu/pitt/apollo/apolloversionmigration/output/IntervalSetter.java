@@ -1,53 +1,48 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-import edu.pitt.apollo.types.v4_0.Duration;
-import edu.pitt.apollo.types.v4_0.Interval;
+public class IntervalSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0.Interval> {
 
-public class IntervalSetter extends AbstractSetter<Interval,edu.pitt.apollo.types.v3_1_0.Interval> {
-
-	public IntervalSetter(Class<Interval> newTypeClass, edu.pitt.apollo.types.v3_1_0.Interval oldTypeInstance) throws MigrationException {
+	public IntervalSetter(Class<edu.pitt.apollo.types.v4_0.Interval> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}
 
-
-	private void setStartBoundaryDefinition() throws MigrationException {
-		Interval startBoundaryInterval = new Interval();
-		startBoundaryInterval.setStartBoundaryDefinition(null);
-		startBoundaryInterval.setEndBoundaryDefinition(null);
-		startBoundaryInterval.setDuration(new Duration());
-		newTypeInstance.setStartBoundaryDefinition(startBoundaryInterval);
-
-//		IntervalSetter setter = new IntervalSetter(edu.pitt.apollo.types.v4_0.Interval.class,oldTypeInstance.getStartBoundaryDefinition());
-//		setter.set();
-//		newTypeInstance.setStartBoundaryDefinition(setter.getNewTypeInstance());
-	}
-
-	private void setEndBoundaryDefinition() throws MigrationException {
-		newTypeInstance.setEndBoundaryDefinition(edu.pitt.apollo.types.v4_0.IntervalBoundaryDefinitionEnum.fromValue(oldTypeInstance.getEndBoundaryDefinition().toString()));
-	}
-
-	private void setDuration() throws MigrationException {
-		DurationSetter setter = DurationSetterFactory.getSetter(oldTypeInstance.getDuration());
+	protected void setStartBoundaryDefinition() throws MigrationException {
+		IntervalSetter setter = new IntervalSetter(edu.pitt.apollo.types.v4_0.Interval.class,((edu.pitt.apollo.types.v3_1_0.Interval) oldTypeInstance).getStartBoundaryDefinition());
 		setter.set();
-		newTypeInstance.setDuration(setter.getNewTypeInstance());
+		newTypeInstance.setStartBoundaryDefinition(setter.getNewTypeInstance());
 	}
 
-	private void setReadableTitle() throws MigrationException {
-		newTypeInstance.setReadableTitle(oldTypeInstance.getReadableTitle());
+	protected void setEndBoundaryDefinition() throws MigrationException {
+		newTypeInstance.setEndBoundaryDefinition(edu.pitt.apollo.types.v4_0.IntervalBoundaryDefinitionEnum.valueOf(((edu.pitt.apollo.types.v3_1_0.Interval) oldTypeInstance).getEndBoundaryDefinition().toString()));
 	}
 
-	private void setReferenceId() throws MigrationException {
-		newTypeInstance.setReferenceId(oldTypeInstance.getReferenceId());
+	protected void setDuration() throws MigrationException {
+		if (((edu.pitt.apollo.types.v3_1_0.Interval) oldTypeInstance).getDuration() != null) {
+			DurationSetter setter = DurationSetterFactory.getSetter(((edu.pitt.apollo.types.v3_1_0.Interval) oldTypeInstance).getDuration());
+			setter.set();
+			newTypeInstance.setDuration(setter.getNewTypeInstance());
+		}
+
+	}
+
+	protected void setReadableTitle() throws MigrationException {
+		newTypeInstance.setReadableTitle(((edu.pitt.apollo.types.v3_1_0.Interval) oldTypeInstance).getReadableTitle());
+	}
+
+	protected void setReferenceId() throws MigrationException {
+		newTypeInstance.setReferenceId(((edu.pitt.apollo.types.v3_1_0.Interval) oldTypeInstance).getReferenceId());
 	}
 
 	@Override
 	public void set() throws MigrationException {
-		setStartBoundaryDefinition();
-		setEndBoundaryDefinition();
-		setDuration();
-		setReadableTitle();
-		setReferenceId();
+		if (oldTypeInstance != null) {
+			setStartBoundaryDefinition();
+			setEndBoundaryDefinition();
+			setDuration();
+			setReadableTitle();
+			setReferenceId();
+		}
 	}
 
 }

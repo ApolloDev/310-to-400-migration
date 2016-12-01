@@ -1,41 +1,43 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class TargetPriorityPopulationSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0.TargetPriorityPopulation,edu.pitt.apollo.types.v3_1_0.TargetPriorityPopulation> {
+public class TargetPriorityPopulationSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0.TargetPriorityPopulation> {
 
-	public TargetPriorityPopulationSetter(Class<edu.pitt.apollo.types.v4_0.TargetPriorityPopulation> newTypeClass, edu.pitt.apollo.types.v3_1_0.TargetPriorityPopulation oldTypeInstance) throws MigrationException {
+	public TargetPriorityPopulationSetter(Class<edu.pitt.apollo.types.v4_0.TargetPriorityPopulation> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}
 
-	private void setDescription() throws MigrationException {
-		newTypeInstance.setDescription(oldTypeInstance.getDescription());
+	protected void setDescription() throws MigrationException {
+		newTypeInstance.setDescription(((edu.pitt.apollo.types.v3_1_0.TargetPriorityPopulation) oldTypeInstance).getDescription());
 	}
 
-	private void setTargetPopulationDefinition() throws MigrationException {
-		TargetPopulationDefinitionSetter setter = new TargetPopulationDefinitionSetter(edu.pitt.apollo.types.v4_0.TargetPopulationDefinition.class,oldTypeInstance.getTargetPopulationDefinition());
+	protected void setTargetPopulationDefinition() throws MigrationException {
+		TargetPopulationDefinitionSetter setter = new TargetPopulationDefinitionSetter(edu.pitt.apollo.types.v4_0.TargetPopulationDefinition.class,((edu.pitt.apollo.types.v3_1_0.TargetPriorityPopulation) oldTypeInstance).getTargetPopulationDefinition());
 		setter.set();
 		newTypeInstance.setTargetPopulationDefinition(setter.getNewTypeInstance());
 	}
 
-	private void setTargetPopulationEnum() throws MigrationException {
-		newTypeInstance.setTargetPopulationEnum(edu.pitt.apollo.types.v4_0.TargetPopulationEnum.fromValue(oldTypeInstance.getTargetPopulationEnum().toString()));
+	protected void setTargetPopulationEnum() throws MigrationException {
+		newTypeInstance.setTargetPopulationEnum(edu.pitt.apollo.types.v4_0.TargetPopulationEnum.valueOf(((edu.pitt.apollo.types.v3_1_0.TargetPriorityPopulation) oldTypeInstance).getTargetPopulationEnum().toString()));
 	}
 
-	private void setFractionOfTargetPopulationToPrioritize() throws MigrationException {
-		newTypeInstance.setFractionOfTargetPopulationToPrioritize(oldTypeInstance.getFractionOfTargetPopulationToPrioritize());
+	protected void setFractionOfTargetPopulationToPrioritize() throws MigrationException {
+		newTypeInstance.setFractionOfTargetPopulationToPrioritize(((edu.pitt.apollo.types.v3_1_0.TargetPriorityPopulation) oldTypeInstance).getFractionOfTargetPopulationToPrioritize());
 	}
 
-	private void setPriority() throws MigrationException {
-		newTypeInstance.setPriority(oldTypeInstance.getPriority());
+	protected void setPriority() throws MigrationException {
+		newTypeInstance.setPriority(((edu.pitt.apollo.types.v3_1_0.TargetPriorityPopulation) oldTypeInstance).getPriority());
 	}
 
 	@Override
 	public void set() throws MigrationException {
-		setDescription();
-		setTargetPopulationDefinition();
-		setTargetPopulationEnum();
-		setFractionOfTargetPopulationToPrioritize();
-		setPriority();
+		if (oldTypeInstance != null) {
+			setDescription();
+			setTargetPopulationDefinition();
+			setTargetPopulationEnum();
+			setFractionOfTargetPopulationToPrioritize();
+			setPriority();
+		}
 	}
 
 }

@@ -1,31 +1,36 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class ReproductionNumberSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0.ReproductionNumber,edu.pitt.apollo.types.v3_1_0.ReproductionNumber> {
+public class ReproductionNumberSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0.ReproductionNumber> {
 
-	public ReproductionNumberSetter(Class<edu.pitt.apollo.types.v4_0.ReproductionNumber> newTypeClass, edu.pitt.apollo.types.v3_1_0.ReproductionNumber oldTypeInstance) throws MigrationException {
+	public ReproductionNumberSetter(Class<edu.pitt.apollo.types.v4_0.ReproductionNumber> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}
 
-	private void setExactValue() throws MigrationException {
-		newTypeInstance.setExactValue(oldTypeInstance.getExactValue());
+	protected void setExactValue() throws MigrationException {
+		newTypeInstance.setExactValue(((edu.pitt.apollo.types.v3_1_0.ReproductionNumber) oldTypeInstance).getExactValue());
 	}
 
-	private void setUncertainValue() throws MigrationException {
-		UncertainValueSetter setter = UncertainValueSetterFactory.getSetter(oldTypeInstance.getUncertainValue());
-		setter.set();
-		newTypeInstance.setUncertainValue(setter.getNewTypeInstance());
+	protected void setUncertainValue() throws MigrationException {
+		if (((edu.pitt.apollo.types.v3_1_0.ReproductionNumber) oldTypeInstance).getUncertainValue() != null) {
+			UncertainValueSetter setter = UncertainValueSetterFactory.getSetter(((edu.pitt.apollo.types.v3_1_0.ReproductionNumber) oldTypeInstance).getUncertainValue());
+			setter.set();
+			newTypeInstance.setUncertainValue(setter.getNewTypeInstance());
+		}
+
 	}
 
-	private void setReferenceId() throws MigrationException {
-		newTypeInstance.setReferenceId(oldTypeInstance.getReferenceId());
+	protected void setReferenceId() throws MigrationException {
+		newTypeInstance.setReferenceId(((edu.pitt.apollo.types.v3_1_0.ReproductionNumber) oldTypeInstance).getReferenceId());
 	}
 
 	@Override
 	public void set() throws MigrationException {
-		setExactValue();
-		setUncertainValue();
-		setReferenceId();
+		if (oldTypeInstance != null) {
+			setExactValue();
+			setUncertainValue();
+			setReferenceId();
+		}
 	}
 
 }

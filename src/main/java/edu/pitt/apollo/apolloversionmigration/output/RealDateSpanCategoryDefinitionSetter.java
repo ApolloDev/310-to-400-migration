@@ -1,30 +1,32 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class RealDateSpanCategoryDefinitionSetter extends CategoryDefinitionSetter<edu.pitt.apollo.types.v4_0.RealDateSpanCategoryDefinition,edu.pitt.apollo.types.v3_1_0.RealDateSpanCategoryDefinition> {
+public class RealDateSpanCategoryDefinitionSetter extends CategoryDefinitionSetter<edu.pitt.apollo.types.v4_0.RealDateSpanCategoryDefinition> {
 
-	public RealDateSpanCategoryDefinitionSetter(Class<edu.pitt.apollo.types.v4_0.RealDateSpanCategoryDefinition> newTypeClass, edu.pitt.apollo.types.v3_1_0.RealDateSpanCategoryDefinition oldTypeInstance) throws MigrationException {
+	public RealDateSpanCategoryDefinitionSetter(Class<edu.pitt.apollo.types.v4_0.RealDateSpanCategoryDefinition> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}
 
-	private void setOffsetFromUtcInHours() throws MigrationException {
-		newTypeInstance.setOffsetFromUtcInHours(oldTypeInstance.getOffsetFromUtcInHours());
+	protected void setOffsetFromUtcInHours() throws MigrationException {
+		newTypeInstance.setOffsetFromUtcInHours(((edu.pitt.apollo.types.v3_1_0.RealDateSpanCategoryDefinition) oldTypeInstance).getOffsetFromUtcInHours());
 	}
 
-	private void setFirstDay() throws MigrationException {
-		newTypeInstance.setFirstDay(oldTypeInstance.getFirstDay());
+	protected void setFirstDay() throws MigrationException {
+		newTypeInstance.setFirstDay(((edu.pitt.apollo.types.v3_1_0.RealDateSpanCategoryDefinition) oldTypeInstance).getFirstDay());
 	}
 
-	private void setLastDay() throws MigrationException {
-		newTypeInstance.setLastDay(oldTypeInstance.getLastDay());
+	protected void setLastDay() throws MigrationException {
+		newTypeInstance.setLastDay(((edu.pitt.apollo.types.v3_1_0.RealDateSpanCategoryDefinition) oldTypeInstance).getLastDay());
 	}
 
 	@Override
 	public void set() throws MigrationException {
-		super.set();
-		setOffsetFromUtcInHours();
-		setFirstDay();
-		setLastDay();
+		if (oldTypeInstance != null) {
+			super.set();
+			setOffsetFromUtcInHours();
+			setFirstDay();
+			setLastDay();
+		}
 	}
 
 }

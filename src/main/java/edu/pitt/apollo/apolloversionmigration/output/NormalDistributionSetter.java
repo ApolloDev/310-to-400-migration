@@ -1,35 +1,37 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class NormalDistributionSetter extends ContinuousParametricProbabilityDistributionSetter<edu.pitt.apollo.types.v4_0.NormalDistribution,edu.pitt.apollo.types.v3_1_0.NormalDistribution> {
+public class NormalDistributionSetter extends ContinuousParametricProbabilityDistributionSetter<edu.pitt.apollo.types.v4_0.NormalDistribution> {
 
-	public NormalDistributionSetter(Class<edu.pitt.apollo.types.v4_0.NormalDistribution> newTypeClass, edu.pitt.apollo.types.v3_1_0.NormalDistribution oldTypeInstance) throws MigrationException {
+	public NormalDistributionSetter(Class<edu.pitt.apollo.types.v4_0.NormalDistribution> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}
 
-	private void setMean() throws MigrationException {
-		newTypeInstance.setMean(oldTypeInstance.getMean());
+	protected void setMean() throws MigrationException {
+		newTypeInstance.setMean(((edu.pitt.apollo.types.v3_1_0.NormalDistribution) oldTypeInstance).getMean());
 	}
 
-	private void setStandardDeviation() throws MigrationException {
-		newTypeInstance.setStandardDeviation(oldTypeInstance.getStandardDeviation());
+	protected void setStandardDeviation() throws MigrationException {
+		newTypeInstance.setStandardDeviation(((edu.pitt.apollo.types.v3_1_0.NormalDistribution) oldTypeInstance).getStandardDeviation());
 	}
 
-	private void setShiftRight() throws MigrationException {
-		newTypeInstance.setShiftRight(oldTypeInstance.getShiftRight());
+	protected void setShiftRight() throws MigrationException {
+		newTypeInstance.setShiftRight(((edu.pitt.apollo.types.v3_1_0.NormalDistribution) oldTypeInstance).getShiftRight());
 	}
 
-	private void setCutTailAt() throws MigrationException {
-		newTypeInstance.setCutTailAt(oldTypeInstance.getCutTailAt());
+	protected void setCutTailAt() throws MigrationException {
+		newTypeInstance.setCutTailAt(((edu.pitt.apollo.types.v3_1_0.NormalDistribution) oldTypeInstance).getCutTailAt());
 	}
 
 	@Override
 	public void set() throws MigrationException {
-		super.set();
-		setMean();
-		setStandardDeviation();
-		setShiftRight();
-		setCutTailAt();
+		if (oldTypeInstance != null) {
+			super.set();
+			setMean();
+			setStandardDeviation();
+			setShiftRight();
+			setCutTailAt();
+		}
 	}
 
 }

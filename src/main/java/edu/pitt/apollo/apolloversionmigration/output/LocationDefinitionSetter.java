@@ -1,28 +1,28 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class LocationDefinitionSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0.LocationDefinition,edu.pitt.apollo.types.v3_1_0.LocationDefinition> {
+public class LocationDefinitionSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0.LocationDefinition> {
 
-	public LocationDefinitionSetter(Class<edu.pitt.apollo.types.v4_0.LocationDefinition> newTypeClass, edu.pitt.apollo.types.v3_1_0.LocationDefinition oldTypeInstance) throws MigrationException {
+	public LocationDefinitionSetter(Class<edu.pitt.apollo.types.v4_0.LocationDefinition> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}
 
-	private void setLocationsIncluded() throws MigrationException {
-		for (java.lang.String oldObj : oldTypeInstance.getLocationsIncluded()) {
+	protected void setLocationsIncluded() throws MigrationException {
+		for (java.lang.String oldObj : ((edu.pitt.apollo.types.v3_1_0.LocationDefinition) oldTypeInstance).getLocationsIncluded()) {
 			newTypeInstance.getLocationsIncluded().add(oldObj);
 		}
 
 	}
 
-	private void setLocationsExcluded() throws MigrationException {
-		for (java.lang.String oldObj : oldTypeInstance.getLocationsExcluded()) {
+	protected void setLocationsExcluded() throws MigrationException {
+		for (java.lang.String oldObj : ((edu.pitt.apollo.types.v3_1_0.LocationDefinition) oldTypeInstance).getLocationsExcluded()) {
 			newTypeInstance.getLocationsExcluded().add(oldObj);
 		}
 
 	}
 
-	private void setMultiGeometries() throws MigrationException {
-		for (edu.pitt.apollo.types.v3_1_0.MultiGeometry oldObj : oldTypeInstance.getMultiGeometries()) {
+	protected void setMultiGeometries() throws MigrationException {
+		for (edu.pitt.apollo.types.v3_1_0.MultiGeometry oldObj : ((edu.pitt.apollo.types.v3_1_0.LocationDefinition) oldTypeInstance).getMultiGeometries()) {
 			MultiGeometrySetter setter = new MultiGeometrySetter(edu.pitt.apollo.types.v4_0.MultiGeometry.class,oldObj);
 			setter.set();
 			edu.pitt.apollo.types.v4_0.MultiGeometry newObj = setter.getNewTypeInstance();
@@ -33,9 +33,11 @@ public class LocationDefinitionSetter extends AbstractSetter<edu.pitt.apollo.typ
 
 	@Override
 	public void set() throws MigrationException {
-		setLocationsIncluded();
-		setLocationsExcluded();
-		setMultiGeometries();
+		if (oldTypeInstance != null) {
+			setLocationsIncluded();
+			setLocationsExcluded();
+			setMultiGeometries();
+		}
 	}
 
 }

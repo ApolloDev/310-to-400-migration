@@ -1,14 +1,14 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class PopulationTreatmentCensusDataSetter extends CensusDataSetter<edu.pitt.apollo.types.v4_0.PopulationTreatmentCensusData,edu.pitt.apollo.types.v3_1_0.PopulationTreatmentCensusData> {
+public class PopulationTreatmentCensusDataSetter extends CensusDataSetter<edu.pitt.apollo.types.v4_0.PopulationTreatmentCensusData> {
 
-	public PopulationTreatmentCensusDataSetter(Class<edu.pitt.apollo.types.v4_0.PopulationTreatmentCensusData> newTypeClass, edu.pitt.apollo.types.v3_1_0.PopulationTreatmentCensusData oldTypeInstance) throws MigrationException {
+	public PopulationTreatmentCensusDataSetter(Class<edu.pitt.apollo.types.v4_0.PopulationTreatmentCensusData> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}
 
-	private void setTreatmentCensusDataCells() throws MigrationException {
-		for (edu.pitt.apollo.types.v3_1_0.PopulationTreatmentCensusDataCell oldObj : oldTypeInstance.getTreatmentCensusDataCells()) {
+	protected void setTreatmentCensusDataCells() throws MigrationException {
+		for (edu.pitt.apollo.types.v3_1_0.PopulationTreatmentCensusDataCell oldObj : ((edu.pitt.apollo.types.v3_1_0.PopulationTreatmentCensusData) oldTypeInstance).getTreatmentCensusDataCells()) {
 			PopulationTreatmentCensusDataCellSetter setter = new PopulationTreatmentCensusDataCellSetter(edu.pitt.apollo.types.v4_0.PopulationTreatmentCensusDataCell.class,oldObj);
 			setter.set();
 			edu.pitt.apollo.types.v4_0.PopulationTreatmentCensusDataCell newObj = setter.getNewTypeInstance();
@@ -17,8 +17,8 @@ public class PopulationTreatmentCensusDataSetter extends CensusDataSetter<edu.pi
 
 	}
 
-	private void setExceptionSubpopulations() throws MigrationException {
-		for (edu.pitt.apollo.types.v3_1_0.PopulationTreatmentCensusData oldObj : oldTypeInstance.getExceptionSubpopulations()) {
+	protected void setExceptionSubpopulations() throws MigrationException {
+		for (edu.pitt.apollo.types.v3_1_0.PopulationTreatmentCensusData oldObj : ((edu.pitt.apollo.types.v3_1_0.PopulationTreatmentCensusData) oldTypeInstance).getExceptionSubpopulations()) {
 			PopulationTreatmentCensusDataSetter setter = new PopulationTreatmentCensusDataSetter(edu.pitt.apollo.types.v4_0.PopulationTreatmentCensusData.class,oldObj);
 			setter.set();
 			edu.pitt.apollo.types.v4_0.PopulationTreatmentCensusData newObj = setter.getNewTypeInstance();
@@ -29,9 +29,11 @@ public class PopulationTreatmentCensusDataSetter extends CensusDataSetter<edu.pi
 
 	@Override
 	public void set() throws MigrationException {
-		super.set();
-		setTreatmentCensusDataCells();
-		setExceptionSubpopulations();
+		if (oldTypeInstance != null) {
+			super.set();
+			setTreatmentCensusDataCells();
+			setExceptionSubpopulations();
+		}
 	}
 
 }

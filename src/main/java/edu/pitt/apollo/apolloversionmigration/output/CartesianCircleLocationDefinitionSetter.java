@@ -1,42 +1,44 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class CartesianCircleLocationDefinitionSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0.CartesianCircleLocationDefinition,edu.pitt.apollo.types.v3_1_0.CartesianCircleLocationDefinition> {
+public class CartesianCircleLocationDefinitionSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0.CartesianCircleLocationDefinition> {
 
-	public CartesianCircleLocationDefinitionSetter(Class<edu.pitt.apollo.types.v4_0.CartesianCircleLocationDefinition> newTypeClass, edu.pitt.apollo.types.v3_1_0.CartesianCircleLocationDefinition oldTypeInstance) throws MigrationException {
+	public CartesianCircleLocationDefinitionSetter(Class<edu.pitt.apollo.types.v4_0.CartesianCircleLocationDefinition> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}
 
-	private void setEastWestOffsetFromCartesianCenter() throws MigrationException {
-		DistanceSetter setter = new DistanceSetter(edu.pitt.apollo.types.v4_0.Distance.class,oldTypeInstance.getEastWestOffsetFromCartesianCenter());
+	protected void setEastWestOffsetFromCartesianCenter() throws MigrationException {
+		DistanceSetter setter = new DistanceSetter(edu.pitt.apollo.types.v4_0.Distance.class,((edu.pitt.apollo.types.v3_1_0.CartesianCircleLocationDefinition) oldTypeInstance).getEastWestOffsetFromCartesianCenter());
 		setter.set();
 		newTypeInstance.setEastWestOffsetFromCartesianCenter(setter.getNewTypeInstance());
 	}
 
-	private void setNorthSouthOffsetFromCartesianCenter() throws MigrationException {
-		DistanceSetter setter = new DistanceSetter(edu.pitt.apollo.types.v4_0.Distance.class,oldTypeInstance.getNorthSouthOffsetFromCartesianCenter());
+	protected void setNorthSouthOffsetFromCartesianCenter() throws MigrationException {
+		DistanceSetter setter = new DistanceSetter(edu.pitt.apollo.types.v4_0.Distance.class,((edu.pitt.apollo.types.v3_1_0.CartesianCircleLocationDefinition) oldTypeInstance).getNorthSouthOffsetFromCartesianCenter());
 		setter.set();
 		newTypeInstance.setNorthSouthOffsetFromCartesianCenter(setter.getNewTypeInstance());
 	}
 
-	private void setAltitudeRelativeToCartesianCenter() throws MigrationException {
-		DistanceSetter setter = new DistanceSetter(edu.pitt.apollo.types.v4_0.Distance.class,oldTypeInstance.getAltitudeRelativeToCartesianCenter());
+	protected void setAltitudeRelativeToCartesianCenter() throws MigrationException {
+		DistanceSetter setter = new DistanceSetter(edu.pitt.apollo.types.v4_0.Distance.class,((edu.pitt.apollo.types.v3_1_0.CartesianCircleLocationDefinition) oldTypeInstance).getAltitudeRelativeToCartesianCenter());
 		setter.set();
 		newTypeInstance.setAltitudeRelativeToCartesianCenter(setter.getNewTypeInstance());
 	}
 
-	private void setRadius() throws MigrationException {
-		DistanceSetter setter = new DistanceSetter(edu.pitt.apollo.types.v4_0.Distance.class,oldTypeInstance.getRadius());
+	protected void setRadius() throws MigrationException {
+		DistanceSetter setter = new DistanceSetter(edu.pitt.apollo.types.v4_0.Distance.class,((edu.pitt.apollo.types.v3_1_0.CartesianCircleLocationDefinition) oldTypeInstance).getRadius());
 		setter.set();
 		newTypeInstance.setRadius(setter.getNewTypeInstance());
 	}
 
 	@Override
 	public void set() throws MigrationException {
-		setEastWestOffsetFromCartesianCenter();
-		setNorthSouthOffsetFromCartesianCenter();
-		setAltitudeRelativeToCartesianCenter();
-		setRadius();
+		if (oldTypeInstance != null) {
+			setEastWestOffsetFromCartesianCenter();
+			setNorthSouthOffsetFromCartesianCenter();
+			setAltitudeRelativeToCartesianCenter();
+			setRadius();
+		}
 	}
 
 }

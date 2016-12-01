@@ -1,20 +1,20 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class InfectiousDiseaseTransmissionExperimentSpecificationSetter extends ApolloIndexableItemSetter<edu.pitt.apollo.types.v4_0.InfectiousDiseaseTransmissionExperimentSpecification,edu.pitt.apollo.types.v3_1_0.InfectiousDiseaseTransmissionExperimentSpecification> {
+public class InfectiousDiseaseTransmissionExperimentSpecificationSetter extends ApolloIndexableItemSetter<edu.pitt.apollo.types.v4_0.InfectiousDiseaseTransmissionExperimentSpecification> {
 
-	public InfectiousDiseaseTransmissionExperimentSpecificationSetter(Class<edu.pitt.apollo.types.v4_0.InfectiousDiseaseTransmissionExperimentSpecification> newTypeClass, edu.pitt.apollo.types.v3_1_0.InfectiousDiseaseTransmissionExperimentSpecification oldTypeInstance) throws MigrationException {
+	public InfectiousDiseaseTransmissionExperimentSpecificationSetter(Class<edu.pitt.apollo.types.v4_0.InfectiousDiseaseTransmissionExperimentSpecification> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}
 
-	private void setInfectiousDiseaseScenarioWithoutIntervention() throws MigrationException {
-		InfectiousDiseaseScenarioSetter setter = new InfectiousDiseaseScenarioSetter(edu.pitt.apollo.types.v4_0.InfectiousDiseaseScenario.class,oldTypeInstance.getInfectiousDiseaseScenarioWithoutIntervention());
+	protected void setInfectiousDiseaseScenarioWithoutIntervention() throws MigrationException {
+		InfectiousDiseaseScenarioSetter setter = new InfectiousDiseaseScenarioSetter(edu.pitt.apollo.types.v4_0.InfectiousDiseaseScenario.class,((edu.pitt.apollo.types.v3_1_0.InfectiousDiseaseTransmissionExperimentSpecification) oldTypeInstance).getInfectiousDiseaseScenarioWithoutIntervention());
 		setter.set();
 		newTypeInstance.setInfectiousDiseaseScenarioWithoutIntervention(setter.getNewTypeInstance());
 	}
 
-	private void setInfectiousDiseaseControlStrategies() throws MigrationException {
-		for (edu.pitt.apollo.types.v3_1_0.InfectiousDiseaseControlStrategy oldObj : oldTypeInstance.getInfectiousDiseaseControlStrategies()) {
+	protected void setInfectiousDiseaseControlStrategies() throws MigrationException {
+		for (edu.pitt.apollo.types.v3_1_0.InfectiousDiseaseControlStrategy oldObj : ((edu.pitt.apollo.types.v3_1_0.InfectiousDiseaseTransmissionExperimentSpecification) oldTypeInstance).getInfectiousDiseaseControlStrategies()) {
 			InfectiousDiseaseControlStrategySetter setter = new InfectiousDiseaseControlStrategySetter(edu.pitt.apollo.types.v4_0.InfectiousDiseaseControlStrategy.class,oldObj);
 			setter.set();
 			edu.pitt.apollo.types.v4_0.InfectiousDiseaseControlStrategy newObj = setter.getNewTypeInstance();
@@ -23,8 +23,8 @@ public class InfectiousDiseaseTransmissionExperimentSpecificationSetter extends 
 
 	}
 
-	private void setInfectiousDiseaseTransmissionModelIds() throws MigrationException {
-		for (edu.pitt.apollo.types.v3_1_0.SoftwareIdentification oldObj : oldTypeInstance.getInfectiousDiseaseTransmissionModelIds()) {
+	protected void setInfectiousDiseaseTransmissionModelIds() throws MigrationException {
+		for (edu.pitt.apollo.types.v3_1_0.SoftwareIdentification oldObj : ((edu.pitt.apollo.types.v3_1_0.InfectiousDiseaseTransmissionExperimentSpecification) oldTypeInstance).getInfectiousDiseaseTransmissionModelIds()) {
 			SoftwareIdentificationSetter setter = new SoftwareIdentificationSetter(edu.pitt.apollo.types.v4_0.SoftwareIdentification.class,oldObj);
 			setter.set();
 			edu.pitt.apollo.types.v4_0.SoftwareIdentification newObj = setter.getNewTypeInstance();
@@ -33,8 +33,8 @@ public class InfectiousDiseaseTransmissionExperimentSpecificationSetter extends 
 
 	}
 
-	private void setSensitivityAnalyses() throws MigrationException {
-		for (edu.pitt.apollo.types.v3_1_0.SensitivityAnalysisSpecification oldObj : oldTypeInstance.getSensitivityAnalyses()) {
+	protected void setSensitivityAnalyses() throws MigrationException {
+		for (edu.pitt.apollo.types.v3_1_0.SensitivityAnalysisSpecification oldObj : ((edu.pitt.apollo.types.v3_1_0.InfectiousDiseaseTransmissionExperimentSpecification) oldTypeInstance).getSensitivityAnalyses()) {
 			SensitivityAnalysisSpecificationSetter setter = new SensitivityAnalysisSpecificationSetter(edu.pitt.apollo.types.v4_0.SensitivityAnalysisSpecification.class,oldObj);
 			setter.set();
 			edu.pitt.apollo.types.v4_0.SensitivityAnalysisSpecification newObj = setter.getNewTypeInstance();
@@ -45,11 +45,13 @@ public class InfectiousDiseaseTransmissionExperimentSpecificationSetter extends 
 
 	@Override
 	public void set() throws MigrationException {
-		super.set();
-		setInfectiousDiseaseScenarioWithoutIntervention();
-		setInfectiousDiseaseControlStrategies();
-		setInfectiousDiseaseTransmissionModelIds();
-		setSensitivityAnalyses();
+		if (oldTypeInstance != null) {
+			super.set();
+			setInfectiousDiseaseScenarioWithoutIntervention();
+			setInfectiousDiseaseControlStrategies();
+			setInfectiousDiseaseTransmissionModelIds();
+			setSensitivityAnalyses();
+		}
 	}
 
 }

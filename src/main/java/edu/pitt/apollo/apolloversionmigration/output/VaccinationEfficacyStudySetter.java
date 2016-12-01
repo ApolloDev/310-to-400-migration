@@ -1,22 +1,22 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class VaccinationEfficacyStudySetter extends AbstractSetter<edu.pitt.apollo.types.v4_0.VaccinationEfficacyStudy,edu.pitt.apollo.types.v3_1_0.VaccinationEfficacyStudy> {
+public class VaccinationEfficacyStudySetter extends AbstractSetter<edu.pitt.apollo.types.v4_0.VaccinationEfficacyStudy> {
 
-	public VaccinationEfficacyStudySetter(Class<edu.pitt.apollo.types.v4_0.VaccinationEfficacyStudy> newTypeClass, edu.pitt.apollo.types.v3_1_0.VaccinationEfficacyStudy oldTypeInstance) throws MigrationException {
+	public VaccinationEfficacyStudySetter(Class<edu.pitt.apollo.types.v4_0.VaccinationEfficacyStudy> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}
 
-	private void setDescription() throws MigrationException {
-		newTypeInstance.setDescription(oldTypeInstance.getDescription());
+	protected void setDescription() throws MigrationException {
+		newTypeInstance.setDescription(((edu.pitt.apollo.types.v3_1_0.VaccinationEfficacyStudy) oldTypeInstance).getDescription());
 	}
 
-	private void setVaccinationPreventableOutcome() throws MigrationException {
-		newTypeInstance.setVaccinationPreventableOutcome(edu.pitt.apollo.types.v4_0.TreatmentPreventableOutcomeEnum.fromValue(oldTypeInstance.getVaccinationPreventableOutcome().toString()));
+	protected void setVaccinationPreventableOutcome() throws MigrationException {
+		newTypeInstance.setVaccinationPreventableOutcome(edu.pitt.apollo.types.v4_0.TreatmentPreventableOutcomeEnum.valueOf(((edu.pitt.apollo.types.v3_1_0.VaccinationEfficacyStudy) oldTypeInstance).getVaccinationPreventableOutcome().toString()));
 	}
 
-	private void setVaccinationEfficacyMeasured() throws MigrationException {
-		for (edu.pitt.apollo.types.v3_1_0.VaccinationEfficacyMeasured oldObj : oldTypeInstance.getVaccinationEfficacyMeasured()) {
+	protected void setVaccinationEfficacyMeasured() throws MigrationException {
+		for (edu.pitt.apollo.types.v3_1_0.VaccinationEfficacyMeasured oldObj : ((edu.pitt.apollo.types.v3_1_0.VaccinationEfficacyStudy) oldTypeInstance).getVaccinationEfficacyMeasured()) {
 			VaccinationEfficacyMeasuredSetter setter = new VaccinationEfficacyMeasuredSetter(edu.pitt.apollo.types.v4_0.VaccinationEfficacyMeasured.class,oldObj);
 			setter.set();
 			edu.pitt.apollo.types.v4_0.VaccinationEfficacyMeasured newObj = setter.getNewTypeInstance();
@@ -25,15 +25,15 @@ public class VaccinationEfficacyStudySetter extends AbstractSetter<edu.pitt.apol
 
 	}
 
-	private void setDataSets() throws MigrationException {
-		for (java.lang.String oldObj : oldTypeInstance.getDataSets()) {
+	protected void setDataSets() throws MigrationException {
+		for (java.lang.String oldObj : ((edu.pitt.apollo.types.v3_1_0.VaccinationEfficacyStudy) oldTypeInstance).getDataSets()) {
 			newTypeInstance.getDataSets().add(oldObj);
 		}
 
 	}
 
-	private void setReferences() throws MigrationException {
-		for (java.lang.String oldObj : oldTypeInstance.getReferences()) {
+	protected void setReferences() throws MigrationException {
+		for (java.lang.String oldObj : ((edu.pitt.apollo.types.v3_1_0.VaccinationEfficacyStudy) oldTypeInstance).getReferences()) {
 			newTypeInstance.getReferences().add(oldObj);
 		}
 
@@ -41,11 +41,13 @@ public class VaccinationEfficacyStudySetter extends AbstractSetter<edu.pitt.apol
 
 	@Override
 	public void set() throws MigrationException {
-		setDescription();
-		setVaccinationPreventableOutcome();
-		setVaccinationEfficacyMeasured();
-		setDataSets();
-		setReferences();
+		if (oldTypeInstance != null) {
+			setDescription();
+			setVaccinationPreventableOutcome();
+			setVaccinationEfficacyMeasured();
+			setDataSets();
+			setReferences();
+		}
 	}
 
 }

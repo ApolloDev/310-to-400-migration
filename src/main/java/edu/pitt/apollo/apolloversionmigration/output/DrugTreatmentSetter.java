@@ -1,18 +1,18 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class DrugTreatmentSetter extends TreatmentSetter<edu.pitt.apollo.types.v4_0.DrugTreatment,edu.pitt.apollo.types.v3_1_0.DrugTreatment> {
+public class DrugTreatmentSetter extends TreatmentSetter<edu.pitt.apollo.types.v4_0.DrugTreatment> {
 
-	public DrugTreatmentSetter(Class<edu.pitt.apollo.types.v4_0.DrugTreatment> newTypeClass, edu.pitt.apollo.types.v3_1_0.DrugTreatment oldTypeInstance) throws MigrationException {
+	public DrugTreatmentSetter(Class<edu.pitt.apollo.types.v4_0.DrugTreatment> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}
 
-	private void setDrugId() throws MigrationException {
-		newTypeInstance.setDrugId(oldTypeInstance.getDrugId());
+	protected void setDrugId() throws MigrationException {
+		newTypeInstance.setDrugId(((edu.pitt.apollo.types.v3_1_0.DrugTreatment) oldTypeInstance).getDrugId());
 	}
 
-	private void setDrugTreatmentEfficacy() throws MigrationException {
-		for (edu.pitt.apollo.types.v3_1_0.DrugTreatmentEfficacyForSimulatorConfiguration oldObj : oldTypeInstance.getDrugTreatmentEfficacy()) {
+	protected void setDrugTreatmentEfficacy() throws MigrationException {
+		for (edu.pitt.apollo.types.v3_1_0.DrugTreatmentEfficacyForSimulatorConfiguration oldObj : ((edu.pitt.apollo.types.v3_1_0.DrugTreatment) oldTypeInstance).getDrugTreatmentEfficacy()) {
 			DrugTreatmentEfficacyForSimulatorConfigurationSetter setter = new DrugTreatmentEfficacyForSimulatorConfigurationSetter(edu.pitt.apollo.types.v4_0.DrugTreatmentEfficacyForSimulatorConfiguration.class,oldObj);
 			setter.set();
 			edu.pitt.apollo.types.v4_0.DrugTreatmentEfficacyForSimulatorConfiguration newObj = setter.getNewTypeInstance();
@@ -23,9 +23,11 @@ public class DrugTreatmentSetter extends TreatmentSetter<edu.pitt.apollo.types.v
 
 	@Override
 	public void set() throws MigrationException {
-		super.set();
-		setDrugId();
-		setDrugTreatmentEfficacy();
+		if (oldTypeInstance != null) {
+			super.set();
+			setDrugId();
+			setDrugTreatmentEfficacy();
+		}
 	}
 
 }

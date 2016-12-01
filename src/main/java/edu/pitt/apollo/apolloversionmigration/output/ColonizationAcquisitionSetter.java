@@ -1,32 +1,32 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class ColonizationAcquisitionSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0.ColonizationAcquisition,edu.pitt.apollo.types.v3_1_0.ColonizationAcquisition> {
+public class ColonizationAcquisitionSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0.ColonizationAcquisition> {
 
-	public ColonizationAcquisitionSetter(Class<edu.pitt.apollo.types.v4_0.ColonizationAcquisition> newTypeClass, edu.pitt.apollo.types.v3_1_0.ColonizationAcquisition oldTypeInstance) throws MigrationException {
+	public ColonizationAcquisitionSetter(Class<edu.pitt.apollo.types.v4_0.ColonizationAcquisition> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}
 
-	private void setInfectiousHostSource() throws MigrationException {
-		newTypeInstance.setInfectiousHostSource(oldTypeInstance.getInfectiousHostSource());
+	protected void setInfectiousHostSource() throws MigrationException {
+		newTypeInstance.setInfectiousHostSource(((edu.pitt.apollo.types.v3_1_0.ColonizationAcquisition) oldTypeInstance).getInfectiousHostSource());
 	}
 
-	private void setContaminatedSource() throws MigrationException {
-		newTypeInstance.setContaminatedSource(edu.pitt.apollo.types.v4_0.AbioticThingEnum.fromValue(oldTypeInstance.getContaminatedSource().toString()));
+	protected void setContaminatedSource() throws MigrationException {
+		newTypeInstance.setContaminatedSource(edu.pitt.apollo.types.v4_0.AbioticThingEnum.valueOf(((edu.pitt.apollo.types.v3_1_0.ColonizationAcquisition) oldTypeInstance).getContaminatedSource().toString()));
 	}
 
-	private void setColonizedHost() throws MigrationException {
-		newTypeInstance.setColonizedHost(oldTypeInstance.getColonizedHost());
+	protected void setColonizedHost() throws MigrationException {
+		newTypeInstance.setColonizedHost(((edu.pitt.apollo.types.v3_1_0.ColonizationAcquisition) oldTypeInstance).getColonizedHost());
 	}
 
-	private void setTransmissionProbability() throws MigrationException {
-		TransmissionProbabilitySetter setter = new TransmissionProbabilitySetter(edu.pitt.apollo.types.v4_0.TransmissionProbability.class,oldTypeInstance.getTransmissionProbability());
+	protected void setTransmissionProbability() throws MigrationException {
+		TransmissionProbabilitySetter setter = new TransmissionProbabilitySetter(edu.pitt.apollo.types.v4_0.TransmissionProbability.class,((edu.pitt.apollo.types.v3_1_0.ColonizationAcquisition) oldTypeInstance).getTransmissionProbability());
 		setter.set();
 		newTypeInstance.setTransmissionProbability(setter.getNewTypeInstance());
 	}
 
-	private void setBeta() throws MigrationException {
-		for (edu.pitt.apollo.types.v3_1_0.Rate oldObj : oldTypeInstance.getBeta()) {
+	protected void setBeta() throws MigrationException {
+		for (edu.pitt.apollo.types.v3_1_0.Rate oldObj : ((edu.pitt.apollo.types.v3_1_0.ColonizationAcquisition) oldTypeInstance).getBeta()) {
 			RateSetter setter = new RateSetter(edu.pitt.apollo.types.v4_0.Rate.class,oldObj);
 			setter.set();
 			edu.pitt.apollo.types.v4_0.Rate newObj = setter.getNewTypeInstance();
@@ -37,11 +37,13 @@ public class ColonizationAcquisitionSetter extends AbstractSetter<edu.pitt.apoll
 
 	@Override
 	public void set() throws MigrationException {
-		setInfectiousHostSource();
-		setContaminatedSource();
-		setColonizedHost();
-		setTransmissionProbability();
-		setBeta();
+		if (oldTypeInstance != null) {
+			setInfectiousHostSource();
+			setContaminatedSource();
+			setColonizedHost();
+			setTransmissionProbability();
+			setBeta();
+		}
 	}
 
 }

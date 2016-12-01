@@ -1,27 +1,29 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class PopulationTreatmentCensusSetter extends CensusSetter<edu.pitt.apollo.types.v4_0.PopulationTreatmentCensus,edu.pitt.apollo.types.v3_1_0.PopulationTreatmentCensus> {
+public class PopulationTreatmentCensusSetter extends CensusSetter<edu.pitt.apollo.types.v4_0.PopulationTreatmentCensus> {
 
-	public PopulationTreatmentCensusSetter(Class<edu.pitt.apollo.types.v4_0.PopulationTreatmentCensus> newTypeClass, edu.pitt.apollo.types.v3_1_0.PopulationTreatmentCensus oldTypeInstance) throws MigrationException {
+	public PopulationTreatmentCensusSetter(Class<edu.pitt.apollo.types.v4_0.PopulationTreatmentCensus> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}
 
-	private void setPopulationSpecies() throws MigrationException {
-		newTypeInstance.setPopulationSpecies(oldTypeInstance.getPopulationSpecies());
+	protected void setPopulationSpecies() throws MigrationException {
+		newTypeInstance.setPopulationSpecies(((edu.pitt.apollo.types.v3_1_0.PopulationTreatmentCensus) oldTypeInstance).getPopulationSpecies());
 	}
 
-	private void setTreatmentCensusData() throws MigrationException {
-		PopulationTreatmentCensusDataSetter setter = new PopulationTreatmentCensusDataSetter(edu.pitt.apollo.types.v4_0.PopulationTreatmentCensusData.class,oldTypeInstance.getTreatmentCensusData());
+	protected void setTreatmentCensusData() throws MigrationException {
+		PopulationTreatmentCensusDataSetter setter = new PopulationTreatmentCensusDataSetter(edu.pitt.apollo.types.v4_0.PopulationTreatmentCensusData.class,((edu.pitt.apollo.types.v3_1_0.PopulationTreatmentCensus) oldTypeInstance).getTreatmentCensusData());
 		setter.set();
 		newTypeInstance.setTreatmentCensusData(setter.getNewTypeInstance());
 	}
 
 	@Override
 	public void set() throws MigrationException {
-		super.set();
-		setPopulationSpecies();
-		setTreatmentCensusData();
+		if (oldTypeInstance != null) {
+			super.set();
+			setPopulationSpecies();
+			setTreatmentCensusData();
+		}
 	}
 
 }

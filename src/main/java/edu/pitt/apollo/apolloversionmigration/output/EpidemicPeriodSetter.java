@@ -1,34 +1,36 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class EpidemicPeriodSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0.EpidemicPeriod,edu.pitt.apollo.types.v3_1_0.EpidemicPeriod> {
+public class EpidemicPeriodSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0.EpidemicPeriod> {
 
-	public EpidemicPeriodSetter(Class<edu.pitt.apollo.types.v4_0.EpidemicPeriod> newTypeClass, edu.pitt.apollo.types.v3_1_0.EpidemicPeriod oldTypeInstance) throws MigrationException {
+	public EpidemicPeriodSetter(Class<edu.pitt.apollo.types.v4_0.EpidemicPeriod> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}
 
-	private void setStartDate() throws MigrationException {
-		newTypeInstance.setStartDate(oldTypeInstance.getStartDate());
+	protected void setStartDate() throws MigrationException {
+		newTypeInstance.setStartDate(((edu.pitt.apollo.types.v3_1_0.EpidemicPeriod) oldTypeInstance).getStartDate());
 	}
 
-	private void setStartDateDefinition() throws MigrationException {
-		newTypeInstance.setStartDateDefinition(edu.pitt.apollo.types.v4_0.EpidemicPeriodStartDefinitionEnum.fromValue(oldTypeInstance.getStartDateDefinition().toString()));
+	protected void setStartDateDefinition() throws MigrationException {
+		newTypeInstance.setStartDateDefinition(edu.pitt.apollo.types.v4_0.EpidemicPeriodStartDefinitionEnum.valueOf(((edu.pitt.apollo.types.v3_1_0.EpidemicPeriod) oldTypeInstance).getStartDateDefinition().toString()));
 	}
 
-	private void setEndDate() throws MigrationException {
-		newTypeInstance.setEndDate(oldTypeInstance.getEndDate());
+	protected void setEndDate() throws MigrationException {
+		newTypeInstance.setEndDate(((edu.pitt.apollo.types.v3_1_0.EpidemicPeriod) oldTypeInstance).getEndDate());
 	}
 
-	private void setEndDateDefinition() throws MigrationException {
-		newTypeInstance.setEndDateDefinition(edu.pitt.apollo.types.v4_0.EpidemicPeriodEndDefinitionEnum.fromValue(oldTypeInstance.getEndDateDefinition().toString()));
+	protected void setEndDateDefinition() throws MigrationException {
+		newTypeInstance.setEndDateDefinition(edu.pitt.apollo.types.v4_0.EpidemicPeriodEndDefinitionEnum.valueOf(((edu.pitt.apollo.types.v3_1_0.EpidemicPeriod) oldTypeInstance).getEndDateDefinition().toString()));
 	}
 
 	@Override
 	public void set() throws MigrationException {
-		setStartDate();
-		setStartDateDefinition();
-		setEndDate();
-		setEndDateDefinition();
+		if (oldTypeInstance != null) {
+			setStartDate();
+			setStartDateDefinition();
+			setEndDate();
+			setEndDateDefinition();
+		}
 	}
 
 }

@@ -1,31 +1,33 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class ScenarioCartesianOriginSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0.ScenarioCartesianOrigin,edu.pitt.apollo.types.v3_1_0.ScenarioCartesianOrigin> {
+public class ScenarioCartesianOriginSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0.ScenarioCartesianOrigin> {
 
-	public ScenarioCartesianOriginSetter(Class<edu.pitt.apollo.types.v4_0.ScenarioCartesianOrigin> newTypeClass, edu.pitt.apollo.types.v3_1_0.ScenarioCartesianOrigin oldTypeInstance) throws MigrationException {
+	public ScenarioCartesianOriginSetter(Class<edu.pitt.apollo.types.v4_0.ScenarioCartesianOrigin> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}
 
-	private void setCartesianReferenceLongitude() throws MigrationException {
-		newTypeInstance.setCartesianReferenceLongitude(oldTypeInstance.getCartesianReferenceLongitude());
+	protected void setCartesianReferenceLongitude() throws MigrationException {
+		newTypeInstance.setCartesianReferenceLongitude(((edu.pitt.apollo.types.v3_1_0.ScenarioCartesianOrigin) oldTypeInstance).getCartesianReferenceLongitude());
 	}
 
-	private void setCartesianReferenceLatitude() throws MigrationException {
-		newTypeInstance.setCartesianReferenceLatitude(oldTypeInstance.getCartesianReferenceLatitude());
+	protected void setCartesianReferenceLatitude() throws MigrationException {
+		newTypeInstance.setCartesianReferenceLatitude(((edu.pitt.apollo.types.v3_1_0.ScenarioCartesianOrigin) oldTypeInstance).getCartesianReferenceLatitude());
 	}
 
-	private void setCartesianReferenceAltitude() throws MigrationException {
-		DistanceSetter setter = new DistanceSetter(edu.pitt.apollo.types.v4_0.Distance.class,oldTypeInstance.getCartesianReferenceAltitude());
+	protected void setCartesianReferenceAltitude() throws MigrationException {
+		DistanceSetter setter = new DistanceSetter(edu.pitt.apollo.types.v4_0.Distance.class,((edu.pitt.apollo.types.v3_1_0.ScenarioCartesianOrigin) oldTypeInstance).getCartesianReferenceAltitude());
 		setter.set();
 		newTypeInstance.setCartesianReferenceAltitude(setter.getNewTypeInstance());
 	}
 
 	@Override
 	public void set() throws MigrationException {
-		setCartesianReferenceLongitude();
-		setCartesianReferenceLatitude();
-		setCartesianReferenceAltitude();
+		if (oldTypeInstance != null) {
+			setCartesianReferenceLongitude();
+			setCartesianReferenceLatitude();
+			setCartesianReferenceAltitude();
+		}
 	}
 
 }

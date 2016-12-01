@@ -1,37 +1,37 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class PlaceVisitedSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0.PlaceVisited,edu.pitt.apollo.types.v3_1_0.PlaceVisited> {
+public class PlaceVisitedSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0.PlaceVisited> {
 
-	public PlaceVisitedSetter(Class<edu.pitt.apollo.types.v4_0.PlaceVisited> newTypeClass, edu.pitt.apollo.types.v3_1_0.PlaceVisited oldTypeInstance) throws MigrationException {
+	public PlaceVisitedSetter(Class<edu.pitt.apollo.types.v4_0.PlaceVisited> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}
 
-	private void setPlace() throws MigrationException {
-		newTypeInstance.setPlace(edu.pitt.apollo.types.v4_0.PlaceEnum.fromValue(oldTypeInstance.getPlace().toString()));
+	protected void setPlace() throws MigrationException {
+		newTypeInstance.setPlace(edu.pitt.apollo.types.v4_0.PlaceEnum.valueOf(((edu.pitt.apollo.types.v3_1_0.PlaceVisited) oldTypeInstance).getPlace().toString()));
 	}
 
-	private void setNamedMultiGeometry() throws MigrationException {
-		NamedMultiGeometrySetter setter = new NamedMultiGeometrySetter(edu.pitt.apollo.types.v4_0.NamedMultiGeometry.class,oldTypeInstance.getNamedMultiGeometry());
+	protected void setNamedMultiGeometry() throws MigrationException {
+		NamedMultiGeometrySetter setter = new NamedMultiGeometrySetter(edu.pitt.apollo.types.v4_0.NamedMultiGeometry.class,((edu.pitt.apollo.types.v3_1_0.PlaceVisited) oldTypeInstance).getNamedMultiGeometry());
 		setter.set();
 		newTypeInstance.setNamedMultiGeometry(setter.getNewTypeInstance());
 	}
 
-	private void setFrequencyOfVisits() throws MigrationException {
-		RateSetter setter = new RateSetter(edu.pitt.apollo.types.v4_0.Rate.class,oldTypeInstance.getFrequencyOfVisits());
+	protected void setFrequencyOfVisits() throws MigrationException {
+		RateSetter setter = new RateSetter(edu.pitt.apollo.types.v4_0.Rate.class,((edu.pitt.apollo.types.v3_1_0.PlaceVisited) oldTypeInstance).getFrequencyOfVisits());
 		setter.set();
 		newTypeInstance.setFrequencyOfVisits(setter.getNewTypeInstance());
 	}
 
-	private void setDatesOfVisits() throws MigrationException {
-		for (javax.xml.datatype.XMLGregorianCalendar oldObj : oldTypeInstance.getDatesOfVisits()) {
+	protected void setDatesOfVisits() throws MigrationException {
+		for (javax.xml.datatype.XMLGregorianCalendar oldObj : ((edu.pitt.apollo.types.v3_1_0.PlaceVisited) oldTypeInstance).getDatesOfVisits()) {
 			newTypeInstance.getDatesOfVisits().add(oldObj);
 		}
 
 	}
 
-	private void setRealDateSpansOfVisits() throws MigrationException {
-		for (edu.pitt.apollo.types.v3_1_0.RealDateSpanCategoryDefinition oldObj : oldTypeInstance.getRealDateSpansOfVisits()) {
+	protected void setRealDateSpansOfVisits() throws MigrationException {
+		for (edu.pitt.apollo.types.v3_1_0.RealDateSpanCategoryDefinition oldObj : ((edu.pitt.apollo.types.v3_1_0.PlaceVisited) oldTypeInstance).getRealDateSpansOfVisits()) {
 			RealDateSpanCategoryDefinitionSetter setter = new RealDateSpanCategoryDefinitionSetter(edu.pitt.apollo.types.v4_0.RealDateSpanCategoryDefinition.class,oldObj);
 			setter.set();
 			edu.pitt.apollo.types.v4_0.RealDateSpanCategoryDefinition newObj = setter.getNewTypeInstance();
@@ -40,8 +40,8 @@ public class PlaceVisitedSetter extends AbstractSetter<edu.pitt.apollo.types.v4_
 
 	}
 
-	private void setRealTimeSpansOfVisits() throws MigrationException {
-		for (edu.pitt.apollo.types.v3_1_0.RealTimeSpanCategoryDefinition oldObj : oldTypeInstance.getRealTimeSpansOfVisits()) {
+	protected void setRealTimeSpansOfVisits() throws MigrationException {
+		for (edu.pitt.apollo.types.v3_1_0.RealTimeSpanCategoryDefinition oldObj : ((edu.pitt.apollo.types.v3_1_0.PlaceVisited) oldTypeInstance).getRealTimeSpansOfVisits()) {
 			RealTimeSpanCategoryDefinitionSetter setter = new RealTimeSpanCategoryDefinitionSetter(edu.pitt.apollo.types.v4_0.RealTimeSpanCategoryDefinition.class,oldObj);
 			setter.set();
 			edu.pitt.apollo.types.v4_0.RealTimeSpanCategoryDefinition newObj = setter.getNewTypeInstance();
@@ -52,12 +52,14 @@ public class PlaceVisitedSetter extends AbstractSetter<edu.pitt.apollo.types.v4_
 
 	@Override
 	public void set() throws MigrationException {
-		setPlace();
-		setNamedMultiGeometry();
-		setFrequencyOfVisits();
-		setDatesOfVisits();
-		setRealDateSpansOfVisits();
-		setRealTimeSpansOfVisits();
+		if (oldTypeInstance != null) {
+			setPlace();
+			setNamedMultiGeometry();
+			setFrequencyOfVisits();
+			setDatesOfVisits();
+			setRealDateSpansOfVisits();
+			setRealTimeSpansOfVisits();
+		}
 	}
 
 }

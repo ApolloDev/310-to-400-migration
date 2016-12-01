@@ -1,37 +1,42 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class PlaceClosureControlMeasureSetter extends InfectiousDiseaseControlMeasureSetter<edu.pitt.apollo.types.v4_0.PlaceClosureControlMeasure,edu.pitt.apollo.types.v3_1_0.PlaceClosureControlMeasure> {
+public class PlaceClosureControlMeasureSetter extends InfectiousDiseaseControlMeasureSetter<edu.pitt.apollo.types.v4_0.PlaceClosureControlMeasure> {
 
-	public PlaceClosureControlMeasureSetter(Class<edu.pitt.apollo.types.v4_0.PlaceClosureControlMeasure> newTypeClass, edu.pitt.apollo.types.v3_1_0.PlaceClosureControlMeasure oldTypeInstance) throws MigrationException {
+	public PlaceClosureControlMeasureSetter(Class<edu.pitt.apollo.types.v4_0.PlaceClosureControlMeasure> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}
 
-	private void setCloseIndividualPlacesIndependently() throws MigrationException {
-		newTypeInstance.setCloseIndividualPlacesIndependently(oldTypeInstance.isCloseIndividualPlacesIndependently());
+	protected void setCloseIndividualPlacesIndependently() throws MigrationException {
+		newTypeInstance.setCloseIndividualPlacesIndependently(((edu.pitt.apollo.types.v3_1_0.PlaceClosureControlMeasure) oldTypeInstance).isCloseIndividualPlacesIndependently());
 	}
 
-	private void setClosurePeriod() throws MigrationException {
-		DurationSetter setter = DurationSetterFactory.getSetter(oldTypeInstance.getClosurePeriod());
-		setter.set();
-		newTypeInstance.setClosurePeriod(setter.getNewTypeInstance());
+	protected void setClosurePeriod() throws MigrationException {
+		if (((edu.pitt.apollo.types.v3_1_0.PlaceClosureControlMeasure) oldTypeInstance).getClosurePeriod() != null) {
+			DurationSetter setter = DurationSetterFactory.getSetter(((edu.pitt.apollo.types.v3_1_0.PlaceClosureControlMeasure) oldTypeInstance).getClosurePeriod());
+			setter.set();
+			newTypeInstance.setClosurePeriod(setter.getNewTypeInstance());
+		}
+
 	}
 
-	private void setHouseholdTransmissionMultiplier() throws MigrationException {
-		newTypeInstance.setHouseholdTransmissionMultiplier(oldTypeInstance.getHouseholdTransmissionMultiplier());
+	protected void setHouseholdTransmissionMultiplier() throws MigrationException {
+		newTypeInstance.setHouseholdTransmissionMultiplier(((edu.pitt.apollo.types.v3_1_0.PlaceClosureControlMeasure) oldTypeInstance).getHouseholdTransmissionMultiplier());
 	}
 
-	private void setCommunityTransmissionMultiplier() throws MigrationException {
-		newTypeInstance.setCommunityTransmissionMultiplier(oldTypeInstance.getCommunityTransmissionMultiplier());
+	protected void setCommunityTransmissionMultiplier() throws MigrationException {
+		newTypeInstance.setCommunityTransmissionMultiplier(((edu.pitt.apollo.types.v3_1_0.PlaceClosureControlMeasure) oldTypeInstance).getCommunityTransmissionMultiplier());
 	}
 
 	@Override
 	public void set() throws MigrationException {
-		super.set();
-		setCloseIndividualPlacesIndependently();
-		setClosurePeriod();
-		setHouseholdTransmissionMultiplier();
-		setCommunityTransmissionMultiplier();
+		if (oldTypeInstance != null) {
+			super.set();
+			setCloseIndividualPlacesIndependently();
+			setClosurePeriod();
+			setHouseholdTransmissionMultiplier();
+			setCommunityTransmissionMultiplier();
+		}
 	}
 
 }

@@ -6,12 +6,12 @@ public class ParameterValueSetterFactory {
 
 		if (oldTypeInstance instanceof edu.pitt.apollo.types.v4_0.ProbabilisticParameter) {
 
-			return new ProbabilisticParameterSetter(edu.pitt.apollo.types.v4_0.ProbabilisticParameter.class, (edu.pitt.apollo.types.v3_1_0.ProbabilisticParameter) oldTypeInstance);
+			return new ProbabilisticParameterSetter(edu.pitt.apollo.types.v4_0.ProbabilisticParameter.class, oldTypeInstance);
 		}
 
 		if (oldTypeInstance instanceof edu.pitt.apollo.types.v4_0.Distance) {
 
-			return new DistanceSetter(edu.pitt.apollo.types.v4_0.Distance.class, (edu.pitt.apollo.types.v3_1_0.Distance) oldTypeInstance);
+			return new DistanceSetter(edu.pitt.apollo.types.v4_0.Distance.class, oldTypeInstance);
 		}
 
 		if (oldTypeInstance instanceof edu.pitt.apollo.types.v4_0.Duration) {

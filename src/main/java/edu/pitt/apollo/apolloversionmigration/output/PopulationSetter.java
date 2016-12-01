@@ -1,26 +1,26 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class PopulationSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0.Population,edu.pitt.apollo.types.v3_1_0.Population> {
+public class PopulationSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0.Population> {
 
-	public PopulationSetter(Class<edu.pitt.apollo.types.v4_0.Population> newTypeClass, edu.pitt.apollo.types.v3_1_0.Population oldTypeInstance) throws MigrationException {
+	public PopulationSetter(Class<edu.pitt.apollo.types.v4_0.Population> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}
 
-	private void setLocation() throws MigrationException {
-		newTypeInstance.setLocation(oldTypeInstance.getLocation());
+	protected void setLocation() throws MigrationException {
+		newTypeInstance.setLocation(((edu.pitt.apollo.types.v3_1_0.Population) oldTypeInstance).getLocation());
 	}
 
-	private void setTaxonId() throws MigrationException {
-		newTypeInstance.setTaxonId(oldTypeInstance.getTaxonId());
+	protected void setTaxonId() throws MigrationException {
+		newTypeInstance.setTaxonId(((edu.pitt.apollo.types.v3_1_0.Population) oldTypeInstance).getTaxonId());
 	}
 
-	private void setCount() throws MigrationException {
-		newTypeInstance.setCount(oldTypeInstance.getCount());
+	protected void setCount() throws MigrationException {
+		newTypeInstance.setCount(((edu.pitt.apollo.types.v3_1_0.Population) oldTypeInstance).getCount());
 	}
 
-	private void setInfectionAndImmunityCensuses() throws MigrationException {
-		for (edu.pitt.apollo.types.v3_1_0.PopulationInfectionAndImmunityCensus oldObj : oldTypeInstance.getInfectionAndImmunityCensuses()) {
+	protected void setInfectionAndImmunityCensuses() throws MigrationException {
+		for (edu.pitt.apollo.types.v3_1_0.PopulationInfectionAndImmunityCensus oldObj : ((edu.pitt.apollo.types.v3_1_0.Population) oldTypeInstance).getInfectionAndImmunityCensuses()) {
 			PopulationInfectionAndImmunityCensusSetter setter = new PopulationInfectionAndImmunityCensusSetter(edu.pitt.apollo.types.v4_0.PopulationInfectionAndImmunityCensus.class,oldObj);
 			setter.set();
 			edu.pitt.apollo.types.v4_0.PopulationInfectionAndImmunityCensus newObj = setter.getNewTypeInstance();
@@ -29,8 +29,8 @@ public class PopulationSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0.
 
 	}
 
-	private void setColonizationCensuses() throws MigrationException {
-		for (edu.pitt.apollo.types.v3_1_0.PopulationColonizationCensus oldObj : oldTypeInstance.getColonizationCensuses()) {
+	protected void setColonizationCensuses() throws MigrationException {
+		for (edu.pitt.apollo.types.v3_1_0.PopulationColonizationCensus oldObj : ((edu.pitt.apollo.types.v3_1_0.Population) oldTypeInstance).getColonizationCensuses()) {
 			PopulationColonizationCensusSetter setter = new PopulationColonizationCensusSetter(edu.pitt.apollo.types.v4_0.PopulationColonizationCensus.class,oldObj);
 			setter.set();
 			edu.pitt.apollo.types.v4_0.PopulationColonizationCensus newObj = setter.getNewTypeInstance();
@@ -39,34 +39,36 @@ public class PopulationSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0.
 
 	}
 
-	private void setIndividualsAndHouseholds() throws MigrationException {
-		IndividualsAndHouseholdsSetter setter = new IndividualsAndHouseholdsSetter(edu.pitt.apollo.types.v4_0.IndividualsAndHouseholds.class,oldTypeInstance.getIndividualsAndHouseholds());
+	protected void setIndividualsAndHouseholds() throws MigrationException {
+		IndividualsAndHouseholdsSetter setter = new IndividualsAndHouseholdsSetter(edu.pitt.apollo.types.v4_0.IndividualsAndHouseholds.class,((edu.pitt.apollo.types.v3_1_0.Population) oldTypeInstance).getIndividualsAndHouseholds());
 		setter.set();
 		newTypeInstance.setIndividualsAndHouseholds(setter.getNewTypeInstance());
 	}
 
-	private void setPointerToIndividualsAndHouseholds() throws MigrationException {
-		PointerToDataSetter setter = new PointerToDataSetter(edu.pitt.apollo.types.v4_0.PointerToData.class,oldTypeInstance.getPointerToIndividualsAndHouseholds());
+	protected void setPointerToIndividualsAndHouseholds() throws MigrationException {
+		PointerToDataSetter setter = new PointerToDataSetter(edu.pitt.apollo.types.v4_0.PointerToData.class,((edu.pitt.apollo.types.v3_1_0.Population) oldTypeInstance).getPointerToIndividualsAndHouseholds());
 		setter.set();
 		newTypeInstance.setPointerToIndividualsAndHouseholds(setter.getNewTypeInstance());
 	}
 
-	private void setIndividualBiologyAndBehavior() throws MigrationException {
-		IndividualBiologyAndBehaviorSetter setter = new IndividualBiologyAndBehaviorSetter(edu.pitt.apollo.types.v4_0.IndividualBiologyAndBehavior.class,oldTypeInstance.getIndividualBiologyAndBehavior());
+	protected void setIndividualBiologyAndBehavior() throws MigrationException {
+		IndividualBiologyAndBehaviorSetter setter = new IndividualBiologyAndBehaviorSetter(edu.pitt.apollo.types.v4_0.IndividualBiologyAndBehavior.class,((edu.pitt.apollo.types.v3_1_0.Population) oldTypeInstance).getIndividualBiologyAndBehavior());
 		setter.set();
 		newTypeInstance.setIndividualBiologyAndBehavior(setter.getNewTypeInstance());
 	}
 
 	@Override
 	public void set() throws MigrationException {
-		setLocation();
-		setTaxonId();
-		setCount();
-		setInfectionAndImmunityCensuses();
-		setColonizationCensuses();
-		setIndividualsAndHouseholds();
-		setPointerToIndividualsAndHouseholds();
-		setIndividualBiologyAndBehavior();
+		if (oldTypeInstance != null) {
+			setLocation();
+			setTaxonId();
+			setCount();
+			setInfectionAndImmunityCensuses();
+			setColonizationCensuses();
+			setIndividualsAndHouseholds();
+			setPointerToIndividualsAndHouseholds();
+			setIndividualBiologyAndBehavior();
+		}
 	}
 
 }

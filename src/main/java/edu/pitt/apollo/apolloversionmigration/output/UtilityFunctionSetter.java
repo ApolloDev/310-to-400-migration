@@ -1,24 +1,26 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class UtilityFunctionSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0.UtilityFunction,edu.pitt.apollo.types.v3_1_0.UtilityFunction> {
+public class UtilityFunctionSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0.UtilityFunction> {
 
-	public UtilityFunctionSetter(Class<edu.pitt.apollo.types.v4_0.UtilityFunction> newTypeClass, edu.pitt.apollo.types.v3_1_0.UtilityFunction oldTypeInstance) throws MigrationException {
+	public UtilityFunctionSetter(Class<edu.pitt.apollo.types.v4_0.UtilityFunction> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}
 
-	private void setLambdaFunction() throws MigrationException {
-		newTypeInstance.setLambdaFunction(oldTypeInstance.getLambdaFunction());
+	protected void setLambdaFunction() throws MigrationException {
+		newTypeInstance.setLambdaFunction(((edu.pitt.apollo.types.v3_1_0.UtilityFunction) oldTypeInstance).getLambdaFunction());
 	}
 
-	private void setTextDescription() throws MigrationException {
-		newTypeInstance.setTextDescription(oldTypeInstance.getTextDescription());
+	protected void setTextDescription() throws MigrationException {
+		newTypeInstance.setTextDescription(((edu.pitt.apollo.types.v3_1_0.UtilityFunction) oldTypeInstance).getTextDescription());
 	}
 
 	@Override
 	public void set() throws MigrationException {
-		setLambdaFunction();
-		setTextDescription();
+		if (oldTypeInstance != null) {
+			setLambdaFunction();
+			setTextDescription();
+		}
 	}
 
 }

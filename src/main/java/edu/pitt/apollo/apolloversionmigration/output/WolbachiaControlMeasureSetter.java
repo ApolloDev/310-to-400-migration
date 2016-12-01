@@ -1,87 +1,89 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class WolbachiaControlMeasureSetter extends VectorControlMeasureSetter<edu.pitt.apollo.types.v4_0.WolbachiaControlMeasure,edu.pitt.apollo.types.v3_1_0.WolbachiaControlMeasure> {
+public class WolbachiaControlMeasureSetter extends VectorControlMeasureSetter<edu.pitt.apollo.types.v4_0.WolbachiaControlMeasure> {
 
-	public WolbachiaControlMeasureSetter(Class<edu.pitt.apollo.types.v4_0.WolbachiaControlMeasure> newTypeClass, edu.pitt.apollo.types.v3_1_0.WolbachiaControlMeasure oldTypeInstance) throws MigrationException {
+	public WolbachiaControlMeasureSetter(Class<edu.pitt.apollo.types.v4_0.WolbachiaControlMeasure> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}
 
-	private void setWolbachiaSitesEveryNth() throws MigrationException {
-		newTypeInstance.setWolbachiaSitesEveryNth(oldTypeInstance.getWolbachiaSitesEveryNth());
+	protected void setWolbachiaSitesEveryNth() throws MigrationException {
+		newTypeInstance.setWolbachiaSitesEveryNth(((edu.pitt.apollo.types.v3_1_0.WolbachiaControlMeasure) oldTypeInstance).getWolbachiaSitesEveryNth());
 	}
 
-	private void setWolbachiaSeedAdultsPerHouse() throws MigrationException {
-		newTypeInstance.setWolbachiaSeedAdultsPerHouse(oldTypeInstance.getWolbachiaSeedAdultsPerHouse());
+	protected void setWolbachiaSeedAdultsPerHouse() throws MigrationException {
+		newTypeInstance.setWolbachiaSeedAdultsPerHouse(((edu.pitt.apollo.types.v3_1_0.WolbachiaControlMeasure) oldTypeInstance).getWolbachiaSeedAdultsPerHouse());
 	}
 
-	private void setClearWolbachiaOnMigration() throws MigrationException {
-		newTypeInstance.setClearWolbachiaOnMigration(oldTypeInstance.isClearWolbachiaOnMigration());
+	protected void setClearWolbachiaOnMigration() throws MigrationException {
+		newTypeInstance.setClearWolbachiaOnMigration(((edu.pitt.apollo.types.v3_1_0.WolbachiaControlMeasure) oldTypeInstance).isClearWolbachiaOnMigration());
 	}
 
-	private void setWolbachiaReleaseInterval() throws MigrationException {
-		FixedDurationSetter setter = new FixedDurationSetter(edu.pitt.apollo.types.v4_0.FixedDuration.class,oldTypeInstance.getWolbachiaReleaseInterval());
+	protected void setWolbachiaReleaseInterval() throws MigrationException {
+		FixedDurationSetter setter = new FixedDurationSetter(edu.pitt.apollo.types.v4_0.FixedDuration.class,((edu.pitt.apollo.types.v3_1_0.WolbachiaControlMeasure) oldTypeInstance).getWolbachiaReleaseInterval());
 		setter.set();
 		newTypeInstance.setWolbachiaReleaseInterval(setter.getNewTypeInstance());
 	}
 
-	private void setWolbachiaReleaseSites() throws MigrationException {
-		newTypeInstance.setWolbachiaReleaseSites(edu.pitt.apollo.types.v4_0.WolbachiaReleaseSiteEnum.fromValue(oldTypeInstance.getWolbachiaReleaseSites().toString()));
+	protected void setWolbachiaReleaseSites() throws MigrationException {
+		newTypeInstance.setWolbachiaReleaseSites(edu.pitt.apollo.types.v4_0.WolbachiaReleaseSiteEnum.valueOf(((edu.pitt.apollo.types.v3_1_0.WolbachiaControlMeasure) oldTypeInstance).getWolbachiaReleaseSites().toString()));
 	}
 
-	private void setWolbachiaEffectOnEggMortalityRate() throws MigrationException {
-		newTypeInstance.setWolbachiaEffectOnEggMortalityRate(oldTypeInstance.getWolbachiaEffectOnEggMortalityRate());
+	protected void setWolbachiaEffectOnEggMortalityRate() throws MigrationException {
+		newTypeInstance.setWolbachiaEffectOnEggMortalityRate(((edu.pitt.apollo.types.v3_1_0.WolbachiaControlMeasure) oldTypeInstance).getWolbachiaEffectOnEggMortalityRate());
 	}
 
-	private void setWolbachiaEffectOnAdultMortalityRate() throws MigrationException {
-		newTypeInstance.setWolbachiaEffectOnAdultMortalityRate(oldTypeInstance.getWolbachiaEffectOnAdultMortalityRate());
+	protected void setWolbachiaEffectOnAdultMortalityRate() throws MigrationException {
+		newTypeInstance.setWolbachiaEffectOnAdultMortalityRate(((edu.pitt.apollo.types.v3_1_0.WolbachiaControlMeasure) oldTypeInstance).getWolbachiaEffectOnAdultMortalityRate());
 	}
 
-	private void setWolbachiaEffectOnLarvalMortalityRate() throws MigrationException {
-		newTypeInstance.setWolbachiaEffectOnLarvalMortalityRate(oldTypeInstance.getWolbachiaEffectOnLarvalMortalityRate());
+	protected void setWolbachiaEffectOnLarvalMortalityRate() throws MigrationException {
+		newTypeInstance.setWolbachiaEffectOnLarvalMortalityRate(((edu.pitt.apollo.types.v3_1_0.WolbachiaControlMeasure) oldTypeInstance).getWolbachiaEffectOnLarvalMortalityRate());
 	}
 
-	private void setWolbachiaEffectOnFecundity() throws MigrationException {
-		newTypeInstance.setWolbachiaEffectOnFecundity(oldTypeInstance.getWolbachiaEffectOnFecundity());
+	protected void setWolbachiaEffectOnFecundity() throws MigrationException {
+		newTypeInstance.setWolbachiaEffectOnFecundity(((edu.pitt.apollo.types.v3_1_0.WolbachiaControlMeasure) oldTypeInstance).getWolbachiaEffectOnFecundity());
 	}
 
-	private void setWolbachiaEffectOnMatingProbability() throws MigrationException {
-		newTypeInstance.setWolbachiaEffectOnMatingProbability(oldTypeInstance.getWolbachiaEffectOnMatingProbability());
+	protected void setWolbachiaEffectOnMatingProbability() throws MigrationException {
+		newTypeInstance.setWolbachiaEffectOnMatingProbability(((edu.pitt.apollo.types.v3_1_0.WolbachiaControlMeasure) oldTypeInstance).getWolbachiaEffectOnMatingProbability());
 	}
 
-	private void setWolbachiaEffectOnLeakageRate() throws MigrationException {
-		newTypeInstance.setWolbachiaEffectOnLeakageRate(oldTypeInstance.getWolbachiaEffectOnLeakageRate());
+	protected void setWolbachiaEffectOnLeakageRate() throws MigrationException {
+		newTypeInstance.setWolbachiaEffectOnLeakageRate(((edu.pitt.apollo.types.v3_1_0.WolbachiaControlMeasure) oldTypeInstance).getWolbachiaEffectOnLeakageRate());
 	}
 
-	private void setWolbachiaEffectOnVectorialCapacity() throws MigrationException {
-		newTypeInstance.setWolbachiaEffectOnVectorialCapacity(oldTypeInstance.getWolbachiaEffectOnVectorialCapacity());
+	protected void setWolbachiaEffectOnVectorialCapacity() throws MigrationException {
+		newTypeInstance.setWolbachiaEffectOnVectorialCapacity(((edu.pitt.apollo.types.v3_1_0.WolbachiaControlMeasure) oldTypeInstance).getWolbachiaEffectOnVectorialCapacity());
 	}
 
-	private void setWolbachiaPreReleaseAdultSuppressionEfficacy() throws MigrationException {
-		newTypeInstance.setWolbachiaPreReleaseAdultSuppressionEfficacy(oldTypeInstance.getWolbachiaPreReleaseAdultSuppressionEfficacy());
+	protected void setWolbachiaPreReleaseAdultSuppressionEfficacy() throws MigrationException {
+		newTypeInstance.setWolbachiaPreReleaseAdultSuppressionEfficacy(((edu.pitt.apollo.types.v3_1_0.WolbachiaControlMeasure) oldTypeInstance).getWolbachiaPreReleaseAdultSuppressionEfficacy());
 	}
 
-	private void setWolbachiaPreReleaseLarvalSuppressionEfficacy() throws MigrationException {
-		newTypeInstance.setWolbachiaPreReleaseLarvalSuppressionEfficacy(oldTypeInstance.getWolbachiaPreReleaseLarvalSuppressionEfficacy());
+	protected void setWolbachiaPreReleaseLarvalSuppressionEfficacy() throws MigrationException {
+		newTypeInstance.setWolbachiaPreReleaseLarvalSuppressionEfficacy(((edu.pitt.apollo.types.v3_1_0.WolbachiaControlMeasure) oldTypeInstance).getWolbachiaPreReleaseLarvalSuppressionEfficacy());
 	}
 
 	@Override
 	public void set() throws MigrationException {
-		super.set();
-		setWolbachiaSitesEveryNth();
-		setWolbachiaSeedAdultsPerHouse();
-		setClearWolbachiaOnMigration();
-		setWolbachiaReleaseInterval();
-		setWolbachiaReleaseSites();
-		setWolbachiaEffectOnEggMortalityRate();
-		setWolbachiaEffectOnAdultMortalityRate();
-		setWolbachiaEffectOnLarvalMortalityRate();
-		setWolbachiaEffectOnFecundity();
-		setWolbachiaEffectOnMatingProbability();
-		setWolbachiaEffectOnLeakageRate();
-		setWolbachiaEffectOnVectorialCapacity();
-		setWolbachiaPreReleaseAdultSuppressionEfficacy();
-		setWolbachiaPreReleaseLarvalSuppressionEfficacy();
+		if (oldTypeInstance != null) {
+			super.set();
+			setWolbachiaSitesEveryNth();
+			setWolbachiaSeedAdultsPerHouse();
+			setClearWolbachiaOnMigration();
+			setWolbachiaReleaseInterval();
+			setWolbachiaReleaseSites();
+			setWolbachiaEffectOnEggMortalityRate();
+			setWolbachiaEffectOnAdultMortalityRate();
+			setWolbachiaEffectOnLarvalMortalityRate();
+			setWolbachiaEffectOnFecundity();
+			setWolbachiaEffectOnMatingProbability();
+			setWolbachiaEffectOnLeakageRate();
+			setWolbachiaEffectOnVectorialCapacity();
+			setWolbachiaPreReleaseAdultSuppressionEfficacy();
+			setWolbachiaPreReleaseLarvalSuppressionEfficacy();
+		}
 	}
 
 }

@@ -6,27 +6,27 @@ public class VectorControlMeasureSetterFactory {
 
 		if (oldTypeInstance instanceof edu.pitt.apollo.types.v4_0.InsecticideTreatedNetControlMeasure) {
 
-			return new InsecticideTreatedNetControlMeasureSetter(edu.pitt.apollo.types.v4_0.InsecticideTreatedNetControlMeasure.class, (edu.pitt.apollo.types.v3_1_0.InsecticideTreatedNetControlMeasure) oldTypeInstance);
-		}
-
-		if (oldTypeInstance instanceof edu.pitt.apollo.types.v4_0.LarvicideControlMeasure) {
-
-			return new LarvicideControlMeasureSetter(edu.pitt.apollo.types.v4_0.LarvicideControlMeasure.class, (edu.pitt.apollo.types.v3_1_0.LarvicideControlMeasure) oldTypeInstance);
-		}
-
-		if (oldTypeInstance instanceof edu.pitt.apollo.types.v4_0.ContainerReductionControlMeasure) {
-
-			return new ContainerReductionControlMeasureSetter(edu.pitt.apollo.types.v4_0.ContainerReductionControlMeasure.class, (edu.pitt.apollo.types.v3_1_0.ContainerReductionControlMeasure) oldTypeInstance);
-		}
-
-		if (oldTypeInstance instanceof edu.pitt.apollo.types.v4_0.WolbachiaControlMeasure) {
-
-			return new WolbachiaControlMeasureSetter(edu.pitt.apollo.types.v4_0.WolbachiaControlMeasure.class, (edu.pitt.apollo.types.v3_1_0.WolbachiaControlMeasure) oldTypeInstance);
+			return new InsecticideTreatedNetControlMeasureSetter(edu.pitt.apollo.types.v4_0.InsecticideTreatedNetControlMeasure.class, oldTypeInstance);
 		}
 
 		if (oldTypeInstance instanceof edu.pitt.apollo.types.v4_0.IndoorResidualSprayingVectorControlMeasure) {
 
-			return new IndoorResidualSprayingVectorControlMeasureSetter(edu.pitt.apollo.types.v4_0.IndoorResidualSprayingVectorControlMeasure.class, (edu.pitt.apollo.types.v3_1_0.IndoorResidualSprayingVectorControlMeasure) oldTypeInstance);
+			return new IndoorResidualSprayingVectorControlMeasureSetter(edu.pitt.apollo.types.v4_0.IndoorResidualSprayingVectorControlMeasure.class, oldTypeInstance);
+		}
+
+		if (oldTypeInstance instanceof edu.pitt.apollo.types.v4_0.WolbachiaControlMeasure) {
+
+			return new WolbachiaControlMeasureSetter(edu.pitt.apollo.types.v4_0.WolbachiaControlMeasure.class, oldTypeInstance);
+		}
+
+		if (oldTypeInstance instanceof edu.pitt.apollo.types.v4_0.LarvicideControlMeasure) {
+
+			return new LarvicideControlMeasureSetter(edu.pitt.apollo.types.v4_0.LarvicideControlMeasure.class, oldTypeInstance);
+		}
+
+		if (oldTypeInstance instanceof edu.pitt.apollo.types.v4_0.ContainerReductionControlMeasure) {
+
+			return new ContainerReductionControlMeasureSetter(edu.pitt.apollo.types.v4_0.ContainerReductionControlMeasure.class, oldTypeInstance);
 		}
 
 		throw new UnsupportedTypeException("Type " + oldTypeInstance.getClass().getCanonicalName() + " is not supported");

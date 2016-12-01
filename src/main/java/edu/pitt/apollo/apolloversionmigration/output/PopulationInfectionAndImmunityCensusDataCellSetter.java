@@ -1,41 +1,43 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class PopulationInfectionAndImmunityCensusDataCellSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0.PopulationInfectionAndImmunityCensusDataCell,edu.pitt.apollo.types.v3_1_0.PopulationInfectionAndImmunityCensusDataCell> {
+public class PopulationInfectionAndImmunityCensusDataCellSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0.PopulationInfectionAndImmunityCensusDataCell> {
 
-	public PopulationInfectionAndImmunityCensusDataCellSetter(Class<edu.pitt.apollo.types.v4_0.PopulationInfectionAndImmunityCensusDataCell> newTypeClass, edu.pitt.apollo.types.v3_1_0.PopulationInfectionAndImmunityCensusDataCell oldTypeInstance) throws MigrationException {
+	public PopulationInfectionAndImmunityCensusDataCellSetter(Class<edu.pitt.apollo.types.v4_0.PopulationInfectionAndImmunityCensusDataCell> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}
 
-	private void setAgeRange() throws MigrationException {
-		AgeRangeCategoryDefinitionSetter setter = new AgeRangeCategoryDefinitionSetter(edu.pitt.apollo.types.v4_0.AgeRangeCategoryDefinition.class,oldTypeInstance.getAgeRange());
+	protected void setAgeRange() throws MigrationException {
+		AgeRangeCategoryDefinitionSetter setter = new AgeRangeCategoryDefinitionSetterImpl(edu.pitt.apollo.types.v4_0.AgeRangeCategoryDefinition.class,((edu.pitt.apollo.types.v3_1_0.PopulationInfectionAndImmunityCensusDataCell) oldTypeInstance).getAgeRange());
 		setter.set();
 		newTypeInstance.setAgeRange(setter.getNewTypeInstance());
 	}
 
-	private void setSex() throws MigrationException {
-		newTypeInstance.setSex(edu.pitt.apollo.types.v4_0.GenderEnum.fromValue(oldTypeInstance.getSex().toString()));
+	protected void setSex() throws MigrationException {
+		newTypeInstance.setSex(edu.pitt.apollo.types.v4_0.GenderEnum.valueOf(((edu.pitt.apollo.types.v3_1_0.PopulationInfectionAndImmunityCensusDataCell) oldTypeInstance).getSex().toString()));
 	}
 
-	private void setInfectionState() throws MigrationException {
-		newTypeInstance.setInfectionState(edu.pitt.apollo.types.v4_0.InfectionStateEnum.fromValue(oldTypeInstance.getInfectionState().toString()));
+	protected void setInfectionState() throws MigrationException {
+		newTypeInstance.setInfectionState(edu.pitt.apollo.types.v4_0.InfectionStateEnum.valueOf(((edu.pitt.apollo.types.v3_1_0.PopulationInfectionAndImmunityCensusDataCell) oldTypeInstance).getInfectionState().toString()));
 	}
 
-	private void setDiseaseState() throws MigrationException {
-		newTypeInstance.setDiseaseState(edu.pitt.apollo.types.v4_0.DiseaseOutcomeEnum.fromValue(oldTypeInstance.getDiseaseState().toString()));
+	protected void setDiseaseState() throws MigrationException {
+		newTypeInstance.setDiseaseState(edu.pitt.apollo.types.v4_0.DiseaseOutcomeEnum.valueOf(((edu.pitt.apollo.types.v3_1_0.PopulationInfectionAndImmunityCensusDataCell) oldTypeInstance).getDiseaseState().toString()));
 	}
 
-	private void setFractionInState() throws MigrationException {
-		newTypeInstance.setFractionInState(oldTypeInstance.getFractionInState());
+	protected void setFractionInState() throws MigrationException {
+		newTypeInstance.setFractionInState(((edu.pitt.apollo.types.v3_1_0.PopulationInfectionAndImmunityCensusDataCell) oldTypeInstance).getFractionInState());
 	}
 
 	@Override
 	public void set() throws MigrationException {
-		setAgeRange();
-		setSex();
-		setInfectionState();
-		setDiseaseState();
-		setFractionInState();
+		if (oldTypeInstance != null) {
+			setAgeRange();
+			setSex();
+			setInfectionState();
+			setDiseaseState();
+			setFractionInState();
+		}
 	}
 
 }

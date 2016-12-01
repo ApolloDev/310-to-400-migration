@@ -1,31 +1,33 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class TreatmentContraindicationSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0.TreatmentContraindication,edu.pitt.apollo.types.v3_1_0.TreatmentContraindication> {
+public class TreatmentContraindicationSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0.TreatmentContraindication> {
 
-	public TreatmentContraindicationSetter(Class<edu.pitt.apollo.types.v4_0.TreatmentContraindication> newTypeClass, edu.pitt.apollo.types.v3_1_0.TreatmentContraindication oldTypeInstance) throws MigrationException {
+	public TreatmentContraindicationSetter(Class<edu.pitt.apollo.types.v4_0.TreatmentContraindication> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}
 
-	private void setDescription() throws MigrationException {
-		newTypeInstance.setDescription(oldTypeInstance.getDescription());
+	protected void setDescription() throws MigrationException {
+		newTypeInstance.setDescription(((edu.pitt.apollo.types.v3_1_0.TreatmentContraindication) oldTypeInstance).getDescription());
 	}
 
-	private void setSimulatorReferencablePopulation() throws MigrationException {
-		TargetPopulationDefinitionSetter setter = new TargetPopulationDefinitionSetter(edu.pitt.apollo.types.v4_0.TargetPopulationDefinition.class,oldTypeInstance.getSimulatorReferencablePopulation());
+	protected void setSimulatorReferencablePopulation() throws MigrationException {
+		TargetPopulationDefinitionSetter setter = new TargetPopulationDefinitionSetter(edu.pitt.apollo.types.v4_0.TargetPopulationDefinition.class,((edu.pitt.apollo.types.v3_1_0.TreatmentContraindication) oldTypeInstance).getSimulatorReferencablePopulation());
 		setter.set();
 		newTypeInstance.setSimulatorReferencablePopulation(setter.getNewTypeInstance());
 	}
 
-	private void setFractionOfSimulatorReferencablePopulation() throws MigrationException {
-		newTypeInstance.setFractionOfSimulatorReferencablePopulation(oldTypeInstance.getFractionOfSimulatorReferencablePopulation());
+	protected void setFractionOfSimulatorReferencablePopulation() throws MigrationException {
+		newTypeInstance.setFractionOfSimulatorReferencablePopulation(((edu.pitt.apollo.types.v3_1_0.TreatmentContraindication) oldTypeInstance).getFractionOfSimulatorReferencablePopulation());
 	}
 
 	@Override
 	public void set() throws MigrationException {
-		setDescription();
-		setSimulatorReferencablePopulation();
-		setFractionOfSimulatorReferencablePopulation();
+		if (oldTypeInstance != null) {
+			setDescription();
+			setSimulatorReferencablePopulation();
+			setFractionOfSimulatorReferencablePopulation();
+		}
 	}
 
 }

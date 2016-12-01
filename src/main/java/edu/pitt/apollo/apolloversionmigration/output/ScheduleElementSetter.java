@@ -1,24 +1,26 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class ScheduleElementSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0.ScheduleElement,edu.pitt.apollo.types.v3_1_0.ScheduleElement> {
+public class ScheduleElementSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0.ScheduleElement> {
 
-	public ScheduleElementSetter(Class<edu.pitt.apollo.types.v4_0.ScheduleElement> newTypeClass, edu.pitt.apollo.types.v3_1_0.ScheduleElement oldTypeInstance) throws MigrationException {
+	public ScheduleElementSetter(Class<edu.pitt.apollo.types.v4_0.ScheduleElement> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}
 
-	private void setQuantity() throws MigrationException {
-		newTypeInstance.setQuantity(oldTypeInstance.getQuantity());
+	protected void setQuantity() throws MigrationException {
+		newTypeInstance.setQuantity(((edu.pitt.apollo.types.v3_1_0.ScheduleElement) oldTypeInstance).getQuantity());
 	}
 
-	private void setDateTime() throws MigrationException {
-		newTypeInstance.setDateTime(oldTypeInstance.getDateTime());
+	protected void setDateTime() throws MigrationException {
+		newTypeInstance.setDateTime(((edu.pitt.apollo.types.v3_1_0.ScheduleElement) oldTypeInstance).getDateTime());
 	}
 
 	@Override
 	public void set() throws MigrationException {
-		setQuantity();
-		setDateTime();
+		if (oldTypeInstance != null) {
+			setQuantity();
+			setDateTime();
+		}
 	}
 
 }

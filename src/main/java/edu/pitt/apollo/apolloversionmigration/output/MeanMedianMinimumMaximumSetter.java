@@ -1,40 +1,42 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class MeanMedianMinimumMaximumSetter extends UncertainValueSetter<edu.pitt.apollo.types.v4_0.MeanMedianMinimumMaximum,edu.pitt.apollo.types.v3_1_0.MeanMedianMinimumMaximum> {
+public class MeanMedianMinimumMaximumSetter extends UncertainValueSetter<edu.pitt.apollo.types.v4_0.MeanMedianMinimumMaximum> {
 
-	public MeanMedianMinimumMaximumSetter(Class<edu.pitt.apollo.types.v4_0.MeanMedianMinimumMaximum> newTypeClass, edu.pitt.apollo.types.v3_1_0.MeanMedianMinimumMaximum oldTypeInstance) throws MigrationException {
+	public MeanMedianMinimumMaximumSetter(Class<edu.pitt.apollo.types.v4_0.MeanMedianMinimumMaximum> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}
 
-	private void setMean() throws MigrationException {
-		newTypeInstance.setMean(oldTypeInstance.getMean());
+	protected void setMean() throws MigrationException {
+		newTypeInstance.setMean(((edu.pitt.apollo.types.v3_1_0.MeanMedianMinimumMaximum) oldTypeInstance).getMean());
 	}
 
-	private void setMedian() throws MigrationException {
-		newTypeInstance.setMedian(oldTypeInstance.getMedian());
+	protected void setMedian() throws MigrationException {
+		newTypeInstance.setMedian(((edu.pitt.apollo.types.v3_1_0.MeanMedianMinimumMaximum) oldTypeInstance).getMedian());
 	}
 
-	private void setMinimumValue() throws MigrationException {
-		newTypeInstance.setMinimumValue(oldTypeInstance.getMinimumValue());
+	protected void setMinimumValue() throws MigrationException {
+		newTypeInstance.setMinimumValue(((edu.pitt.apollo.types.v3_1_0.MeanMedianMinimumMaximum) oldTypeInstance).getMinimumValue());
 	}
 
-	private void setMaximumValue() throws MigrationException {
-		newTypeInstance.setMaximumValue(oldTypeInstance.getMaximumValue());
+	protected void setMaximumValue() throws MigrationException {
+		newTypeInstance.setMaximumValue(((edu.pitt.apollo.types.v3_1_0.MeanMedianMinimumMaximum) oldTypeInstance).getMaximumValue());
 	}
 
-	private void setSampleSize() throws MigrationException {
-		newTypeInstance.setSampleSize(oldTypeInstance.getSampleSize());
+	protected void setSampleSize() throws MigrationException {
+		newTypeInstance.setSampleSize(((edu.pitt.apollo.types.v3_1_0.MeanMedianMinimumMaximum) oldTypeInstance).getSampleSize());
 	}
 
 	@Override
 	public void set() throws MigrationException {
-		super.set();
-		setMean();
-		setMedian();
-		setMinimumValue();
-		setMaximumValue();
-		setSampleSize();
+		if (oldTypeInstance != null) {
+			super.set();
+			setMean();
+			setMedian();
+			setMinimumValue();
+			setMaximumValue();
+			setSampleSize();
+		}
 	}
 
 }

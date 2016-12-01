@@ -1,43 +1,48 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class TreatmentSurveillanceCapabilitySetter extends AbstractSetter<edu.pitt.apollo.types.v4_0.TreatmentSurveillanceCapability,edu.pitt.apollo.types.v3_1_0.TreatmentSurveillanceCapability> {
+public class TreatmentSurveillanceCapabilitySetter extends AbstractSetter<edu.pitt.apollo.types.v4_0.TreatmentSurveillanceCapability> {
 
-	public TreatmentSurveillanceCapabilitySetter(Class<edu.pitt.apollo.types.v4_0.TreatmentSurveillanceCapability> newTypeClass, edu.pitt.apollo.types.v3_1_0.TreatmentSurveillanceCapability oldTypeInstance) throws MigrationException {
+	public TreatmentSurveillanceCapabilitySetter(Class<edu.pitt.apollo.types.v4_0.TreatmentSurveillanceCapability> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}
 
-	private void setLocation() throws MigrationException {
-		LocationSetter setter = new LocationSetter(edu.pitt.apollo.types.v4_0.Location.class,oldTypeInstance.getLocation());
+	protected void setLocation() throws MigrationException {
+		LocationSetter setter = new LocationSetter(edu.pitt.apollo.types.v4_0.Location.class,((edu.pitt.apollo.types.v3_1_0.TreatmentSurveillanceCapability) oldTypeInstance).getLocation());
 		setter.set();
 		newTypeInstance.setLocation(setter.getNewTypeInstance());
 	}
 
-	private void setTreatment() throws MigrationException {
-		newTypeInstance.setTreatment(edu.pitt.apollo.types.v4_0.IndividualTreatmentEnum.fromValue(oldTypeInstance.getTreatment().toString()));
+	protected void setTreatment() throws MigrationException {
+		newTypeInstance.setTreatment(edu.pitt.apollo.types.v4_0.IndividualTreatmentEnum.valueOf(((edu.pitt.apollo.types.v3_1_0.TreatmentSurveillanceCapability) oldTypeInstance).getTreatment().toString()));
 	}
 
-	private void setSensitivityOfTreatmentDetection() throws MigrationException {
-		newTypeInstance.setSensitivityOfTreatmentDetection(oldTypeInstance.getSensitivityOfTreatmentDetection());
+	protected void setSensitivityOfTreatmentDetection() throws MigrationException {
+		newTypeInstance.setSensitivityOfTreatmentDetection(((edu.pitt.apollo.types.v3_1_0.TreatmentSurveillanceCapability) oldTypeInstance).getSensitivityOfTreatmentDetection());
 	}
 
-	private void setSpecificityOfTreatmentDetection() throws MigrationException {
-		newTypeInstance.setSpecificityOfTreatmentDetection(oldTypeInstance.getSpecificityOfTreatmentDetection());
+	protected void setSpecificityOfTreatmentDetection() throws MigrationException {
+		newTypeInstance.setSpecificityOfTreatmentDetection(((edu.pitt.apollo.types.v3_1_0.TreatmentSurveillanceCapability) oldTypeInstance).getSpecificityOfTreatmentDetection());
 	}
 
-	private void setTimeDelayOfTreatmentDetection() throws MigrationException {
-		DurationSetter setter = DurationSetterFactory.getSetter(oldTypeInstance.getTimeDelayOfTreatmentDetection());
-		setter.set();
-		newTypeInstance.setTimeDelayOfTreatmentDetection(setter.getNewTypeInstance());
+	protected void setTimeDelayOfTreatmentDetection() throws MigrationException {
+		if (((edu.pitt.apollo.types.v3_1_0.TreatmentSurveillanceCapability) oldTypeInstance).getTimeDelayOfTreatmentDetection() != null) {
+			DurationSetter setter = DurationSetterFactory.getSetter(((edu.pitt.apollo.types.v3_1_0.TreatmentSurveillanceCapability) oldTypeInstance).getTimeDelayOfTreatmentDetection());
+			setter.set();
+			newTypeInstance.setTimeDelayOfTreatmentDetection(setter.getNewTypeInstance());
+		}
+
 	}
 
 	@Override
 	public void set() throws MigrationException {
-		setLocation();
-		setTreatment();
-		setSensitivityOfTreatmentDetection();
-		setSpecificityOfTreatmentDetection();
-		setTimeDelayOfTreatmentDetection();
+		if (oldTypeInstance != null) {
+			setLocation();
+			setTreatment();
+			setSensitivityOfTreatmentDetection();
+			setSpecificityOfTreatmentDetection();
+			setTimeDelayOfTreatmentDetection();
+		}
 	}
 
 }

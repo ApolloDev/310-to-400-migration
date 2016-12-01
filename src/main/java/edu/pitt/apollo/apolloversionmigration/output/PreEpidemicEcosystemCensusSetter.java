@@ -1,38 +1,38 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class PreEpidemicEcosystemCensusSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0.PreEpidemicEcosystemCensus,edu.pitt.apollo.types.v3_1_0.PreEpidemicEcosystemCensus> {
+public class PreEpidemicEcosystemCensusSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0.PreEpidemicEcosystemCensus> {
 
-	public PreEpidemicEcosystemCensusSetter(Class<edu.pitt.apollo.types.v4_0.PreEpidemicEcosystemCensus> newTypeClass, edu.pitt.apollo.types.v3_1_0.PreEpidemicEcosystemCensus oldTypeInstance) throws MigrationException {
+	public PreEpidemicEcosystemCensusSetter(Class<edu.pitt.apollo.types.v4_0.PreEpidemicEcosystemCensus> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}
 
-	private void setNameOfAdministrativeUnit() throws MigrationException {
-		newTypeInstance.setNameOfAdministrativeUnit(oldTypeInstance.getNameOfAdministrativeUnit());
+	protected void setNameOfAdministrativeUnit() throws MigrationException {
+		newTypeInstance.setNameOfAdministrativeUnit(((edu.pitt.apollo.types.v3_1_0.PreEpidemicEcosystemCensus) oldTypeInstance).getNameOfAdministrativeUnit());
 	}
 
-	private void setNumberOfPeople() throws MigrationException {
-		newTypeInstance.setNumberOfPeople(oldTypeInstance.getNumberOfPeople());
+	protected void setNumberOfPeople() throws MigrationException {
+		newTypeInstance.setNumberOfPeople(((edu.pitt.apollo.types.v3_1_0.PreEpidemicEcosystemCensus) oldTypeInstance).getNumberOfPeople());
 	}
 
-	private void setNumberOfHouseholds() throws MigrationException {
-		newTypeInstance.setNumberOfHouseholds(oldTypeInstance.getNumberOfHouseholds());
+	protected void setNumberOfHouseholds() throws MigrationException {
+		newTypeInstance.setNumberOfHouseholds(((edu.pitt.apollo.types.v3_1_0.PreEpidemicEcosystemCensus) oldTypeInstance).getNumberOfHouseholds());
 	}
 
-	private void setNumberOfSchools() throws MigrationException {
-		newTypeInstance.setNumberOfSchools(oldTypeInstance.getNumberOfSchools());
+	protected void setNumberOfSchools() throws MigrationException {
+		newTypeInstance.setNumberOfSchools(((edu.pitt.apollo.types.v3_1_0.PreEpidemicEcosystemCensus) oldTypeInstance).getNumberOfSchools());
 	}
 
-	private void setNumberOfWorkplaces() throws MigrationException {
-		newTypeInstance.setNumberOfWorkplaces(oldTypeInstance.getNumberOfWorkplaces());
+	protected void setNumberOfWorkplaces() throws MigrationException {
+		newTypeInstance.setNumberOfWorkplaces(((edu.pitt.apollo.types.v3_1_0.PreEpidemicEcosystemCensus) oldTypeInstance).getNumberOfWorkplaces());
 	}
 
-	private void setAdditionalDescription() throws MigrationException {
-		newTypeInstance.setAdditionalDescription(oldTypeInstance.getAdditionalDescription());
+	protected void setAdditionalDescription() throws MigrationException {
+		newTypeInstance.setAdditionalDescription(((edu.pitt.apollo.types.v3_1_0.PreEpidemicEcosystemCensus) oldTypeInstance).getAdditionalDescription());
 	}
 
-	private void setSubLocationCensuses() throws MigrationException {
-		for (edu.pitt.apollo.types.v3_1_0.PreEpidemicEcosystemCensus oldObj : oldTypeInstance.getSubLocationCensuses()) {
+	protected void setSubLocationCensuses() throws MigrationException {
+		for (edu.pitt.apollo.types.v3_1_0.PreEpidemicEcosystemCensus oldObj : ((edu.pitt.apollo.types.v3_1_0.PreEpidemicEcosystemCensus) oldTypeInstance).getSubLocationCensuses()) {
 			PreEpidemicEcosystemCensusSetter setter = new PreEpidemicEcosystemCensusSetter(edu.pitt.apollo.types.v4_0.PreEpidemicEcosystemCensus.class,oldObj);
 			setter.set();
 			edu.pitt.apollo.types.v4_0.PreEpidemicEcosystemCensus newObj = setter.getNewTypeInstance();
@@ -41,20 +41,22 @@ public class PreEpidemicEcosystemCensusSetter extends AbstractSetter<edu.pitt.ap
 
 	}
 
-	private void setReferenceId() throws MigrationException {
-		newTypeInstance.setReferenceId(oldTypeInstance.getReferenceId());
+	protected void setReferenceId() throws MigrationException {
+		newTypeInstance.setReferenceId(((edu.pitt.apollo.types.v3_1_0.PreEpidemicEcosystemCensus) oldTypeInstance).getReferenceId());
 	}
 
 	@Override
 	public void set() throws MigrationException {
-		setNameOfAdministrativeUnit();
-		setNumberOfPeople();
-		setNumberOfHouseholds();
-		setNumberOfSchools();
-		setNumberOfWorkplaces();
-		setAdditionalDescription();
-		setSubLocationCensuses();
-		setReferenceId();
+		if (oldTypeInstance != null) {
+			setNameOfAdministrativeUnit();
+			setNumberOfPeople();
+			setNumberOfHouseholds();
+			setNumberOfSchools();
+			setNumberOfWorkplaces();
+			setAdditionalDescription();
+			setSubLocationCensuses();
+			setReferenceId();
+		}
 	}
 
 }
