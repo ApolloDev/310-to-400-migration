@@ -1,20 +1,20 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class DiseaseSurveillanceCapabilitySetter extends AbstractSetter<edu.pitt.apollo.types.v4_0.DiseaseSurveillanceCapability> {
+public class DiseaseSurveillanceCapabilitySetter extends AbstractSetter<edu.pitt.apollo.types.v4_0_1.DiseaseSurveillanceCapability> {
 
-	public DiseaseSurveillanceCapabilitySetter(Class<edu.pitt.apollo.types.v4_0.DiseaseSurveillanceCapability> newTypeClass, Object oldTypeInstance) throws MigrationException {
+	public DiseaseSurveillanceCapabilitySetter(Class<edu.pitt.apollo.types.v4_0_1.DiseaseSurveillanceCapability> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}
 
 	protected void setLocation() throws MigrationException {
-		LocationSetter setter = new LocationSetter(edu.pitt.apollo.types.v4_0.Location.class,((edu.pitt.apollo.types.v3_1_0.DiseaseSurveillanceCapability) oldTypeInstance).getLocation());
+		LocationSetter setter = new LocationSetter(edu.pitt.apollo.types.v4_0_1.Location.class,((edu.pitt.apollo.types.v3_1_0.DiseaseSurveillanceCapability) oldTypeInstance).getLocation());
 		setter.set();
 		newTypeInstance.setLocation(setter.getNewTypeInstance());
 	}
 
 	protected void setPathogen() throws MigrationException {
-		ApolloPathogenCodeSetter setter = new ApolloPathogenCodeSetter(edu.pitt.apollo.types.v4_0.ApolloPathogenCode.class,((edu.pitt.apollo.types.v3_1_0.DiseaseSurveillanceCapability) oldTypeInstance).getPathogen());
+		ApolloPathogenCodeSetter setter = new ApolloPathogenCodeSetter(edu.pitt.apollo.types.v4_0_1.ApolloPathogenCode.class,((edu.pitt.apollo.types.v3_1_0.DiseaseSurveillanceCapability) oldTypeInstance).getPathogen());
 		setter.set();
 		newTypeInstance.setPathogen(setter.getNewTypeInstance());
 	}
@@ -24,7 +24,9 @@ public class DiseaseSurveillanceCapabilitySetter extends AbstractSetter<edu.pitt
 	}
 
 	protected void setCaseDefinition() throws MigrationException {
-		newTypeInstance.setCaseDefinition(edu.pitt.apollo.types.v4_0.DiseaseOutcomeEnum.valueOf(((edu.pitt.apollo.types.v3_1_0.DiseaseSurveillanceCapability) oldTypeInstance).getCaseDefinition().toString()));
+		if (((edu.pitt.apollo.types.v3_1_0.DiseaseSurveillanceCapability) oldTypeInstance).getCaseDefinition() != null) {
+			newTypeInstance.setCaseDefinition(edu.pitt.apollo.types.v4_0_1.DiseaseOutcomeEnum.valueOf(((edu.pitt.apollo.types.v3_1_0.DiseaseSurveillanceCapability) oldTypeInstance).getCaseDefinition().toString()));
+		}
 	}
 
 	protected void setSensitivityOfCaseDetection() throws MigrationException {

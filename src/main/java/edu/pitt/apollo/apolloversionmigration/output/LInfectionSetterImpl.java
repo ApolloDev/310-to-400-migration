@@ -2,7 +2,7 @@ package edu.pitt.apollo.apolloversionmigration.output;
 
 public class LInfectionSetterImpl extends LInfectionSetter {
 
-    public LInfectionSetterImpl(Class<edu.pitt.apollo.types.v4_0.LInfection> newTypeClass, Object oldTypeInstance) throws MigrationException {
+    public LInfectionSetterImpl(Class<edu.pitt.apollo.types.v4_0_1.LInfection> newTypeClass, Object oldTypeInstance) throws MigrationException {
         super(newTypeClass, oldTypeInstance);
 
     }

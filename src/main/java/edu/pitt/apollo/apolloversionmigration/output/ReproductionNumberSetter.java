@@ -1,8 +1,8 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class ReproductionNumberSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0.ReproductionNumber> {
+public class ReproductionNumberSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0_1.ReproductionNumber> {
 
-	public ReproductionNumberSetter(Class<edu.pitt.apollo.types.v4_0.ReproductionNumber> newTypeClass, Object oldTypeInstance) throws MigrationException {
+	public ReproductionNumberSetter(Class<edu.pitt.apollo.types.v4_0_1.ReproductionNumber> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}

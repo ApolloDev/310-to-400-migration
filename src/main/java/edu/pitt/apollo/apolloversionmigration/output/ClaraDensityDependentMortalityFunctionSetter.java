@@ -1,8 +1,8 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class ClaraDensityDependentMortalityFunctionSetter extends MortalityFunctionSetter<edu.pitt.apollo.types.v4_0.ClaraDensityDependentMortalityFunction> {
+public class ClaraDensityDependentMortalityFunctionSetter extends MortalityFunctionSetter<edu.pitt.apollo.types.v4_0_1.ClaraDensityDependentMortalityFunction> {
 
-	public ClaraDensityDependentMortalityFunctionSetter(Class<edu.pitt.apollo.types.v4_0.ClaraDensityDependentMortalityFunction> newTypeClass, Object oldTypeInstance) throws MigrationException {
+	public ClaraDensityDependentMortalityFunctionSetter(Class<edu.pitt.apollo.types.v4_0_1.ClaraDensityDependentMortalityFunction> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}

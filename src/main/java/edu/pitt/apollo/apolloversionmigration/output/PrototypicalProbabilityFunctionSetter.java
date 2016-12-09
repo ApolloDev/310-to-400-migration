@@ -1,8 +1,8 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class PrototypicalProbabilityFunctionSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0.PrototypicalProbabilityFunction> {
+public class PrototypicalProbabilityFunctionSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0_1.PrototypicalProbabilityFunction> {
 
-	public PrototypicalProbabilityFunctionSetter(Class<edu.pitt.apollo.types.v4_0.PrototypicalProbabilityFunction> newTypeClass, Object oldTypeInstance) throws MigrationException {
+	public PrototypicalProbabilityFunctionSetter(Class<edu.pitt.apollo.types.v4_0_1.PrototypicalProbabilityFunction> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}

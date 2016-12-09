@@ -1,8 +1,8 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public abstract class AgeRangeCategoryDefinitionSetter extends CategoryDefinitionSetter<edu.pitt.apollo.types.v4_0.AgeRangeCategoryDefinition> {
+public abstract class AgeRangeCategoryDefinitionSetter extends CategoryDefinitionSetter<edu.pitt.apollo.types.v4_0_1.AgeRangeCategoryDefinition> {
 
-	public AgeRangeCategoryDefinitionSetter(Class<edu.pitt.apollo.types.v4_0.AgeRangeCategoryDefinition> newTypeClass, Object oldTypeInstance) throws MigrationException {
+	public AgeRangeCategoryDefinitionSetter(Class<edu.pitt.apollo.types.v4_0_1.AgeRangeCategoryDefinition> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}

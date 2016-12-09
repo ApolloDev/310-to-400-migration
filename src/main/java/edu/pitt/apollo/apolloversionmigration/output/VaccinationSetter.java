@@ -1,8 +1,8 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class VaccinationSetter extends TreatmentSetter<edu.pitt.apollo.types.v4_0.Vaccination> {
+public class VaccinationSetter extends TreatmentSetter<edu.pitt.apollo.types.v4_0_1.Vaccination> {
 
-	public VaccinationSetter(Class<edu.pitt.apollo.types.v4_0.Vaccination> newTypeClass, Object oldTypeInstance) throws MigrationException {
+	public VaccinationSetter(Class<edu.pitt.apollo.types.v4_0_1.Vaccination> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}
@@ -13,9 +13,9 @@ public class VaccinationSetter extends TreatmentSetter<edu.pitt.apollo.types.v4_
 
 	protected void setVaccinationEfficacies() throws MigrationException {
 		for (edu.pitt.apollo.types.v3_1_0.VaccinationEfficacyForSimulatorConfiguration oldObj : ((edu.pitt.apollo.types.v3_1_0.Vaccination) oldTypeInstance).getVaccinationEfficacies()) {
-			VaccinationEfficacyForSimulatorConfigurationSetter setter = new VaccinationEfficacyForSimulatorConfigurationSetter(edu.pitt.apollo.types.v4_0.VaccinationEfficacyForSimulatorConfiguration.class,oldObj);
+			VaccinationEfficacyForSimulatorConfigurationSetter setter = new VaccinationEfficacyForSimulatorConfigurationSetter(edu.pitt.apollo.types.v4_0_1.VaccinationEfficacyForSimulatorConfiguration.class,oldObj);
 			setter.set();
-			edu.pitt.apollo.types.v4_0.VaccinationEfficacyForSimulatorConfiguration newObj = setter.getNewTypeInstance();
+			edu.pitt.apollo.types.v4_0_1.VaccinationEfficacyForSimulatorConfiguration newObj = setter.getNewTypeInstance();
 			newTypeInstance.getVaccinationEfficacies().add(newObj);
 		}
 

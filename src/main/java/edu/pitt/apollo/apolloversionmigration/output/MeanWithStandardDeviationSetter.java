@@ -1,8 +1,8 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class MeanWithStandardDeviationSetter extends UncertainValueSetter<edu.pitt.apollo.types.v4_0.MeanWithStandardDeviation> {
+public class MeanWithStandardDeviationSetter extends UncertainValueSetter<edu.pitt.apollo.types.v4_0_1.MeanWithStandardDeviation> {
 
-	public MeanWithStandardDeviationSetter(Class<edu.pitt.apollo.types.v4_0.MeanWithStandardDeviation> newTypeClass, Object oldTypeInstance) throws MigrationException {
+	public MeanWithStandardDeviationSetter(Class<edu.pitt.apollo.types.v4_0_1.MeanWithStandardDeviation> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}

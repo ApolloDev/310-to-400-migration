@@ -1,8 +1,8 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class BorderControlMeasureSetter extends InfectiousDiseaseControlMeasureSetter<edu.pitt.apollo.types.v4_0.BorderControlMeasure> {
+public class BorderControlMeasureSetter extends InfectiousDiseaseControlMeasureSetter<edu.pitt.apollo.types.v4_0_1.BorderControlMeasure> {
 
-	public BorderControlMeasureSetter(Class<edu.pitt.apollo.types.v4_0.BorderControlMeasure> newTypeClass, Object oldTypeInstance) throws MigrationException {
+	public BorderControlMeasureSetter(Class<edu.pitt.apollo.types.v4_0_1.BorderControlMeasure> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}

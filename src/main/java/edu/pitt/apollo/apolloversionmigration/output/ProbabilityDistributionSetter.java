@@ -1,6 +1,6 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class ProbabilityDistributionSetter<T extends edu.pitt.apollo.types.v4_0.ProbabilityDistribution> extends UncertainValueSetter<T> {
+public class ProbabilityDistributionSetter<T extends edu.pitt.apollo.types.v4_0_1.ProbabilityDistribution> extends UncertainValueSetter<T> {
 
 	public ProbabilityDistributionSetter(Class<T> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);

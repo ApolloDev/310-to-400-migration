@@ -1,6 +1,6 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class NonparametricProbabilityDistributionSetter<T extends edu.pitt.apollo.types.v4_0.NonparametricProbabilityDistribution> extends UnconditionalProbabilityDistributionSetter<T> {
+public class NonparametricProbabilityDistributionSetter<T extends edu.pitt.apollo.types.v4_0_1.NonparametricProbabilityDistribution> extends UnconditionalProbabilityDistributionSetter<T> {
 
 	public NonparametricProbabilityDistributionSetter(Class<T> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);

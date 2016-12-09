@@ -1,8 +1,8 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class CaseRecordSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0.CaseRecord> {
+public class CaseRecordSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0_1.CaseRecord> {
 
-	public CaseRecordSetter(Class<edu.pitt.apollo.types.v4_0.CaseRecord> newTypeClass, Object oldTypeInstance) throws MigrationException {
+	public CaseRecordSetter(Class<edu.pitt.apollo.types.v4_0_1.CaseRecord> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}
@@ -17,16 +17,16 @@ public class CaseRecordSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0.
 
 	protected void setOccupations() throws MigrationException {
 		for (edu.pitt.apollo.types.v3_1_0.OccupationEnum oldObj : ((edu.pitt.apollo.types.v3_1_0.CaseRecord) oldTypeInstance).getOccupations()) {
-			newTypeInstance.getOccupations().add(edu.pitt.apollo.types.v4_0.OccupationEnum.valueOf(oldObj.toString()));
+			newTypeInstance.getOccupations().add(edu.pitt.apollo.types.v4_0_1.OccupationEnum.valueOf(oldObj.toString()));
 		}
 
 	}
 
 	protected void setPlacesVisitedWhileSusceptibleOrInfectious() throws MigrationException {
 		for (edu.pitt.apollo.types.v3_1_0.PlaceVisited oldObj : ((edu.pitt.apollo.types.v3_1_0.CaseRecord) oldTypeInstance).getPlacesVisitedWhileSusceptibleOrInfectious()) {
-			PlaceVisitedSetter setter = new PlaceVisitedSetter(edu.pitt.apollo.types.v4_0.PlaceVisited.class,oldObj);
+			PlaceVisitedSetter setter = new PlaceVisitedSetter(edu.pitt.apollo.types.v4_0_1.PlaceVisited.class,oldObj);
 			setter.set();
-			edu.pitt.apollo.types.v4_0.PlaceVisited newObj = setter.getNewTypeInstance();
+			edu.pitt.apollo.types.v4_0_1.PlaceVisited newObj = setter.getNewTypeInstance();
 			newTypeInstance.getPlacesVisitedWhileSusceptibleOrInfectious().add(newObj);
 		}
 
@@ -38,9 +38,9 @@ public class CaseRecordSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0.
 
 	protected void setDiseaseOutcomesWithLocationDateTime() throws MigrationException {
 		for (edu.pitt.apollo.types.v3_1_0.DiseaseOutcomeWithLocationDateTime oldObj : ((edu.pitt.apollo.types.v3_1_0.CaseRecord) oldTypeInstance).getDiseaseOutcomesWithLocationDateTime()) {
-			DiseaseOutcomeWithLocationDateTimeSetter setter = new DiseaseOutcomeWithLocationDateTimeSetter(edu.pitt.apollo.types.v4_0.DiseaseOutcomeWithLocationDateTime.class,oldObj);
+			DiseaseOutcomeWithLocationDateTimeSetter setter = new DiseaseOutcomeWithLocationDateTimeSetter(edu.pitt.apollo.types.v4_0_1.DiseaseOutcomeWithLocationDateTime.class,oldObj);
 			setter.set();
-			edu.pitt.apollo.types.v4_0.DiseaseOutcomeWithLocationDateTime newObj = setter.getNewTypeInstance();
+			edu.pitt.apollo.types.v4_0_1.DiseaseOutcomeWithLocationDateTime newObj = setter.getNewTypeInstance();
 			newTypeInstance.getDiseaseOutcomesWithLocationDateTime().add(newObj);
 		}
 
@@ -48,9 +48,9 @@ public class CaseRecordSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0.
 
 	protected void setLabTestsAndResults() throws MigrationException {
 		for (edu.pitt.apollo.types.v3_1_0.LabTestAndResult oldObj : ((edu.pitt.apollo.types.v3_1_0.CaseRecord) oldTypeInstance).getLabTestsAndResults()) {
-			LabTestAndResultSetter setter = new LabTestAndResultSetter(edu.pitt.apollo.types.v4_0.LabTestAndResult.class,oldObj);
+			LabTestAndResultSetter setter = new LabTestAndResultSetter(edu.pitt.apollo.types.v4_0_1.LabTestAndResult.class,oldObj);
 			setter.set();
-			edu.pitt.apollo.types.v4_0.LabTestAndResult newObj = setter.getNewTypeInstance();
+			edu.pitt.apollo.types.v4_0_1.LabTestAndResult newObj = setter.getNewTypeInstance();
 			newTypeInstance.getLabTestsAndResults().add(newObj);
 		}
 

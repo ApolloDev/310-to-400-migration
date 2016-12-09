@@ -1,6 +1,6 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class InfectiousDiseaseControlMeasureSetter<T extends edu.pitt.apollo.types.v4_0.InfectiousDiseaseControlMeasure> extends ApolloIndexableItemSetter<T> {
+public class InfectiousDiseaseControlMeasureSetter<T extends edu.pitt.apollo.types.v4_0_1.InfectiousDiseaseControlMeasure> extends ApolloIndexableItemSetter<T> {
 
 	public InfectiousDiseaseControlMeasureSetter(Class<T> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
@@ -12,16 +12,16 @@ public class InfectiousDiseaseControlMeasureSetter<T extends edu.pitt.apollo.typ
 	}
 
 	protected void setLocation() throws MigrationException {
-		LocationSetter setter = new LocationSetter(edu.pitt.apollo.types.v4_0.Location.class,((edu.pitt.apollo.types.v3_1_0.InfectiousDiseaseControlMeasure) oldTypeInstance).getLocation());
+		LocationSetter setter = new LocationSetter(edu.pitt.apollo.types.v4_0_1.Location.class,((edu.pitt.apollo.types.v3_1_0.InfectiousDiseaseControlMeasure) oldTypeInstance).getLocation());
 		setter.set();
 		newTypeInstance.setLocation(setter.getNewTypeInstance());
 	}
 
 	protected void setControlMeasureStartTime() throws MigrationException {
 		for (edu.pitt.apollo.types.v3_1_0.TriggerDefinition oldObj : ((edu.pitt.apollo.types.v3_1_0.InfectiousDiseaseControlMeasure) oldTypeInstance).getControlMeasureStartTime()) {
-			TriggerDefinitionSetter setter = new TriggerDefinitionSetter(edu.pitt.apollo.types.v4_0.TriggerDefinition.class,oldObj);
+			TriggerDefinitionSetter setter = new TriggerDefinitionSetter(edu.pitt.apollo.types.v4_0_1.TriggerDefinition.class,oldObj);
 			setter.set();
-			edu.pitt.apollo.types.v4_0.TriggerDefinition newObj = setter.getNewTypeInstance();
+			edu.pitt.apollo.types.v4_0_1.TriggerDefinition newObj = setter.getNewTypeInstance();
 			newTypeInstance.getControlMeasureStartTime().add(newObj);
 		}
 
@@ -29,9 +29,9 @@ public class InfectiousDiseaseControlMeasureSetter<T extends edu.pitt.apollo.typ
 
 	protected void setControlMeasureStopTime() throws MigrationException {
 		for (edu.pitt.apollo.types.v3_1_0.TriggerDefinition oldObj : ((edu.pitt.apollo.types.v3_1_0.InfectiousDiseaseControlMeasure) oldTypeInstance).getControlMeasureStopTime()) {
-			TriggerDefinitionSetter setter = new TriggerDefinitionSetter(edu.pitt.apollo.types.v4_0.TriggerDefinition.class,oldObj);
+			TriggerDefinitionSetter setter = new TriggerDefinitionSetter(edu.pitt.apollo.types.v4_0_1.TriggerDefinition.class,oldObj);
 			setter.set();
-			edu.pitt.apollo.types.v4_0.TriggerDefinition newObj = setter.getNewTypeInstance();
+			edu.pitt.apollo.types.v4_0_1.TriggerDefinition newObj = setter.getNewTypeInstance();
 			newTypeInstance.getControlMeasureStopTime().add(newObj);
 		}
 
@@ -57,9 +57,9 @@ public class InfectiousDiseaseControlMeasureSetter<T extends edu.pitt.apollo.typ
 
 	protected void setLogisticalSystems() throws MigrationException {
 		for (edu.pitt.apollo.types.v3_1_0.LogisticalSystem oldObj : ((edu.pitt.apollo.types.v3_1_0.InfectiousDiseaseControlMeasure) oldTypeInstance).getLogisticalSystems()) {
-			LogisticalSystemSetter setter = new LogisticalSystemSetter(edu.pitt.apollo.types.v4_0.LogisticalSystem.class,oldObj);
+			LogisticalSystemSetter setter = new LogisticalSystemSetter(edu.pitt.apollo.types.v4_0_1.LogisticalSystem.class,oldObj);
 			setter.set();
-			edu.pitt.apollo.types.v4_0.LogisticalSystem newObj = setter.getNewTypeInstance();
+			edu.pitt.apollo.types.v4_0_1.LogisticalSystem newObj = setter.getNewTypeInstance();
 			newTypeInstance.getLogisticalSystems().add(newObj);
 		}
 
@@ -71,9 +71,9 @@ public class InfectiousDiseaseControlMeasureSetter<T extends edu.pitt.apollo.typ
 
 	protected void setTemplatedInfectiousDiseaseControlMeasureUrlsForSoftware() throws MigrationException {
 		for (edu.pitt.apollo.types.v3_1_0.TemplatedInfectiousDiseaseControlMeasureUrlForSoftware oldObj : ((edu.pitt.apollo.types.v3_1_0.InfectiousDiseaseControlMeasure) oldTypeInstance).getTemplatedInfectiousDiseaseControlMeasureUrlsForSoftware()) {
-			TemplatedInfectiousDiseaseControlMeasureUrlForSoftwareSetter setter = new TemplatedInfectiousDiseaseControlMeasureUrlForSoftwareSetter(edu.pitt.apollo.types.v4_0.TemplatedInfectiousDiseaseControlMeasureUrlForSoftware.class,oldObj);
+			TemplatedInfectiousDiseaseControlMeasureUrlForSoftwareSetter setter = new TemplatedInfectiousDiseaseControlMeasureUrlForSoftwareSetter(edu.pitt.apollo.types.v4_0_1.TemplatedInfectiousDiseaseControlMeasureUrlForSoftware.class,oldObj);
 			setter.set();
-			edu.pitt.apollo.types.v4_0.TemplatedInfectiousDiseaseControlMeasureUrlForSoftware newObj = setter.getNewTypeInstance();
+			edu.pitt.apollo.types.v4_0_1.TemplatedInfectiousDiseaseControlMeasureUrlForSoftware newObj = setter.getNewTypeInstance();
 			newTypeInstance.getTemplatedInfectiousDiseaseControlMeasureUrlsForSoftware().add(newObj);
 		}
 

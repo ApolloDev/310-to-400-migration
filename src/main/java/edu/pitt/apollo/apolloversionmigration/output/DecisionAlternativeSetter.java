@@ -1,8 +1,8 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public abstract class DecisionAlternativeSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0.DecisionAlternative> {
+public abstract class DecisionAlternativeSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0_1.DecisionAlternative> {
 
-	public DecisionAlternativeSetter(Class<edu.pitt.apollo.types.v4_0.DecisionAlternative> newTypeClass, Object oldTypeInstance) throws MigrationException {
+	public DecisionAlternativeSetter(Class<edu.pitt.apollo.types.v4_0_1.DecisionAlternative> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}

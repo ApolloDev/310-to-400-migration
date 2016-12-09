@@ -1,8 +1,8 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class LabTestAndResultSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0.LabTestAndResult> {
+public class LabTestAndResultSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0_1.LabTestAndResult> {
 
-	public LabTestAndResultSetter(Class<edu.pitt.apollo.types.v4_0.LabTestAndResult> newTypeClass, Object oldTypeInstance) throws MigrationException {
+	public LabTestAndResultSetter(Class<edu.pitt.apollo.types.v4_0_1.LabTestAndResult> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}

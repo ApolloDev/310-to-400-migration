@@ -1,14 +1,16 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class DisabilityStatusCategoryDefinitionSetter extends CategoryDefinitionSetter<edu.pitt.apollo.types.v4_0.DisabilityStatusCategoryDefinition> {
+public class DisabilityStatusCategoryDefinitionSetter extends CategoryDefinitionSetter<edu.pitt.apollo.types.v4_0_1.DisabilityStatusCategoryDefinition> {
 
-	public DisabilityStatusCategoryDefinitionSetter(Class<edu.pitt.apollo.types.v4_0.DisabilityStatusCategoryDefinition> newTypeClass, Object oldTypeInstance) throws MigrationException {
+	public DisabilityStatusCategoryDefinitionSetter(Class<edu.pitt.apollo.types.v4_0_1.DisabilityStatusCategoryDefinition> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}
 
 	protected void setDisabilityStatus() throws MigrationException {
-		newTypeInstance.setDisabilityStatus(edu.pitt.apollo.types.v4_0.DisabilityStatusEnum.valueOf(((edu.pitt.apollo.types.v3_1_0.DisabilityStatusCategoryDefinition) oldTypeInstance).getDisabilityStatus().toString()));
+		if (((edu.pitt.apollo.types.v3_1_0.DisabilityStatusCategoryDefinition) oldTypeInstance).getDisabilityStatus() != null) {
+			newTypeInstance.setDisabilityStatus(edu.pitt.apollo.types.v4_0_1.DisabilityStatusEnum.valueOf(((edu.pitt.apollo.types.v3_1_0.DisabilityStatusCategoryDefinition) oldTypeInstance).getDisabilityStatus().toString()));
+		}
 	}
 
 	@Override

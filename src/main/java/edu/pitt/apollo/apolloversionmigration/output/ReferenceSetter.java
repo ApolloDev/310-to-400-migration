@@ -1,8 +1,8 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class ReferenceSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0.Reference> {
+public class ReferenceSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0_1.Reference> {
 
-	public ReferenceSetter(Class<edu.pitt.apollo.types.v4_0.Reference> newTypeClass, Object oldTypeInstance) throws MigrationException {
+	public ReferenceSetter(Class<edu.pitt.apollo.types.v4_0_1.Reference> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}

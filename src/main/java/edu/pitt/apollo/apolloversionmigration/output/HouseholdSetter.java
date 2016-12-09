@@ -1,8 +1,8 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public abstract class HouseholdSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0.Household> {
+public abstract class HouseholdSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0_1.Household> {
 
-	public HouseholdSetter(Class<edu.pitt.apollo.types.v4_0.Household> newTypeClass, Object oldTypeInstance) throws MigrationException {
+	public HouseholdSetter(Class<edu.pitt.apollo.types.v4_0_1.Household> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}

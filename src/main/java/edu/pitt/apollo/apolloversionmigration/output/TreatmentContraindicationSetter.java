@@ -1,8 +1,8 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class TreatmentContraindicationSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0.TreatmentContraindication> {
+public class TreatmentContraindicationSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0_1.TreatmentContraindication> {
 
-	public TreatmentContraindicationSetter(Class<edu.pitt.apollo.types.v4_0.TreatmentContraindication> newTypeClass, Object oldTypeInstance) throws MigrationException {
+	public TreatmentContraindicationSetter(Class<edu.pitt.apollo.types.v4_0_1.TreatmentContraindication> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}
@@ -12,7 +12,7 @@ public class TreatmentContraindicationSetter extends AbstractSetter<edu.pitt.apo
 	}
 
 	protected void setSimulatorReferencablePopulation() throws MigrationException {
-		TargetPopulationDefinitionSetter setter = new TargetPopulationDefinitionSetter(edu.pitt.apollo.types.v4_0.TargetPopulationDefinition.class,((edu.pitt.apollo.types.v3_1_0.TreatmentContraindication) oldTypeInstance).getSimulatorReferencablePopulation());
+		TargetPopulationDefinitionSetter setter = new TargetPopulationDefinitionSetter(edu.pitt.apollo.types.v4_0_1.TargetPopulationDefinition.class,((edu.pitt.apollo.types.v3_1_0.TreatmentContraindication) oldTypeInstance).getSimulatorReferencablePopulation());
 		setter.set();
 		newTypeInstance.setSimulatorReferencablePopulation(setter.getNewTypeInstance());
 	}

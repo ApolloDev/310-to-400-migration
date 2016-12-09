@@ -1,8 +1,8 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public abstract class LInfectiousDiseaseSetter<T extends edu.pitt.apollo.types.v4_0.LInfectiousDisease> extends ApolloIndexableItemSetter<T> {
+public abstract class LInfectiousDiseaseSetter extends InfectiousDiseaseSetter<edu.pitt.apollo.types.v4_0_1.LInfectiousDisease> {
 
-	public LInfectiousDiseaseSetter(Class<T> newTypeClass, Object oldTypeInstance) throws MigrationException {
+	public LInfectiousDiseaseSetter(Class<edu.pitt.apollo.types.v4_0_1.LInfectiousDisease> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}
@@ -16,11 +16,6 @@ public abstract class LInfectiousDiseaseSetter<T extends edu.pitt.apollo.types.v
 			setCoosalPathogen();
 			setHoostSpecies();
 		}
-	}
-
-	@Override
-	public T getNewTypeInstance() {
-		return newTypeInstance;
 	}
 
 }

@@ -1,8 +1,8 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class ProbabilityValuePairSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0.ProbabilityValuePair> {
+public class ProbabilityValuePairSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0_1.ProbabilityValuePair> {
 
-	public ProbabilityValuePairSetter(Class<edu.pitt.apollo.types.v4_0.ProbabilityValuePair> newTypeClass, Object oldTypeInstance) throws MigrationException {
+	public ProbabilityValuePairSetter(Class<edu.pitt.apollo.types.v4_0_1.ProbabilityValuePair> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}

@@ -8,13 +8,13 @@ import java.util.GregorianCalendar;
 
 public class CaseCountArrayDescriptionSetterImpl extends CaseCountArrayDescriptionSetter {
 
-	public CaseCountArrayDescriptionSetterImpl(Class<edu.pitt.apollo.types.v4_0.CaseCountArrayDescription> newTypeClass, Object oldTypeInstance) throws MigrationException {
+	public CaseCountArrayDescriptionSetterImpl(Class<edu.pitt.apollo.types.v4_0_1.CaseCountArrayDescription> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}
 
 	protected void setCaseCountArrayType() throws MigrationException {
-		newTypeInstance.setCaseCountArrayType(edu.pitt.apollo.types.v4_0.CaseCountArrayTypeEnum.valueOf(((edu.pitt.apollo.types.v3_1_0.CaseCountArrayDescription) oldTypeInstance).getCaseCountArrayType().toString()));
+		newTypeInstance.setCaseCountArrayType(edu.pitt.apollo.types.v4_0_1.CaseCountArrayTypeEnum.valueOf(((edu.pitt.apollo.types.v3_1_0.CaseCountArrayDescription) oldTypeInstance).getCaseCountArrayType().toString()));
 	}
 
 	@Override

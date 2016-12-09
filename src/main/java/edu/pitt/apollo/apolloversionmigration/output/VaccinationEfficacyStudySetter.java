@@ -1,8 +1,8 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class VaccinationEfficacyStudySetter extends AbstractSetter<edu.pitt.apollo.types.v4_0.VaccinationEfficacyStudy> {
+public class VaccinationEfficacyStudySetter extends AbstractSetter<edu.pitt.apollo.types.v4_0_1.VaccinationEfficacyStudy> {
 
-	public VaccinationEfficacyStudySetter(Class<edu.pitt.apollo.types.v4_0.VaccinationEfficacyStudy> newTypeClass, Object oldTypeInstance) throws MigrationException {
+	public VaccinationEfficacyStudySetter(Class<edu.pitt.apollo.types.v4_0_1.VaccinationEfficacyStudy> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}
@@ -12,14 +12,16 @@ public class VaccinationEfficacyStudySetter extends AbstractSetter<edu.pitt.apol
 	}
 
 	protected void setVaccinationPreventableOutcome() throws MigrationException {
-		newTypeInstance.setVaccinationPreventableOutcome(edu.pitt.apollo.types.v4_0.TreatmentPreventableOutcomeEnum.valueOf(((edu.pitt.apollo.types.v3_1_0.VaccinationEfficacyStudy) oldTypeInstance).getVaccinationPreventableOutcome().toString()));
+		if (((edu.pitt.apollo.types.v3_1_0.VaccinationEfficacyStudy) oldTypeInstance).getVaccinationPreventableOutcome() != null) {
+			newTypeInstance.setVaccinationPreventableOutcome(edu.pitt.apollo.types.v4_0_1.TreatmentPreventableOutcomeEnum.valueOf(((edu.pitt.apollo.types.v3_1_0.VaccinationEfficacyStudy) oldTypeInstance).getVaccinationPreventableOutcome().toString()));
+		}
 	}
 
 	protected void setVaccinationEfficacyMeasured() throws MigrationException {
 		for (edu.pitt.apollo.types.v3_1_0.VaccinationEfficacyMeasured oldObj : ((edu.pitt.apollo.types.v3_1_0.VaccinationEfficacyStudy) oldTypeInstance).getVaccinationEfficacyMeasured()) {
-			VaccinationEfficacyMeasuredSetter setter = new VaccinationEfficacyMeasuredSetter(edu.pitt.apollo.types.v4_0.VaccinationEfficacyMeasured.class,oldObj);
+			VaccinationEfficacyMeasuredSetter setter = new VaccinationEfficacyMeasuredSetter(edu.pitt.apollo.types.v4_0_1.VaccinationEfficacyMeasured.class,oldObj);
 			setter.set();
-			edu.pitt.apollo.types.v4_0.VaccinationEfficacyMeasured newObj = setter.getNewTypeInstance();
+			edu.pitt.apollo.types.v4_0_1.VaccinationEfficacyMeasured newObj = setter.getNewTypeInstance();
 			newTypeInstance.getVaccinationEfficacyMeasured().add(newObj);
 		}
 

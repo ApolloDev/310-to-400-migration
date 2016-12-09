@@ -1,8 +1,8 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class LogNormalDistributionSetter extends ContinuousParametricProbabilityDistributionSetter<edu.pitt.apollo.types.v4_0.LogNormalDistribution> {
+public class LogNormalDistributionSetter extends ContinuousParametricProbabilityDistributionSetter<edu.pitt.apollo.types.v4_0_1.LogNormalDistribution> {
 
-	public LogNormalDistributionSetter(Class<edu.pitt.apollo.types.v4_0.LogNormalDistribution> newTypeClass, Object oldTypeInstance) throws MigrationException {
+	public LogNormalDistributionSetter(Class<edu.pitt.apollo.types.v4_0_1.LogNormalDistribution> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}

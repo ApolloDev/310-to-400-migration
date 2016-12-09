@@ -1,6 +1,6 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class IndividualTreatmentControlMeasureSetter<T extends edu.pitt.apollo.types.v4_0.IndividualTreatmentControlMeasure> extends InfectiousDiseaseControlMeasureSetter<T> {
+public class IndividualTreatmentControlMeasureSetter<T extends edu.pitt.apollo.types.v4_0_1.IndividualTreatmentControlMeasure> extends InfectiousDiseaseControlMeasureSetter<T> {
 
 	public IndividualTreatmentControlMeasureSetter(Class<T> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
@@ -8,7 +8,7 @@ public class IndividualTreatmentControlMeasureSetter<T extends edu.pitt.apollo.t
 	}
 
 	protected void setPathogen() throws MigrationException {
-		ApolloPathogenCodeSetter setter = new ApolloPathogenCodeSetter(edu.pitt.apollo.types.v4_0.ApolloPathogenCode.class,((edu.pitt.apollo.types.v3_1_0.IndividualTreatmentControlMeasure) oldTypeInstance).getPathogen());
+		ApolloPathogenCodeSetter setter = new ApolloPathogenCodeSetter(edu.pitt.apollo.types.v4_0_1.ApolloPathogenCode.class,((edu.pitt.apollo.types.v3_1_0.IndividualTreatmentControlMeasure) oldTypeInstance).getPathogen());
 		setter.set();
 		newTypeInstance.setPathogen(setter.getNewTypeInstance());
 	}
@@ -27,13 +27,13 @@ public class IndividualTreatmentControlMeasureSetter<T extends edu.pitt.apollo.t
 	}
 
 	protected void setPopulationTreatmentCensus() throws MigrationException {
-		PopulationTreatmentCensusSetter setter = new PopulationTreatmentCensusSetter(edu.pitt.apollo.types.v4_0.PopulationTreatmentCensus.class,((edu.pitt.apollo.types.v3_1_0.IndividualTreatmentControlMeasure) oldTypeInstance).getPopulationTreatmentCensus());
+		PopulationTreatmentCensusSetter setter = new PopulationTreatmentCensusSetter(edu.pitt.apollo.types.v4_0_1.PopulationTreatmentCensus.class,((edu.pitt.apollo.types.v3_1_0.IndividualTreatmentControlMeasure) oldTypeInstance).getPopulationTreatmentCensus());
 		setter.set();
 		newTypeInstance.setPopulationTreatmentCensus(setter.getNewTypeInstance());
 	}
 
 	protected void setCompliance() throws MigrationException {
-		ProbabilisticParameterSetter setter = new ProbabilisticParameterSetter(edu.pitt.apollo.types.v4_0.ProbabilisticParameter.class,((edu.pitt.apollo.types.v3_1_0.IndividualTreatmentControlMeasure) oldTypeInstance).getCompliance());
+		ProbabilisticParameterSetter setter = new ProbabilisticParameterSetter(edu.pitt.apollo.types.v4_0_1.ProbabilisticParameter.class,((edu.pitt.apollo.types.v3_1_0.IndividualTreatmentControlMeasure) oldTypeInstance).getCompliance());
 		setter.set();
 		newTypeInstance.setCompliance(setter.getNewTypeInstance());
 	}
@@ -48,7 +48,7 @@ public class IndividualTreatmentControlMeasureSetter<T extends edu.pitt.apollo.t
 	}
 
 	protected void setTargetPopulationsAndPrioritizations() throws MigrationException {
-		ControlMeasureTargetPopulationsAndPrioritizationSetter setter = new ControlMeasureTargetPopulationsAndPrioritizationSetter(edu.pitt.apollo.types.v4_0.ControlMeasureTargetPopulationsAndPrioritization.class,((edu.pitt.apollo.types.v3_1_0.IndividualTreatmentControlMeasure) oldTypeInstance).getTargetPopulationsAndPrioritizations());
+		ControlMeasureTargetPopulationsAndPrioritizationSetter setter = new ControlMeasureTargetPopulationsAndPrioritizationSetter(edu.pitt.apollo.types.v4_0_1.ControlMeasureTargetPopulationsAndPrioritization.class,((edu.pitt.apollo.types.v3_1_0.IndividualTreatmentControlMeasure) oldTypeInstance).getTargetPopulationsAndPrioritizations());
 		setter.set();
 		newTypeInstance.setTargetPopulationsAndPrioritizations(setter.getNewTypeInstance());
 	}

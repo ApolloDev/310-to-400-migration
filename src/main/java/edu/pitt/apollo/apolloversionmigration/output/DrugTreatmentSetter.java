@@ -1,8 +1,8 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class DrugTreatmentSetter extends TreatmentSetter<edu.pitt.apollo.types.v4_0.DrugTreatment> {
+public class DrugTreatmentSetter extends TreatmentSetter<edu.pitt.apollo.types.v4_0_1.DrugTreatment> {
 
-	public DrugTreatmentSetter(Class<edu.pitt.apollo.types.v4_0.DrugTreatment> newTypeClass, Object oldTypeInstance) throws MigrationException {
+	public DrugTreatmentSetter(Class<edu.pitt.apollo.types.v4_0_1.DrugTreatment> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}
@@ -13,9 +13,9 @@ public class DrugTreatmentSetter extends TreatmentSetter<edu.pitt.apollo.types.v
 
 	protected void setDrugTreatmentEfficacy() throws MigrationException {
 		for (edu.pitt.apollo.types.v3_1_0.DrugTreatmentEfficacyForSimulatorConfiguration oldObj : ((edu.pitt.apollo.types.v3_1_0.DrugTreatment) oldTypeInstance).getDrugTreatmentEfficacy()) {
-			DrugTreatmentEfficacyForSimulatorConfigurationSetter setter = new DrugTreatmentEfficacyForSimulatorConfigurationSetter(edu.pitt.apollo.types.v4_0.DrugTreatmentEfficacyForSimulatorConfiguration.class,oldObj);
+			DrugTreatmentEfficacyForSimulatorConfigurationSetter setter = new DrugTreatmentEfficacyForSimulatorConfigurationSetter(edu.pitt.apollo.types.v4_0_1.DrugTreatmentEfficacyForSimulatorConfiguration.class,oldObj);
 			setter.set();
-			edu.pitt.apollo.types.v4_0.DrugTreatmentEfficacyForSimulatorConfiguration newObj = setter.getNewTypeInstance();
+			edu.pitt.apollo.types.v4_0_1.DrugTreatmentEfficacyForSimulatorConfiguration newObj = setter.getNewTypeInstance();
 			newTypeInstance.getDrugTreatmentEfficacy().add(newObj);
 		}
 

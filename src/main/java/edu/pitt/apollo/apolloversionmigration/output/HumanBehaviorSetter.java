@@ -1,14 +1,14 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class HumanBehaviorSetter extends BehaviorSetter<edu.pitt.apollo.types.v4_0.HumanBehavior> {
+public class HumanBehaviorSetter extends BehaviorSetter<edu.pitt.apollo.types.v4_0_1.HumanBehavior> {
 
-	public HumanBehaviorSetter(Class<edu.pitt.apollo.types.v4_0.HumanBehavior> newTypeClass, Object oldTypeInstance) throws MigrationException {
+	public HumanBehaviorSetter(Class<edu.pitt.apollo.types.v4_0_1.HumanBehavior> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}
 
 	protected void setSpeedOfMovement() throws MigrationException {
-		RateSetter setter = new RateSetter(edu.pitt.apollo.types.v4_0.Rate.class,((edu.pitt.apollo.types.v3_1_0.HumanBehavior) oldTypeInstance).getSpeedOfMovement());
+		RateSetter setter = new RateSetter(edu.pitt.apollo.types.v4_0_1.Rate.class,((edu.pitt.apollo.types.v3_1_0.HumanBehavior) oldTypeInstance).getSpeedOfMovement());
 		setter.set();
 		newTypeInstance.setSpeedOfMovement(setter.getNewTypeInstance());
 	}

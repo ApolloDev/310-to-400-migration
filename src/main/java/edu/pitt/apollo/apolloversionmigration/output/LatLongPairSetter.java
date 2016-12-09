@@ -1,8 +1,8 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class LatLongPairSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0.LatLongPair> {
+public class LatLongPairSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0_1.LatLongPair> {
 
-	public LatLongPairSetter(Class<edu.pitt.apollo.types.v4_0.LatLongPair> newTypeClass, Object oldTypeInstance) throws MigrationException {
+	public LatLongPairSetter(Class<edu.pitt.apollo.types.v4_0_1.LatLongPair> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}

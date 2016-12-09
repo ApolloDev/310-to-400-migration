@@ -1,8 +1,8 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class ColonizationAcquisitionSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0.ColonizationAcquisition> {
+public class ColonizationAcquisitionSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0_1.ColonizationAcquisition> {
 
-	public ColonizationAcquisitionSetter(Class<edu.pitt.apollo.types.v4_0.ColonizationAcquisition> newTypeClass, Object oldTypeInstance) throws MigrationException {
+	public ColonizationAcquisitionSetter(Class<edu.pitt.apollo.types.v4_0_1.ColonizationAcquisition> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}
@@ -12,7 +12,9 @@ public class ColonizationAcquisitionSetter extends AbstractSetter<edu.pitt.apoll
 	}
 
 	protected void setContaminatedSource() throws MigrationException {
-		newTypeInstance.setContaminatedSource(edu.pitt.apollo.types.v4_0.AbioticThingEnum.valueOf(((edu.pitt.apollo.types.v3_1_0.ColonizationAcquisition) oldTypeInstance).getContaminatedSource().toString()));
+		if (((edu.pitt.apollo.types.v3_1_0.ColonizationAcquisition) oldTypeInstance).getContaminatedSource() != null) {
+			newTypeInstance.setContaminatedSource(edu.pitt.apollo.types.v4_0_1.AbioticThingEnum.valueOf(((edu.pitt.apollo.types.v3_1_0.ColonizationAcquisition) oldTypeInstance).getContaminatedSource().toString()));
+		}
 	}
 
 	protected void setColonizedHost() throws MigrationException {
@@ -20,16 +22,16 @@ public class ColonizationAcquisitionSetter extends AbstractSetter<edu.pitt.apoll
 	}
 
 	protected void setTransmissionProbability() throws MigrationException {
-		TransmissionProbabilitySetter setter = new TransmissionProbabilitySetter(edu.pitt.apollo.types.v4_0.TransmissionProbability.class,((edu.pitt.apollo.types.v3_1_0.ColonizationAcquisition) oldTypeInstance).getTransmissionProbability());
+		TransmissionProbabilitySetter setter = new TransmissionProbabilitySetter(edu.pitt.apollo.types.v4_0_1.TransmissionProbability.class,((edu.pitt.apollo.types.v3_1_0.ColonizationAcquisition) oldTypeInstance).getTransmissionProbability());
 		setter.set();
 		newTypeInstance.setTransmissionProbability(setter.getNewTypeInstance());
 	}
 
 	protected void setBeta() throws MigrationException {
 		for (edu.pitt.apollo.types.v3_1_0.Rate oldObj : ((edu.pitt.apollo.types.v3_1_0.ColonizationAcquisition) oldTypeInstance).getBeta()) {
-			RateSetter setter = new RateSetter(edu.pitt.apollo.types.v4_0.Rate.class,oldObj);
+			RateSetter setter = new RateSetter(edu.pitt.apollo.types.v4_0_1.Rate.class,oldObj);
 			setter.set();
-			edu.pitt.apollo.types.v4_0.Rate newObj = setter.getNewTypeInstance();
+			edu.pitt.apollo.types.v4_0_1.Rate newObj = setter.getNewTypeInstance();
 			newTypeInstance.getBeta().add(newObj);
 		}
 

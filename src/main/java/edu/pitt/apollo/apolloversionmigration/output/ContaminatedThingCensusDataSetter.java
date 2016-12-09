@@ -1,8 +1,8 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class ContaminatedThingCensusDataSetter extends CensusDataSetter<edu.pitt.apollo.types.v4_0.ContaminatedThingCensusData> {
+public class ContaminatedThingCensusDataSetter extends CensusDataSetter<edu.pitt.apollo.types.v4_0_1.ContaminatedThingCensusData> {
 
-	public ContaminatedThingCensusDataSetter(Class<edu.pitt.apollo.types.v4_0.ContaminatedThingCensusData> newTypeClass, Object oldTypeInstance) throws MigrationException {
+	public ContaminatedThingCensusDataSetter(Class<edu.pitt.apollo.types.v4_0_1.ContaminatedThingCensusData> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}
@@ -13,9 +13,9 @@ public class ContaminatedThingCensusDataSetter extends CensusDataSetter<edu.pitt
 
 	protected void setExceptionSublocations() throws MigrationException {
 		for (edu.pitt.apollo.types.v3_1_0.ContaminatedThingCensusData oldObj : ((edu.pitt.apollo.types.v3_1_0.ContaminatedThingCensusData) oldTypeInstance).getExceptionSublocations()) {
-			ContaminatedThingCensusDataSetter setter = new ContaminatedThingCensusDataSetter(edu.pitt.apollo.types.v4_0.ContaminatedThingCensusData.class,oldObj);
+			ContaminatedThingCensusDataSetter setter = new ContaminatedThingCensusDataSetter(edu.pitt.apollo.types.v4_0_1.ContaminatedThingCensusData.class,oldObj);
 			setter.set();
-			edu.pitt.apollo.types.v4_0.ContaminatedThingCensusData newObj = setter.getNewTypeInstance();
+			edu.pitt.apollo.types.v4_0_1.ContaminatedThingCensusData newObj = setter.getNewTypeInstance();
 			newTypeInstance.getExceptionSublocations().add(newObj);
 		}
 

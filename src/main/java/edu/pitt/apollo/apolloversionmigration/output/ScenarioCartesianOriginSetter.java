@@ -1,8 +1,8 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class ScenarioCartesianOriginSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0.ScenarioCartesianOrigin> {
+public class ScenarioCartesianOriginSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0_1.ScenarioCartesianOrigin> {
 
-	public ScenarioCartesianOriginSetter(Class<edu.pitt.apollo.types.v4_0.ScenarioCartesianOrigin> newTypeClass, Object oldTypeInstance) throws MigrationException {
+	public ScenarioCartesianOriginSetter(Class<edu.pitt.apollo.types.v4_0_1.ScenarioCartesianOrigin> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}
@@ -16,7 +16,7 @@ public class ScenarioCartesianOriginSetter extends AbstractSetter<edu.pitt.apoll
 	}
 
 	protected void setCartesianReferenceAltitude() throws MigrationException {
-		DistanceSetter setter = new DistanceSetter(edu.pitt.apollo.types.v4_0.Distance.class,((edu.pitt.apollo.types.v3_1_0.ScenarioCartesianOrigin) oldTypeInstance).getCartesianReferenceAltitude());
+		DistanceSetter setter = new DistanceSetter(edu.pitt.apollo.types.v4_0_1.Distance.class,((edu.pitt.apollo.types.v3_1_0.ScenarioCartesianOrigin) oldTypeInstance).getCartesianReferenceAltitude());
 		setter.set();
 		newTypeInstance.setCartesianReferenceAltitude(setter.getNewTypeInstance());
 	}

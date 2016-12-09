@@ -1,8 +1,8 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class InfectionAcquisitionFromInfectedHostSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0.InfectionAcquisitionFromInfectedHost> {
+public class InfectionAcquisitionFromInfectedHostSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0_1.InfectionAcquisitionFromInfectedHost> {
 
-	public InfectionAcquisitionFromInfectedHostSetter(Class<edu.pitt.apollo.types.v4_0.InfectionAcquisitionFromInfectedHost> newTypeClass, Object oldTypeInstance) throws MigrationException {
+	public InfectionAcquisitionFromInfectedHostSetter(Class<edu.pitt.apollo.types.v4_0_1.InfectionAcquisitionFromInfectedHost> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}
@@ -31,32 +31,32 @@ public class InfectionAcquisitionFromInfectedHostSetter extends AbstractSetter<e
 
 	protected void setBasicReproductionNumbers() throws MigrationException {
 		for (edu.pitt.apollo.types.v3_1_0.ReproductionNumber oldObj : ((edu.pitt.apollo.types.v3_1_0.InfectionAcquisitionFromInfectedHost) oldTypeInstance).getBasicReproductionNumbers()) {
-			ReproductionNumberSetter setter = new ReproductionNumberSetter(edu.pitt.apollo.types.v4_0.ReproductionNumber.class,oldObj);
+			ReproductionNumberSetter setter = new ReproductionNumberSetter(edu.pitt.apollo.types.v4_0_1.ReproductionNumber.class,oldObj);
 			setter.set();
-			edu.pitt.apollo.types.v4_0.ReproductionNumber newObj = setter.getNewTypeInstance();
+			edu.pitt.apollo.types.v4_0_1.ReproductionNumber newObj = setter.getNewTypeInstance();
 			newTypeInstance.getBasicReproductionNumbers().add(newObj);
 		}
 
 	}
 
 	protected void setBeta() throws MigrationException {
-		RateSetter setter = new RateSetter(edu.pitt.apollo.types.v4_0.Rate.class,((edu.pitt.apollo.types.v3_1_0.InfectionAcquisitionFromInfectedHost) oldTypeInstance).getBeta());
+		RateSetter setter = new RateSetter(edu.pitt.apollo.types.v4_0_1.Rate.class,((edu.pitt.apollo.types.v3_1_0.InfectionAcquisitionFromInfectedHost) oldTypeInstance).getBeta());
 		setter.set();
 		newTypeInstance.setBeta(setter.getNewTypeInstance());
 	}
 
 	protected void setTransmissionProbabilities() throws MigrationException {
 		for (edu.pitt.apollo.types.v3_1_0.TransmissionProbability oldObj : ((edu.pitt.apollo.types.v3_1_0.InfectionAcquisitionFromInfectedHost) oldTypeInstance).getTransmissionProbabilities()) {
-			TransmissionProbabilitySetter setter = new TransmissionProbabilitySetter(edu.pitt.apollo.types.v4_0.TransmissionProbability.class,oldObj);
+			TransmissionProbabilitySetter setter = new TransmissionProbabilitySetter(edu.pitt.apollo.types.v4_0_1.TransmissionProbability.class,oldObj);
 			setter.set();
-			edu.pitt.apollo.types.v4_0.TransmissionProbability newObj = setter.getNewTypeInstance();
+			edu.pitt.apollo.types.v4_0_1.TransmissionProbability newObj = setter.getNewTypeInstance();
 			newTypeInstance.getTransmissionProbabilities().add(newObj);
 		}
 
 	}
 
 	protected void setInoculationRate() throws MigrationException {
-		RateSetter setter = new RateSetter(edu.pitt.apollo.types.v4_0.Rate.class,((edu.pitt.apollo.types.v3_1_0.InfectionAcquisitionFromInfectedHost) oldTypeInstance).getInoculationRate());
+		RateSetter setter = new RateSetter(edu.pitt.apollo.types.v4_0_1.Rate.class,((edu.pitt.apollo.types.v3_1_0.InfectionAcquisitionFromInfectedHost) oldTypeInstance).getInoculationRate());
 		setter.set();
 		newTypeInstance.setInoculationRate(setter.getNewTypeInstance());
 	}

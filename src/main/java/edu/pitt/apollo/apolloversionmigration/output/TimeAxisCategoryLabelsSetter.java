@@ -1,8 +1,8 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class TimeAxisCategoryLabelsSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0.TimeAxisCategoryLabels> {
+public class TimeAxisCategoryLabelsSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0_1.TimeAxisCategoryLabels> {
 
-	public TimeAxisCategoryLabelsSetter(Class<edu.pitt.apollo.types.v4_0.TimeAxisCategoryLabels> newTypeClass, Object oldTypeInstance) throws MigrationException {
+	public TimeAxisCategoryLabelsSetter(Class<edu.pitt.apollo.types.v4_0_1.TimeAxisCategoryLabels> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}

@@ -1,8 +1,8 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class WolbachiaControlMeasureSetter extends VectorControlMeasureSetter<edu.pitt.apollo.types.v4_0.WolbachiaControlMeasure> {
+public class WolbachiaControlMeasureSetter extends VectorControlMeasureSetter<edu.pitt.apollo.types.v4_0_1.WolbachiaControlMeasure> {
 
-	public WolbachiaControlMeasureSetter(Class<edu.pitt.apollo.types.v4_0.WolbachiaControlMeasure> newTypeClass, Object oldTypeInstance) throws MigrationException {
+	public WolbachiaControlMeasureSetter(Class<edu.pitt.apollo.types.v4_0_1.WolbachiaControlMeasure> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}
@@ -20,13 +20,15 @@ public class WolbachiaControlMeasureSetter extends VectorControlMeasureSetter<ed
 	}
 
 	protected void setWolbachiaReleaseInterval() throws MigrationException {
-		FixedDurationSetter setter = new FixedDurationSetter(edu.pitt.apollo.types.v4_0.FixedDuration.class,((edu.pitt.apollo.types.v3_1_0.WolbachiaControlMeasure) oldTypeInstance).getWolbachiaReleaseInterval());
+		FixedDurationSetter setter = new FixedDurationSetter(edu.pitt.apollo.types.v4_0_1.FixedDuration.class,((edu.pitt.apollo.types.v3_1_0.WolbachiaControlMeasure) oldTypeInstance).getWolbachiaReleaseInterval());
 		setter.set();
 		newTypeInstance.setWolbachiaReleaseInterval(setter.getNewTypeInstance());
 	}
 
 	protected void setWolbachiaReleaseSites() throws MigrationException {
-		newTypeInstance.setWolbachiaReleaseSites(edu.pitt.apollo.types.v4_0.WolbachiaReleaseSiteEnum.valueOf(((edu.pitt.apollo.types.v3_1_0.WolbachiaControlMeasure) oldTypeInstance).getWolbachiaReleaseSites().toString()));
+		if (((edu.pitt.apollo.types.v3_1_0.WolbachiaControlMeasure) oldTypeInstance).getWolbachiaReleaseSites() != null) {
+			newTypeInstance.setWolbachiaReleaseSites(edu.pitt.apollo.types.v4_0_1.WolbachiaReleaseSiteEnum.valueOf(((edu.pitt.apollo.types.v3_1_0.WolbachiaControlMeasure) oldTypeInstance).getWolbachiaReleaseSites().toString()));
+		}
 	}
 
 	protected void setWolbachiaEffectOnEggMortalityRate() throws MigrationException {

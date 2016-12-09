@@ -1,6 +1,6 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class CensusDataSetter<T extends edu.pitt.apollo.types.v4_0.CensusData> extends ApolloIndexableItemSetter<T> {
+public class CensusDataSetter<T extends edu.pitt.apollo.types.v4_0_1.CensusData> extends ApolloIndexableItemSetter<T> {
 
 	public CensusDataSetter(Class<T> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
@@ -12,7 +12,7 @@ public class CensusDataSetter<T extends edu.pitt.apollo.types.v4_0.CensusData> e
 	}
 
 	protected void setLocation() throws MigrationException {
-		LocationSetter setter = new LocationSetter(edu.pitt.apollo.types.v4_0.Location.class,((edu.pitt.apollo.types.v3_1_0.CensusData) oldTypeInstance).getLocation());
+		LocationSetter setter = new LocationSetter(edu.pitt.apollo.types.v4_0_1.Location.class,((edu.pitt.apollo.types.v3_1_0.CensusData) oldTypeInstance).getLocation());
 		setter.set();
 		newTypeInstance.setLocation(setter.getNewTypeInstance());
 	}

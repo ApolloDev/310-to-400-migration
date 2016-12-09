@@ -1,8 +1,8 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public abstract class OneWaySensitivityAnalysisOfContinousVariableSpecificationSetter extends SensitivityAnalysisSpecificationSetter<edu.pitt.apollo.types.v4_0.OneWaySensitivityAnalysisOfContinousVariableSpecification> {
+public abstract class OneWaySensitivityAnalysisOfContinousVariableSpecificationSetter extends SensitivityAnalysisSpecificationSetter<edu.pitt.apollo.types.v4_0_1.OneWaySensitivityAnalysisOfContinousVariableSpecification> {
 
-	public OneWaySensitivityAnalysisOfContinousVariableSpecificationSetter(Class<edu.pitt.apollo.types.v4_0.OneWaySensitivityAnalysisOfContinousVariableSpecification> newTypeClass, Object oldTypeInstance) throws MigrationException {
+	public OneWaySensitivityAnalysisOfContinousVariableSpecificationSetter(Class<edu.pitt.apollo.types.v4_0_1.OneWaySensitivityAnalysisOfContinousVariableSpecification> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}

@@ -1,8 +1,8 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class LogisticalSystemSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0.LogisticalSystem> {
+public class LogisticalSystemSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0_1.LogisticalSystem> {
 
-	public LogisticalSystemSetter(Class<edu.pitt.apollo.types.v4_0.LogisticalSystem> newTypeClass, Object oldTypeInstance) throws MigrationException {
+	public LogisticalSystemSetter(Class<edu.pitt.apollo.types.v4_0_1.LogisticalSystem> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}
@@ -13,9 +13,9 @@ public class LogisticalSystemSetter extends AbstractSetter<edu.pitt.apollo.types
 
 	protected void setLogisticalSystemNodes() throws MigrationException {
 		for (edu.pitt.apollo.types.v3_1_0.LogisticalSystemNode oldObj : ((edu.pitt.apollo.types.v3_1_0.LogisticalSystem) oldTypeInstance).getLogisticalSystemNodes()) {
-			LogisticalSystemNodeSetter setter = new LogisticalSystemNodeSetter(edu.pitt.apollo.types.v4_0.LogisticalSystemNode.class,oldObj);
+			LogisticalSystemNodeSetter setter = new LogisticalSystemNodeSetter(edu.pitt.apollo.types.v4_0_1.LogisticalSystemNode.class,oldObj);
 			setter.set();
-			edu.pitt.apollo.types.v4_0.LogisticalSystemNode newObj = setter.getNewTypeInstance();
+			edu.pitt.apollo.types.v4_0_1.LogisticalSystemNode newObj = setter.getNewTypeInstance();
 			newTypeInstance.getLogisticalSystemNodes().add(newObj);
 		}
 

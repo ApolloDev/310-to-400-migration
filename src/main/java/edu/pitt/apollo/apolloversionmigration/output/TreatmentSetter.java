@@ -1,6 +1,6 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class TreatmentSetter<T extends edu.pitt.apollo.types.v4_0.Treatment> extends ApolloIndexableItemSetter<T> {
+public class TreatmentSetter<T extends edu.pitt.apollo.types.v4_0_1.Treatment> extends ApolloIndexableItemSetter<T> {
 
 	public TreatmentSetter(Class<T> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
@@ -16,7 +16,7 @@ public class TreatmentSetter<T extends edu.pitt.apollo.types.v4_0.Treatment> ext
 	}
 
 	protected void setPathogen() throws MigrationException {
-		ApolloPathogenCodeSetter setter = new ApolloPathogenCodeSetter(edu.pitt.apollo.types.v4_0.ApolloPathogenCode.class,((edu.pitt.apollo.types.v3_1_0.Treatment) oldTypeInstance).getPathogen());
+		ApolloPathogenCodeSetter setter = new ApolloPathogenCodeSetter(edu.pitt.apollo.types.v4_0_1.ApolloPathogenCode.class,((edu.pitt.apollo.types.v3_1_0.Treatment) oldTypeInstance).getPathogen());
 		setter.set();
 		newTypeInstance.setPathogen(setter.getNewTypeInstance());
 	}
@@ -36,9 +36,9 @@ public class TreatmentSetter<T extends edu.pitt.apollo.types.v4_0.Treatment> ext
 
 	protected void setTreatmentContraindications() throws MigrationException {
 		for (edu.pitt.apollo.types.v3_1_0.TreatmentContraindication oldObj : ((edu.pitt.apollo.types.v3_1_0.Treatment) oldTypeInstance).getTreatmentContraindications()) {
-			TreatmentContraindicationSetter setter = new TreatmentContraindicationSetter(edu.pitt.apollo.types.v4_0.TreatmentContraindication.class,oldObj);
+			TreatmentContraindicationSetter setter = new TreatmentContraindicationSetter(edu.pitt.apollo.types.v4_0_1.TreatmentContraindication.class,oldObj);
 			setter.set();
-			edu.pitt.apollo.types.v4_0.TreatmentContraindication newObj = setter.getNewTypeInstance();
+			edu.pitt.apollo.types.v4_0_1.TreatmentContraindication newObj = setter.getNewTypeInstance();
 			newTypeInstance.getTreatmentContraindications().add(newObj);
 		}
 

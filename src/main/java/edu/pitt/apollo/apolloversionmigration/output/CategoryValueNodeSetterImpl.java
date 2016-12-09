@@ -5,7 +5,7 @@ import edu.pitt.apollo.types.v3_1_0.Category;
 
 public class CategoryValueNodeSetterImpl extends CategoryValueNodeSetter {
 
-    public CategoryValueNodeSetterImpl(Class<edu.pitt.apollo.types.v4_0.CategoryValueNode> newTypeClass, Object oldTypeInstance) throws MigrationException {
+    public CategoryValueNodeSetterImpl(Class<edu.pitt.apollo.types.v4_0_1.CategoryValueNode> newTypeClass, Object oldTypeInstance) throws MigrationException {
         super(newTypeClass, oldTypeInstance);
 
     }
@@ -57,11 +57,11 @@ public class CategoryValueNodeSetterImpl extends CategoryValueNodeSetter {
     @Override
     protected void setNextCategoricalVariable() throws MigrationException {
         if (oldTypeInstance instanceof edu.pitt.apollo.types.v3_1_0.CaseCountCategory) {
-            CategoricalVariableNodeSetter setter = new CategoricalVariableNodeSetterImpl(edu.pitt.apollo.types.v4_0.CategoricalVariableNode.class, ((CaseCountCategory) oldTypeInstance).getArrayAxis());
+            CategoricalVariableNodeSetter setter = new CategoricalVariableNodeSetterImpl(edu.pitt.apollo.types.v4_0_1.CategoricalVariableNode.class, ((CaseCountCategory) oldTypeInstance).getArrayAxis());
             setter.set();
             newTypeInstance.setNextCategoricalVariable(setter.getNewTypeInstance());
         } else if (oldTypeInstance instanceof edu.pitt.apollo.types.v3_1_0.Category) {
-            CategoricalVariableNodeSetter setter = new CategoricalVariableNodeSetterImpl(edu.pitt.apollo.types.v4_0.CategoricalVariableNode.class,((Category)oldTypeInstance).getConditioningVariable());
+            CategoricalVariableNodeSetter setter = new CategoricalVariableNodeSetterImpl(edu.pitt.apollo.types.v4_0_1.CategoricalVariableNode.class,((Category)oldTypeInstance).getConditioningVariable());
             setter.set();
             newTypeInstance.setNextCategoricalVariable(setter.getNewTypeInstance());
         } else {

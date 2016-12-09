@@ -1,8 +1,8 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public abstract class MeasuredQuantityRangeCategoryDefinitionSetter extends CategoryDefinitionSetter<edu.pitt.apollo.types.v4_0.MeasuredQuantityRangeCategoryDefinition> {
+public abstract class MeasuredQuantityRangeCategoryDefinitionSetter extends CategoryDefinitionSetter<edu.pitt.apollo.types.v4_0_1.MeasuredQuantityRangeCategoryDefinition> {
 
-	public MeasuredQuantityRangeCategoryDefinitionSetter(Class<edu.pitt.apollo.types.v4_0.MeasuredQuantityRangeCategoryDefinition> newTypeClass, Object oldTypeInstance) throws MigrationException {
+	public MeasuredQuantityRangeCategoryDefinitionSetter(Class<edu.pitt.apollo.types.v4_0_1.MeasuredQuantityRangeCategoryDefinition> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}

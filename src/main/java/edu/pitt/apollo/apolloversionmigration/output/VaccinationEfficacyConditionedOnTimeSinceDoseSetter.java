@@ -1,8 +1,8 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class VaccinationEfficacyConditionedOnTimeSinceDoseSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0.VaccinationEfficacyConditionedOnTimeSinceDose> {
+public class VaccinationEfficacyConditionedOnTimeSinceDoseSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0_1.VaccinationEfficacyConditionedOnTimeSinceDose> {
 
-	public VaccinationEfficacyConditionedOnTimeSinceDoseSetter(Class<edu.pitt.apollo.types.v4_0.VaccinationEfficacyConditionedOnTimeSinceDose> newTypeClass, Object oldTypeInstance) throws MigrationException {
+	public VaccinationEfficacyConditionedOnTimeSinceDoseSetter(Class<edu.pitt.apollo.types.v4_0_1.VaccinationEfficacyConditionedOnTimeSinceDose> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}
@@ -13,9 +13,9 @@ public class VaccinationEfficacyConditionedOnTimeSinceDoseSetter extends Abstrac
 
 	protected void setTimeIntervalLabelDefinitions() throws MigrationException {
 		for (edu.pitt.apollo.types.v3_1_0.TimeAxisCategoryLabels oldObj : ((edu.pitt.apollo.types.v3_1_0.VaccinationEfficacyConditionedOnTimeSinceDose) oldTypeInstance).getTimeIntervalLabelDefinitions()) {
-			TimeAxisCategoryLabelsSetter setter = new TimeAxisCategoryLabelsSetter(edu.pitt.apollo.types.v4_0.TimeAxisCategoryLabels.class,oldObj);
+			TimeAxisCategoryLabelsSetter setter = new TimeAxisCategoryLabelsSetter(edu.pitt.apollo.types.v4_0_1.TimeAxisCategoryLabels.class,oldObj);
 			setter.set();
-			edu.pitt.apollo.types.v4_0.TimeAxisCategoryLabels newObj = setter.getNewTypeInstance();
+			edu.pitt.apollo.types.v4_0_1.TimeAxisCategoryLabels newObj = setter.getNewTypeInstance();
 			newTypeInstance.getTimeIntervalLabelDefinitions().add(newObj);
 		}
 

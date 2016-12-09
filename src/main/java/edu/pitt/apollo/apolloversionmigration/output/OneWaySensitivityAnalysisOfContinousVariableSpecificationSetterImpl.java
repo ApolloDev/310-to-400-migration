@@ -2,7 +2,7 @@ package edu.pitt.apollo.apolloversionmigration.output;
 
 public class OneWaySensitivityAnalysisOfContinousVariableSpecificationSetterImpl extends OneWaySensitivityAnalysisOfContinousVariableSpecificationSetter {
 
-	public OneWaySensitivityAnalysisOfContinousVariableSpecificationSetterImpl(Class<edu.pitt.apollo.types.v4_0.OneWaySensitivityAnalysisOfContinousVariableSpecification> newTypeClass, Object oldTypeInstance) throws MigrationException {
+	public OneWaySensitivityAnalysisOfContinousVariableSpecificationSetterImpl(Class<edu.pitt.apollo.types.v4_0_1.OneWaySensitivityAnalysisOfContinousVariableSpecification> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}

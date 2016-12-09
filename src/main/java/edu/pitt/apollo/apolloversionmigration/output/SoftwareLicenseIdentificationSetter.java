@@ -1,8 +1,8 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class SoftwareLicenseIdentificationSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0.SoftwareLicenseIdentification> {
+public class SoftwareLicenseIdentificationSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0_1.SoftwareLicenseIdentification> {
 
-	public SoftwareLicenseIdentificationSetter(Class<edu.pitt.apollo.types.v4_0.SoftwareLicenseIdentification> newTypeClass, Object oldTypeInstance) throws MigrationException {
+	public SoftwareLicenseIdentificationSetter(Class<edu.pitt.apollo.types.v4_0_1.SoftwareLicenseIdentification> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}

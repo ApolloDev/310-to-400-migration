@@ -1,6 +1,6 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class TriggerDefinitionSetter<T extends edu.pitt.apollo.types.v4_0.TriggerDefinition> extends AbstractSetter<T> {
+public class TriggerDefinitionSetter<T extends edu.pitt.apollo.types.v4_0_1.TriggerDefinition> extends AbstractSetter<T> {
 
 	public TriggerDefinitionSetter(Class<T> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);

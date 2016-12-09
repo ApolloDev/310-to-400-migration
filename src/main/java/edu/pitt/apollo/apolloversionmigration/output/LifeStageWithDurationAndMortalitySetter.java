@@ -1,14 +1,16 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class LifeStageWithDurationAndMortalitySetter extends AbstractSetter<edu.pitt.apollo.types.v4_0.LifeStageWithDurationAndMortality> {
+public class LifeStageWithDurationAndMortalitySetter extends AbstractSetter<edu.pitt.apollo.types.v4_0_1.LifeStageWithDurationAndMortality> {
 
-	public LifeStageWithDurationAndMortalitySetter(Class<edu.pitt.apollo.types.v4_0.LifeStageWithDurationAndMortality> newTypeClass, Object oldTypeInstance) throws MigrationException {
+	public LifeStageWithDurationAndMortalitySetter(Class<edu.pitt.apollo.types.v4_0_1.LifeStageWithDurationAndMortality> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}
 
 	protected void setStage() throws MigrationException {
-		newTypeInstance.setStage(edu.pitt.apollo.types.v4_0.DevelopmentalStageEnum.valueOf(((edu.pitt.apollo.types.v3_1_0.LifeStageWithDurationAndMortality) oldTypeInstance).getStage().toString()));
+		if (((edu.pitt.apollo.types.v3_1_0.LifeStageWithDurationAndMortality) oldTypeInstance).getStage() != null) {
+			newTypeInstance.setStage(edu.pitt.apollo.types.v4_0_1.DevelopmentalStageEnum.valueOf(((edu.pitt.apollo.types.v3_1_0.LifeStageWithDurationAndMortality) oldTypeInstance).getStage().toString()));
+		}
 	}
 
 	protected void setDuration() throws MigrationException {
@@ -21,7 +23,7 @@ public class LifeStageWithDurationAndMortalitySetter extends AbstractSetter<edu.
 	}
 
 	protected void setMortalityRate() throws MigrationException {
-		RateSetter setter = new RateSetter(edu.pitt.apollo.types.v4_0.Rate.class,((edu.pitt.apollo.types.v3_1_0.LifeStageWithDurationAndMortality) oldTypeInstance).getMortalityRate());
+		RateSetter setter = new RateSetter(edu.pitt.apollo.types.v4_0_1.Rate.class,((edu.pitt.apollo.types.v3_1_0.LifeStageWithDurationAndMortality) oldTypeInstance).getMortalityRate());
 		setter.set();
 		newTypeInstance.setMortalityRate(setter.getNewTypeInstance());
 	}

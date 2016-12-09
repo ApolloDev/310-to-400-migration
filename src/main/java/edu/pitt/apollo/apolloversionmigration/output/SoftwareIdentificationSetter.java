@@ -1,8 +1,8 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class SoftwareIdentificationSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0.SoftwareIdentification> {
+public class SoftwareIdentificationSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0_1.SoftwareIdentification> {
 
-	public SoftwareIdentificationSetter(Class<edu.pitt.apollo.types.v4_0.SoftwareIdentification> newTypeClass, Object oldTypeInstance) throws MigrationException {
+	public SoftwareIdentificationSetter(Class<edu.pitt.apollo.types.v4_0_1.SoftwareIdentification> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}
@@ -20,11 +20,13 @@ public class SoftwareIdentificationSetter extends AbstractSetter<edu.pitt.apollo
 	}
 
 	protected void setSoftwareType() throws MigrationException {
-		newTypeInstance.setSoftwareType(edu.pitt.apollo.types.v4_0.ApolloSoftwareTypeEnum.valueOf(((edu.pitt.apollo.types.v3_1_0.SoftwareIdentification) oldTypeInstance).getSoftwareType().toString()));
+		if (((edu.pitt.apollo.types.v3_1_0.SoftwareIdentification) oldTypeInstance).getSoftwareType() != null) {
+			newTypeInstance.setSoftwareType(edu.pitt.apollo.types.v4_0_1.ApolloSoftwareTypeEnum.valueOf(((edu.pitt.apollo.types.v3_1_0.SoftwareIdentification) oldTypeInstance).getSoftwareType().toString()));
+		}
 	}
 
 	protected void setSoftwareLicenseIdentification() throws MigrationException {
-		SoftwareLicenseIdentificationSetter setter = new SoftwareLicenseIdentificationSetter(edu.pitt.apollo.types.v4_0.SoftwareLicenseIdentification.class,((edu.pitt.apollo.types.v3_1_0.SoftwareIdentification) oldTypeInstance).getSoftwareLicenseIdentification());
+		SoftwareLicenseIdentificationSetter setter = new SoftwareLicenseIdentificationSetter(edu.pitt.apollo.types.v4_0_1.SoftwareLicenseIdentification.class,((edu.pitt.apollo.types.v3_1_0.SoftwareIdentification) oldTypeInstance).getSoftwareLicenseIdentification());
 		setter.set();
 		newTypeInstance.setSoftwareLicenseIdentification(setter.getNewTypeInstance());
 	}

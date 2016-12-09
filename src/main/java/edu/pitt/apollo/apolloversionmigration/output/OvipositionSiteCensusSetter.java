@@ -1,8 +1,8 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class OvipositionSiteCensusSetter extends AbioticThingCensusSetter<edu.pitt.apollo.types.v4_0.OvipositionSiteCensus> {
+public class OvipositionSiteCensusSetter extends AbioticThingCensusSetter<edu.pitt.apollo.types.v4_0_1.OvipositionSiteCensus> {
 
-	public OvipositionSiteCensusSetter(Class<edu.pitt.apollo.types.v4_0.OvipositionSiteCensus> newTypeClass, Object oldTypeInstance) throws MigrationException {
+	public OvipositionSiteCensusSetter(Class<edu.pitt.apollo.types.v4_0_1.OvipositionSiteCensus> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}

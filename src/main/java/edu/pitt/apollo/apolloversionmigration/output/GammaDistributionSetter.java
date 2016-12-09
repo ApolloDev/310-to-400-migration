@@ -1,8 +1,8 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class GammaDistributionSetter extends ContinuousParametricProbabilityDistributionSetter<edu.pitt.apollo.types.v4_0.GammaDistribution> {
+public class GammaDistributionSetter extends ContinuousParametricProbabilityDistributionSetter<edu.pitt.apollo.types.v4_0_1.GammaDistribution> {
 
-	public GammaDistributionSetter(Class<edu.pitt.apollo.types.v4_0.GammaDistribution> newTypeClass, Object oldTypeInstance) throws MigrationException {
+	public GammaDistributionSetter(Class<edu.pitt.apollo.types.v4_0_1.GammaDistribution> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}

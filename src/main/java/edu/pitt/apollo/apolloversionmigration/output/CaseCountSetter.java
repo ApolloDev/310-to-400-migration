@@ -1,8 +1,8 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class CaseCountSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0.CaseCount> {
+public class CaseCountSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0_1.CaseCount> {
 
-	public CaseCountSetter(Class<edu.pitt.apollo.types.v4_0.CaseCount> newTypeClass, Object oldTypeInstance) throws MigrationException {
+	public CaseCountSetter(Class<edu.pitt.apollo.types.v4_0_1.CaseCount> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}
@@ -13,13 +13,13 @@ public class CaseCountSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0.C
 
 	protected void setCaseDefinitionsIncluded() throws MigrationException {
 		for (edu.pitt.apollo.types.v3_1_0.CaseDefinitionEnum oldObj : ((edu.pitt.apollo.types.v3_1_0.CaseCount) oldTypeInstance).getCaseDefinitionsIncluded()) {
-			newTypeInstance.getCaseDefinitionsIncluded().add(edu.pitt.apollo.types.v4_0.CaseDefinitionEnum.valueOf(oldObj.toString()));
+			newTypeInstance.getCaseDefinitionsIncluded().add(edu.pitt.apollo.types.v4_0_1.CaseDefinitionEnum.valueOf(oldObj.toString()));
 		}
 
 	}
 
 	protected void setCaseCountArrayDescription() throws MigrationException {
-		CaseCountArrayDescriptionSetter setter = new CaseCountArrayDescriptionSetterImpl(edu.pitt.apollo.types.v4_0.CaseCountArrayDescription.class,((edu.pitt.apollo.types.v3_1_0.CaseCount) oldTypeInstance).getCaseCountArrayDescription());
+		CaseCountArrayDescriptionSetter setter = new CaseCountArrayDescriptionSetterImpl(edu.pitt.apollo.types.v4_0_1.CaseCountArrayDescription.class,((edu.pitt.apollo.types.v3_1_0.CaseCount) oldTypeInstance).getCaseCountArrayDescription());
 		setter.set();
 		newTypeInstance.setCaseCountArrayDescription(setter.getNewTypeInstance());
 	}
@@ -29,13 +29,13 @@ public class CaseCountSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0.C
 	}
 
 	protected void setCaseCountArray() throws MigrationException {
-		VariableCategoryValueTreeSetter setter = new VariableCategoryValueTreeSetterImpl(edu.pitt.apollo.types.v4_0.VariableCategoryValueTree.class,((edu.pitt.apollo.types.v3_1_0.CaseCount) oldTypeInstance).getCaseCountArray());
+		VariableCategoryValueTreeSetter setter = new VariableCategoryValueTreeSetterImpl(edu.pitt.apollo.types.v4_0_1.VariableCategoryValueTree.class,((edu.pitt.apollo.types.v3_1_0.CaseCount) oldTypeInstance).getCaseCountArray());
 		setter.set();
 		newTypeInstance.setCaseCountArray(setter.getNewTypeInstance());
 	}
 
 	protected void setTemporalCountArrayWithUniformIntervals() throws MigrationException {
-		TemporalCountArrayWithUniformIntervalsSetter setter = new TemporalCountArrayWithUniformIntervalsSetter(edu.pitt.apollo.types.v4_0.TemporalCountArrayWithUniformIntervals.class,((edu.pitt.apollo.types.v3_1_0.CaseCount) oldTypeInstance).getTemporalCountArrayWithUniformIntervals());
+		TemporalCountArrayWithUniformIntervalsSetter setter = new TemporalCountArrayWithUniformIntervalsSetter(edu.pitt.apollo.types.v4_0_1.TemporalCountArrayWithUniformIntervals.class,((edu.pitt.apollo.types.v3_1_0.CaseCount) oldTypeInstance).getTemporalCountArrayWithUniformIntervals());
 		setter.set();
 		newTypeInstance.setTemporalCountArrayWithUniformIntervals(setter.getNewTypeInstance());
 	}

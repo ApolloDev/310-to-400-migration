@@ -1,20 +1,20 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class MosquitoBehaviorSetter extends BehaviorSetter<edu.pitt.apollo.types.v4_0.MosquitoBehavior> {
+public class MosquitoBehaviorSetter extends BehaviorSetter<edu.pitt.apollo.types.v4_0_1.MosquitoBehavior> {
 
-	public MosquitoBehaviorSetter(Class<edu.pitt.apollo.types.v4_0.MosquitoBehavior> newTypeClass, Object oldTypeInstance) throws MigrationException {
+	public MosquitoBehaviorSetter(Class<edu.pitt.apollo.types.v4_0_1.MosquitoBehavior> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}
 
 	protected void setBiteProbability() throws MigrationException {
-		ProbabilisticParameterSetter setter = new ProbabilisticParameterSetter(edu.pitt.apollo.types.v4_0.ProbabilisticParameter.class,((edu.pitt.apollo.types.v3_1_0.MosquitoBehavior) oldTypeInstance).getBiteProbability());
+		ProbabilisticParameterSetter setter = new ProbabilisticParameterSetter(edu.pitt.apollo.types.v4_0_1.ProbabilisticParameter.class,((edu.pitt.apollo.types.v3_1_0.MosquitoBehavior) oldTypeInstance).getBiteProbability());
 		setter.set();
 		newTypeInstance.setBiteProbability(setter.getNewTypeInstance());
 	}
 
 	protected void setBiteRadius() throws MigrationException {
-		DistanceSetter setter = new DistanceSetter(edu.pitt.apollo.types.v4_0.Distance.class,((edu.pitt.apollo.types.v3_1_0.MosquitoBehavior) oldTypeInstance).getBiteRadius());
+		DistanceSetter setter = new DistanceSetter(edu.pitt.apollo.types.v4_0_1.Distance.class,((edu.pitt.apollo.types.v3_1_0.MosquitoBehavior) oldTypeInstance).getBiteRadius());
 		setter.set();
 		newTypeInstance.setBiteRadius(setter.getNewTypeInstance());
 	}
@@ -29,7 +29,7 @@ public class MosquitoBehaviorSetter extends BehaviorSetter<edu.pitt.apollo.types
 	}
 
 	protected void setMigrationSpeed() throws MigrationException {
-		RateSetter setter = new RateSetter(edu.pitt.apollo.types.v4_0.Rate.class,((edu.pitt.apollo.types.v3_1_0.MosquitoBehavior) oldTypeInstance).getMigrationSpeed());
+		RateSetter setter = new RateSetter(edu.pitt.apollo.types.v4_0_1.Rate.class,((edu.pitt.apollo.types.v3_1_0.MosquitoBehavior) oldTypeInstance).getMigrationSpeed());
 		setter.set();
 		newTypeInstance.setMigrationSpeed(setter.getNewTypeInstance());
 	}
@@ -39,7 +39,7 @@ public class MosquitoBehaviorSetter extends BehaviorSetter<edu.pitt.apollo.types
 	}
 
 	protected void setMaleMatingRadius() throws MigrationException {
-		DistanceSetter setter = new DistanceSetter(edu.pitt.apollo.types.v4_0.Distance.class,((edu.pitt.apollo.types.v3_1_0.MosquitoBehavior) oldTypeInstance).getMaleMatingRadius());
+		DistanceSetter setter = new DistanceSetter(edu.pitt.apollo.types.v4_0_1.Distance.class,((edu.pitt.apollo.types.v3_1_0.MosquitoBehavior) oldTypeInstance).getMaleMatingRadius());
 		setter.set();
 		newTypeInstance.setMaleMatingRadius(setter.getNewTypeInstance());
 	}
@@ -49,7 +49,7 @@ public class MosquitoBehaviorSetter extends BehaviorSetter<edu.pitt.apollo.types
 	}
 
 	protected void setStraightTravelAfterOviposit() throws MigrationException {
-		DistanceSetter setter = new DistanceSetter(edu.pitt.apollo.types.v4_0.Distance.class,((edu.pitt.apollo.types.v3_1_0.MosquitoBehavior) oldTypeInstance).getStraightTravelAfterOviposit());
+		DistanceSetter setter = new DistanceSetter(edu.pitt.apollo.types.v4_0_1.Distance.class,((edu.pitt.apollo.types.v3_1_0.MosquitoBehavior) oldTypeInstance).getStraightTravelAfterOviposit());
 		setter.set();
 		newTypeInstance.setStraightTravelAfterOviposit(setter.getNewTypeInstance());
 	}

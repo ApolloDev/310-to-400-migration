@@ -1,17 +1,17 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class IndividualAndEpidemiologicalCharacteristicsSetter extends IndividualSetter<edu.pitt.apollo.types.v4_0.IndividualAndEpidemiologicalCharacteristics> {
+public class IndividualAndEpidemiologicalCharacteristicsSetter extends IndividualSetter<edu.pitt.apollo.types.v4_0_1.IndividualAndEpidemiologicalCharacteristics> {
 
-	public IndividualAndEpidemiologicalCharacteristicsSetter(Class<edu.pitt.apollo.types.v4_0.IndividualAndEpidemiologicalCharacteristics> newTypeClass, Object oldTypeInstance) throws MigrationException {
+	public IndividualAndEpidemiologicalCharacteristicsSetter(Class<edu.pitt.apollo.types.v4_0_1.IndividualAndEpidemiologicalCharacteristics> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}
 
 	protected void setIndividualInfection() throws MigrationException {
 		for (edu.pitt.apollo.types.v3_1_0.IndividualInfection oldObj : ((edu.pitt.apollo.types.v3_1_0.IndividualAndEpidemiologicalCharacteristics) oldTypeInstance).getIndividualInfection()) {
-			IndividualInfectionSetter setter = new IndividualInfectionSetter(edu.pitt.apollo.types.v4_0.IndividualInfection.class,oldObj);
+			IndividualInfectionSetter setter = new IndividualInfectionSetter(edu.pitt.apollo.types.v4_0_1.IndividualInfection.class,oldObj);
 			setter.set();
-			edu.pitt.apollo.types.v4_0.IndividualInfection newObj = setter.getNewTypeInstance();
+			edu.pitt.apollo.types.v4_0_1.IndividualInfection newObj = setter.getNewTypeInstance();
 			newTypeInstance.getIndividualInfection().add(newObj);
 		}
 
@@ -19,9 +19,9 @@ public class IndividualAndEpidemiologicalCharacteristicsSetter extends Individua
 
 	protected void setIndividualDisease() throws MigrationException {
 		for (edu.pitt.apollo.types.v3_1_0.IndividualDisease oldObj : ((edu.pitt.apollo.types.v3_1_0.IndividualAndEpidemiologicalCharacteristics) oldTypeInstance).getIndividualDisease()) {
-			IndividualDiseaseSetter setter = new IndividualDiseaseSetter(edu.pitt.apollo.types.v4_0.IndividualDisease.class,oldObj);
+			IndividualDiseaseSetter setter = new IndividualDiseaseSetter(edu.pitt.apollo.types.v4_0_1.IndividualDisease.class,oldObj);
 			setter.set();
-			edu.pitt.apollo.types.v4_0.IndividualDisease newObj = setter.getNewTypeInstance();
+			edu.pitt.apollo.types.v4_0_1.IndividualDisease newObj = setter.getNewTypeInstance();
 			newTypeInstance.getIndividualDisease().add(newObj);
 		}
 

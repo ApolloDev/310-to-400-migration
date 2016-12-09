@@ -1,8 +1,8 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public abstract class InfectiousDiseaseSetter extends LInfectiousDiseaseSetter<edu.pitt.apollo.types.v4_0.InfectiousDisease> {
+public class InfectiousDiseaseSetter<T extends edu.pitt.apollo.types.v4_0_1.InfectiousDisease> extends ApolloIndexableItemSetter<T> {
 
-	public InfectiousDiseaseSetter(Class<edu.pitt.apollo.types.v4_0.InfectiousDisease> newTypeClass, Object oldTypeInstance) throws MigrationException {
+	public InfectiousDiseaseSetter(Class<T> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}
@@ -16,7 +16,7 @@ public abstract class InfectiousDiseaseSetter extends LInfectiousDiseaseSetter<e
 	}
 
 	protected void setCausalPathogen() throws MigrationException {
-		ApolloPathogenCodeSetter setter = new ApolloPathogenCodeSetter(edu.pitt.apollo.types.v4_0.ApolloPathogenCode.class,((edu.pitt.apollo.types.v3_1_0.InfectiousDisease) oldTypeInstance).getCausalPathogen());
+		ApolloPathogenCodeSetter setter = new ApolloPathogenCodeSetter(edu.pitt.apollo.types.v4_0_1.ApolloPathogenCode.class,((edu.pitt.apollo.types.v3_1_0.InfectiousDisease) oldTypeInstance).getCausalPathogen());
 		setter.set();
 		newTypeInstance.setCausalPathogen(setter.getNewTypeInstance());
 	}
@@ -50,9 +50,9 @@ public abstract class InfectiousDiseaseSetter extends LInfectiousDiseaseSetter<e
 
 	protected void setOtherIntervals() throws MigrationException {
 		for (edu.pitt.apollo.types.v3_1_0.Interval oldObj : ((edu.pitt.apollo.types.v3_1_0.InfectiousDisease) oldTypeInstance).getOtherIntervals()) {
-			IntervalSetter setter = new IntervalSetter(edu.pitt.apollo.types.v4_0.Interval.class,oldObj);
+			IntervalSetter setter = new IntervalSetter(edu.pitt.apollo.types.v4_0_1.Interval.class,oldObj);
 			setter.set();
-			edu.pitt.apollo.types.v4_0.Interval newObj = setter.getNewTypeInstance();
+			edu.pitt.apollo.types.v4_0_1.Interval newObj = setter.getNewTypeInstance();
 			newTypeInstance.getOtherIntervals().add(newObj);
 		}
 
@@ -60,9 +60,9 @@ public abstract class InfectiousDiseaseSetter extends LInfectiousDiseaseSetter<e
 
 	protected void setDiseaseOutcomesWithProbabilities() throws MigrationException {
 		for (edu.pitt.apollo.types.v3_1_0.DiseaseOutcomeWithProbability oldObj : ((edu.pitt.apollo.types.v3_1_0.InfectiousDisease) oldTypeInstance).getDiseaseOutcomesWithProbabilities()) {
-			DiseaseOutcomeWithProbabilitySetter setter = new DiseaseOutcomeWithProbabilitySetter(edu.pitt.apollo.types.v4_0.DiseaseOutcomeWithProbability.class,oldObj);
+			DiseaseOutcomeWithProbabilitySetter setter = new DiseaseOutcomeWithProbabilitySetter(edu.pitt.apollo.types.v4_0_1.DiseaseOutcomeWithProbability.class,oldObj);
 			setter.set();
-			edu.pitt.apollo.types.v4_0.DiseaseOutcomeWithProbability newObj = setter.getNewTypeInstance();
+			edu.pitt.apollo.types.v4_0_1.DiseaseOutcomeWithProbability newObj = setter.getNewTypeInstance();
 			newTypeInstance.getDiseaseOutcomesWithProbabilities().add(newObj);
 		}
 
@@ -81,6 +81,11 @@ public abstract class InfectiousDiseaseSetter extends LInfectiousDiseaseSetter<e
 			setOtherIntervals();
 			setDiseaseOutcomesWithProbabilities();
 		}
+	}
+
+	@Override
+	public T getNewTypeInstance() {
+		return newTypeInstance;
 	}
 
 }

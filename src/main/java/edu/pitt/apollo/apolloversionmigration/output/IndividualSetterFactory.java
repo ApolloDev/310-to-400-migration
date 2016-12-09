@@ -4,9 +4,9 @@ public class IndividualSetterFactory {
 
 	public static IndividualSetter getSetter(Object oldTypeInstance) throws MigrationException {
 
-		if (oldTypeInstance instanceof edu.pitt.apollo.types.v4_0.IndividualAndEpidemiologicalCharacteristics) {
+		if (oldTypeInstance instanceof edu.pitt.apollo.types.v3_1_0.IndividualAndEpidemiologicalCharacteristics) {
 
-			return new IndividualAndEpidemiologicalCharacteristicsSetter(edu.pitt.apollo.types.v4_0.IndividualAndEpidemiologicalCharacteristics.class, oldTypeInstance);
+			return new IndividualAndEpidemiologicalCharacteristicsSetter(edu.pitt.apollo.types.v4_0_1.IndividualAndEpidemiologicalCharacteristics.class, oldTypeInstance);
 		}
 
 		throw new UnsupportedTypeException("Type " + oldTypeInstance.getClass().getCanonicalName() + " is not supported");

@@ -1,8 +1,8 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class DrugTreatmentEfficacyForSimulatorConfigurationSetter extends TreatmentEfficacySetter<edu.pitt.apollo.types.v4_0.DrugTreatmentEfficacyForSimulatorConfiguration> {
+public class DrugTreatmentEfficacyForSimulatorConfigurationSetter extends TreatmentEfficacySetter<edu.pitt.apollo.types.v4_0_1.DrugTreatmentEfficacyForSimulatorConfiguration> {
 
-	public DrugTreatmentEfficacyForSimulatorConfigurationSetter(Class<edu.pitt.apollo.types.v4_0.DrugTreatmentEfficacyForSimulatorConfiguration> newTypeClass, Object oldTypeInstance) throws MigrationException {
+	public DrugTreatmentEfficacyForSimulatorConfigurationSetter(Class<edu.pitt.apollo.types.v4_0_1.DrugTreatmentEfficacyForSimulatorConfiguration> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}
@@ -12,13 +12,13 @@ public class DrugTreatmentEfficacyForSimulatorConfigurationSetter extends Treatm
 	}
 
 	protected void setDrugEfficacyConditionedOnAgeRange() throws MigrationException {
-		ConditionalProbabilityDistributionSetter setter = new ConditionalProbabilityDistributionSetter(edu.pitt.apollo.types.v4_0.ConditionalProbabilityDistribution.class,((edu.pitt.apollo.types.v3_1_0.DrugTreatmentEfficacyForSimulatorConfiguration) oldTypeInstance).getDrugEfficacyConditionedOnAgeRange());
+		ConditionalProbabilityDistributionSetter setter = new ConditionalProbabilityDistributionSetter(edu.pitt.apollo.types.v4_0_1.ConditionalProbabilityDistribution.class,((edu.pitt.apollo.types.v3_1_0.DrugTreatmentEfficacyForSimulatorConfiguration) oldTypeInstance).getDrugEfficacyConditionedOnAgeRange());
 		setter.set();
 		newTypeInstance.setDrugEfficacyConditionedOnAgeRange(setter.getNewTypeInstance());
 	}
 
 	protected void setDrugEfficaciesConditionedOnCurrentDiseaseOutcome() throws MigrationException {
-		ConditionalProbabilityDistributionSetter setter = new ConditionalProbabilityDistributionSetter(edu.pitt.apollo.types.v4_0.ConditionalProbabilityDistribution.class,((edu.pitt.apollo.types.v3_1_0.DrugTreatmentEfficacyForSimulatorConfiguration) oldTypeInstance).getDrugEfficaciesConditionedOnCurrentDiseaseOutcome());
+		ConditionalProbabilityDistributionSetter setter = new ConditionalProbabilityDistributionSetter(edu.pitt.apollo.types.v4_0_1.ConditionalProbabilityDistribution.class,((edu.pitt.apollo.types.v3_1_0.DrugTreatmentEfficacyForSimulatorConfiguration) oldTypeInstance).getDrugEfficaciesConditionedOnCurrentDiseaseOutcome());
 		setter.set();
 		newTypeInstance.setDrugEfficaciesConditionedOnCurrentDiseaseOutcome(setter.getNewTypeInstance());
 	}

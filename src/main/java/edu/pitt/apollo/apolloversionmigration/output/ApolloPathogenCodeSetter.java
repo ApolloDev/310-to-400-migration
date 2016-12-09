@@ -1,8 +1,8 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class ApolloPathogenCodeSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0.ApolloPathogenCode> {
+public class ApolloPathogenCodeSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0_1.ApolloPathogenCode> {
 
-	public ApolloPathogenCodeSetter(Class<edu.pitt.apollo.types.v4_0.ApolloPathogenCode> newTypeClass, Object oldTypeInstance) throws MigrationException {
+	public ApolloPathogenCodeSetter(Class<edu.pitt.apollo.types.v4_0_1.ApolloPathogenCode> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}

@@ -1,14 +1,14 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class ContactIsolationControlMeasureSetter extends InfectiousDiseaseControlMeasureSetter<edu.pitt.apollo.types.v4_0.ContactIsolationControlMeasure> {
+public class ContactIsolationControlMeasureSetter extends InfectiousDiseaseControlMeasureSetter<edu.pitt.apollo.types.v4_0_1.ContactIsolationControlMeasure> {
 
-	public ContactIsolationControlMeasureSetter(Class<edu.pitt.apollo.types.v4_0.ContactIsolationControlMeasure> newTypeClass, Object oldTypeInstance) throws MigrationException {
+	public ContactIsolationControlMeasureSetter(Class<edu.pitt.apollo.types.v4_0_1.ContactIsolationControlMeasure> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}
 
 	protected void setContactDefinition() throws MigrationException {
-		ContactDefinitionSetter setter = new ContactDefinitionSetter(edu.pitt.apollo.types.v4_0.ContactDefinition.class,((edu.pitt.apollo.types.v3_1_0.ContactIsolationControlMeasure) oldTypeInstance).getContactDefinition());
+		ContactDefinitionSetter setter = new ContactDefinitionSetter(edu.pitt.apollo.types.v4_0_1.ContactDefinition.class,((edu.pitt.apollo.types.v3_1_0.ContactIsolationControlMeasure) oldTypeInstance).getContactDefinition());
 		setter.set();
 		newTypeInstance.setContactDefinition(setter.getNewTypeInstance());
 	}
@@ -23,7 +23,7 @@ public class ContactIsolationControlMeasureSetter extends InfectiousDiseaseContr
 	}
 
 	protected void setCompliance() throws MigrationException {
-		ProbabilisticParameterSetter setter = new ProbabilisticParameterSetter(edu.pitt.apollo.types.v4_0.ProbabilisticParameter.class,((edu.pitt.apollo.types.v3_1_0.ContactIsolationControlMeasure) oldTypeInstance).getCompliance());
+		ProbabilisticParameterSetter setter = new ProbabilisticParameterSetter(edu.pitt.apollo.types.v4_0_1.ProbabilisticParameter.class,((edu.pitt.apollo.types.v3_1_0.ContactIsolationControlMeasure) oldTypeInstance).getCompliance());
 		setter.set();
 		newTypeInstance.setCompliance(setter.getNewTypeInstance());
 	}

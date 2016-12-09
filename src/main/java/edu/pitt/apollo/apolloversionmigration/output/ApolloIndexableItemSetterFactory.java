@@ -4,79 +4,79 @@ public class ApolloIndexableItemSetterFactory {
 
 	public static ApolloIndexableItemSetter getSetter(Object oldTypeInstance) throws MigrationException {
 
-		if (oldTypeInstance instanceof edu.pitt.apollo.types.v4_0.LInfectiousDisease) {
+		if (oldTypeInstance instanceof edu.pitt.apollo.types.v3_1_0.InfectiousDiseaseScenario) {
 
-			return LInfectiousDiseaseSetterFactory.getSetter(oldTypeInstance);
+			return new InfectiousDiseaseScenarioSetter(edu.pitt.apollo.types.v4_0_1.InfectiousDiseaseScenario.class, oldTypeInstance);
 		}
 
-		if (oldTypeInstance instanceof edu.pitt.apollo.types.v4_0.InfectiousDiseaseTransmissionExperimentSpecification) {
+		if (oldTypeInstance instanceof edu.pitt.apollo.types.v3_1_0.Epidemic) {
 
-			return new InfectiousDiseaseTransmissionExperimentSpecificationSetter(edu.pitt.apollo.types.v4_0.InfectiousDiseaseTransmissionExperimentSpecification.class, oldTypeInstance);
+			return new EpidemicSetter(edu.pitt.apollo.types.v4_0_1.Epidemic.class, oldTypeInstance);
 		}
 
-		if (oldTypeInstance instanceof edu.pitt.apollo.types.v4_0.InfectiousDiseaseControlDecisionModel) {
+		if (oldTypeInstance instanceof edu.pitt.apollo.types.v3_1_0.InfectiousDiseaseDecisionAnalysisSpecificationAndResults) {
 
-			return new InfectiousDiseaseControlDecisionModelSetter(edu.pitt.apollo.types.v4_0.InfectiousDiseaseControlDecisionModel.class, oldTypeInstance);
+			return new InfectiousDiseaseDecisionAnalysisSpecificationAndResultsSetter(edu.pitt.apollo.types.v4_0_1.InfectiousDiseaseDecisionAnalysisSpecificationAndResults.class, oldTypeInstance);
 		}
 
-		if (oldTypeInstance instanceof edu.pitt.apollo.types.v4_0.Colonization) {
+		if (oldTypeInstance instanceof edu.pitt.apollo.types.v3_1_0.Contamination) {
 
-			return new ColonizationSetter(edu.pitt.apollo.types.v4_0.Colonization.class, oldTypeInstance);
+			return ContaminationSetterFactory.getSetter(oldTypeInstance);
 		}
 
-		if (oldTypeInstance instanceof edu.pitt.apollo.types.v4_0.Census) {
+		if (oldTypeInstance instanceof edu.pitt.apollo.types.v3_1_0.InfectiousDiseaseControlDecisionModel) {
+
+			return new InfectiousDiseaseControlDecisionModelSetter(edu.pitt.apollo.types.v4_0_1.InfectiousDiseaseControlDecisionModel.class, oldTypeInstance);
+		}
+
+		if (oldTypeInstance instanceof edu.pitt.apollo.types.v3_1_0.Census) {
 
 			return CensusSetterFactory.getSetter(oldTypeInstance);
 		}
 
-		if (oldTypeInstance instanceof edu.pitt.apollo.types.v4_0.EpidemicCaseCounts) {
-
-			return new EpidemicCaseCountsSetter(edu.pitt.apollo.types.v4_0.EpidemicCaseCounts.class, oldTypeInstance);
-		}
-
-		if (oldTypeInstance instanceof edu.pitt.apollo.types.v4_0.SensitivityAnalysisSpecificationAndResult) {
-
-			return new SensitivityAnalysisSpecificationAndResultSetter(edu.pitt.apollo.types.v4_0.SensitivityAnalysisSpecificationAndResult.class, oldTypeInstance);
-		}
-
-		if (oldTypeInstance instanceof edu.pitt.apollo.types.v4_0.InfectiousDiseaseDecisionAnalysisSpecificationAndResults) {
-
-			return new InfectiousDiseaseDecisionAnalysisSpecificationAndResultsSetter(edu.pitt.apollo.types.v4_0.InfectiousDiseaseDecisionAnalysisSpecificationAndResults.class, oldTypeInstance);
-		}
-
-		if (oldTypeInstance instanceof edu.pitt.apollo.types.v4_0.InfectiousDiseaseScenario) {
-
-			return new InfectiousDiseaseScenarioSetter(edu.pitt.apollo.types.v4_0.InfectiousDiseaseScenario.class, oldTypeInstance);
-		}
-
-		if (oldTypeInstance instanceof edu.pitt.apollo.types.v4_0.Epidemic) {
-
-			return new EpidemicSetter(edu.pitt.apollo.types.v4_0.Epidemic.class, oldTypeInstance);
-		}
-
-		if (oldTypeInstance instanceof edu.pitt.apollo.types.v4_0.CensusData) {
-
-			return CensusDataSetterFactory.getSetter(oldTypeInstance);
-		}
-
-		if (oldTypeInstance instanceof edu.pitt.apollo.types.v4_0.Treatment) {
-
-			return TreatmentSetterFactory.getSetter(oldTypeInstance);
-		}
-
-		if (oldTypeInstance instanceof edu.pitt.apollo.types.v4_0.Infection) {
-
-			return InfectionSetterFactory.getSetter(oldTypeInstance);
-		}
-
-		if (oldTypeInstance instanceof edu.pitt.apollo.types.v4_0.InfectiousDiseaseControlMeasure) {
+		if (oldTypeInstance instanceof edu.pitt.apollo.types.v3_1_0.InfectiousDiseaseControlMeasure) {
 
 			return InfectiousDiseaseControlMeasureSetterFactory.getSetter(oldTypeInstance);
 		}
 
-		if (oldTypeInstance instanceof edu.pitt.apollo.types.v4_0.LContamination) {
+		if (oldTypeInstance instanceof edu.pitt.apollo.types.v3_1_0.Treatment) {
 
-			return LContaminationSetterFactory.getSetter(oldTypeInstance);
+			return TreatmentSetterFactory.getSetter(oldTypeInstance);
+		}
+
+		if (oldTypeInstance instanceof edu.pitt.apollo.types.v3_1_0.Colonization) {
+
+			return new ColonizationSetter(edu.pitt.apollo.types.v4_0_1.Colonization.class, oldTypeInstance);
+		}
+
+		if (oldTypeInstance instanceof edu.pitt.apollo.types.v3_1_0.InfectiousDiseaseTransmissionExperimentSpecification) {
+
+			return new InfectiousDiseaseTransmissionExperimentSpecificationSetter(edu.pitt.apollo.types.v4_0_1.InfectiousDiseaseTransmissionExperimentSpecification.class, oldTypeInstance);
+		}
+
+		if (oldTypeInstance instanceof edu.pitt.apollo.types.v3_1_0.SensitivityAnalysisSpecificationAndResult) {
+
+			return new SensitivityAnalysisSpecificationAndResultSetter(edu.pitt.apollo.types.v4_0_1.SensitivityAnalysisSpecificationAndResult.class, oldTypeInstance);
+		}
+
+		if (oldTypeInstance instanceof edu.pitt.apollo.types.v3_1_0.InfectiousDisease) {
+
+			return InfectiousDiseaseSetterFactory.getSetter(oldTypeInstance);
+		}
+
+		if (oldTypeInstance instanceof edu.pitt.apollo.types.v3_1_0.CensusData) {
+
+			return CensusDataSetterFactory.getSetter(oldTypeInstance);
+		}
+
+		if (oldTypeInstance instanceof edu.pitt.apollo.types.v3_1_0.EpidemicCaseCounts) {
+
+			return new EpidemicCaseCountsSetter(edu.pitt.apollo.types.v4_0_1.EpidemicCaseCounts.class, oldTypeInstance);
+		}
+
+		if (oldTypeInstance instanceof edu.pitt.apollo.types.v3_1_0.Infection) {
+
+			return InfectionSetterFactory.getSetter(oldTypeInstance);
 		}
 
 		throw new UnsupportedTypeException("Type " + oldTypeInstance.getClass().getCanonicalName() + " is not supported");

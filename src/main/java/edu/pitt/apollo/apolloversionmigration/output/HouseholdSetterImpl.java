@@ -4,7 +4,7 @@ import edu.pitt.apollo.types.v3_1_0.Household;
 
 public class HouseholdSetterImpl extends HouseholdSetter {
 
-    public HouseholdSetterImpl(Class<edu.pitt.apollo.types.v4_0.Household> newTypeClass, Object oldTypeInstance) throws MigrationException {
+    public HouseholdSetterImpl(Class<edu.pitt.apollo.types.v4_0_1.Household> newTypeClass, Object oldTypeInstance) throws MigrationException {
         super(newTypeClass, oldTypeInstance);
 
     }

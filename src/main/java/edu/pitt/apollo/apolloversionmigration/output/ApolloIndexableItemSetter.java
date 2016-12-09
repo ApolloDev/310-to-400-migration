@@ -1,6 +1,6 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class ApolloIndexableItemSetter<T extends edu.pitt.apollo.types.v4_0.ApolloIndexableItem> extends AbstractSetter<T> {
+public class ApolloIndexableItemSetter<T extends edu.pitt.apollo.types.v4_0_1.ApolloIndexableItem> extends AbstractSetter<T> {
 
 	public ApolloIndexableItemSetter(Class<T> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);

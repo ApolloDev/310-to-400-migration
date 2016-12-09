@@ -1,14 +1,14 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class ColonizationSetter extends ApolloIndexableItemSetter<edu.pitt.apollo.types.v4_0.Colonization> {
+public class ColonizationSetter extends ApolloIndexableItemSetter<edu.pitt.apollo.types.v4_0_1.Colonization> {
 
-	public ColonizationSetter(Class<edu.pitt.apollo.types.v4_0.Colonization> newTypeClass, Object oldTypeInstance) throws MigrationException {
+	public ColonizationSetter(Class<edu.pitt.apollo.types.v4_0_1.Colonization> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}
 
 	protected void setPathogen() throws MigrationException {
-		ApolloPathogenCodeSetter setter = new ApolloPathogenCodeSetter(edu.pitt.apollo.types.v4_0.ApolloPathogenCode.class,((edu.pitt.apollo.types.v3_1_0.Colonization) oldTypeInstance).getPathogen());
+		ApolloPathogenCodeSetter setter = new ApolloPathogenCodeSetter(edu.pitt.apollo.types.v4_0_1.ApolloPathogenCode.class,((edu.pitt.apollo.types.v3_1_0.Colonization) oldTypeInstance).getPathogen());
 		setter.set();
 		newTypeInstance.setPathogen(setter.getNewTypeInstance());
 	}
@@ -27,16 +27,16 @@ public class ColonizationSetter extends ApolloIndexableItemSetter<edu.pitt.apoll
 	}
 
 	protected void setProbabilityOfInfectionOverTime() throws MigrationException {
-		ConditionalProbabilityDistributionSetter setter = new ConditionalProbabilityDistributionSetter(edu.pitt.apollo.types.v4_0.ConditionalProbabilityDistribution.class,((edu.pitt.apollo.types.v3_1_0.Colonization) oldTypeInstance).getProbabilityOfInfectionOverTime());
+		ConditionalProbabilityDistributionSetter setter = new ConditionalProbabilityDistributionSetter(edu.pitt.apollo.types.v4_0_1.ConditionalProbabilityDistribution.class,((edu.pitt.apollo.types.v3_1_0.Colonization) oldTypeInstance).getProbabilityOfInfectionOverTime());
 		setter.set();
 		newTypeInstance.setProbabilityOfInfectionOverTime(setter.getNewTypeInstance());
 	}
 
 	protected void setColonizationAcquisition() throws MigrationException {
 		for (edu.pitt.apollo.types.v3_1_0.ColonizationAcquisition oldObj : ((edu.pitt.apollo.types.v3_1_0.Colonization) oldTypeInstance).getColonizationAcquisition()) {
-			ColonizationAcquisitionSetter setter = new ColonizationAcquisitionSetter(edu.pitt.apollo.types.v4_0.ColonizationAcquisition.class,oldObj);
+			ColonizationAcquisitionSetter setter = new ColonizationAcquisitionSetter(edu.pitt.apollo.types.v4_0_1.ColonizationAcquisition.class,oldObj);
 			setter.set();
-			edu.pitt.apollo.types.v4_0.ColonizationAcquisition newObj = setter.getNewTypeInstance();
+			edu.pitt.apollo.types.v4_0_1.ColonizationAcquisition newObj = setter.getNewTypeInstance();
 			newTypeInstance.getColonizationAcquisition().add(newObj);
 		}
 

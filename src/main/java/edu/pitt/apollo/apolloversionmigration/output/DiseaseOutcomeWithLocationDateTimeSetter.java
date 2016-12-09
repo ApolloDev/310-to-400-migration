@@ -1,14 +1,16 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class DiseaseOutcomeWithLocationDateTimeSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0.DiseaseOutcomeWithLocationDateTime> {
+public class DiseaseOutcomeWithLocationDateTimeSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0_1.DiseaseOutcomeWithLocationDateTime> {
 
-	public DiseaseOutcomeWithLocationDateTimeSetter(Class<edu.pitt.apollo.types.v4_0.DiseaseOutcomeWithLocationDateTime> newTypeClass, Object oldTypeInstance) throws MigrationException {
+	public DiseaseOutcomeWithLocationDateTimeSetter(Class<edu.pitt.apollo.types.v4_0_1.DiseaseOutcomeWithLocationDateTime> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}
 
 	protected void setDiseaseOutcome() throws MigrationException {
-		newTypeInstance.setDiseaseOutcome(edu.pitt.apollo.types.v4_0.DiseaseOutcomeEnum.valueOf(((edu.pitt.apollo.types.v3_1_0.DiseaseOutcomeWithLocationDateTime) oldTypeInstance).getDiseaseOutcome().toString()));
+		if (((edu.pitt.apollo.types.v3_1_0.DiseaseOutcomeWithLocationDateTime) oldTypeInstance).getDiseaseOutcome() != null) {
+			newTypeInstance.setDiseaseOutcome(edu.pitt.apollo.types.v4_0_1.DiseaseOutcomeEnum.valueOf(((edu.pitt.apollo.types.v3_1_0.DiseaseOutcomeWithLocationDateTime) oldTypeInstance).getDiseaseOutcome().toString()));
+		}
 	}
 
 	protected void setDateTime() throws MigrationException {
@@ -16,7 +18,9 @@ public class DiseaseOutcomeWithLocationDateTimeSetter extends AbstractSetter<edu
 	}
 
 	protected void setPlace() throws MigrationException {
-		newTypeInstance.setPlace(edu.pitt.apollo.types.v4_0.PlaceEnum.valueOf(((edu.pitt.apollo.types.v3_1_0.DiseaseOutcomeWithLocationDateTime) oldTypeInstance).getPlace().toString()));
+		if (((edu.pitt.apollo.types.v3_1_0.DiseaseOutcomeWithLocationDateTime) oldTypeInstance).getPlace() != null) {
+			newTypeInstance.setPlace(edu.pitt.apollo.types.v4_0_1.PlaceEnum.valueOf(((edu.pitt.apollo.types.v3_1_0.DiseaseOutcomeWithLocationDateTime) oldTypeInstance).getPlace().toString()));
+		}
 	}
 
 	protected void setLocationCode() throws MigrationException {
@@ -24,7 +28,7 @@ public class DiseaseOutcomeWithLocationDateTimeSetter extends AbstractSetter<edu
 	}
 
 	protected void setLatLongPair() throws MigrationException {
-		LatLongPairSetter setter = new LatLongPairSetter(edu.pitt.apollo.types.v4_0.LatLongPair.class,((edu.pitt.apollo.types.v3_1_0.DiseaseOutcomeWithLocationDateTime) oldTypeInstance).getLatLongPair());
+		LatLongPairSetter setter = new LatLongPairSetter(edu.pitt.apollo.types.v4_0_1.LatLongPair.class,((edu.pitt.apollo.types.v3_1_0.DiseaseOutcomeWithLocationDateTime) oldTypeInstance).getLatLongPair());
 		setter.set();
 		newTypeInstance.setLatLongPair(setter.getNewTypeInstance());
 	}

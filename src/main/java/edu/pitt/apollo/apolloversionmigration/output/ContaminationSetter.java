@@ -1,20 +1,22 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public abstract class ContaminationSetter extends LContaminationSetter<edu.pitt.apollo.types.v4_0.Contamination> {
+public class ContaminationSetter<T extends edu.pitt.apollo.types.v4_0_1.Contamination> extends ApolloIndexableItemSetter<T> {
 
-	public ContaminationSetter(Class<edu.pitt.apollo.types.v4_0.Contamination> newTypeClass, Object oldTypeInstance) throws MigrationException {
+	public ContaminationSetter(Class<T> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}
 
 	protected void setPathogen() throws MigrationException {
-		ApolloPathogenCodeSetter setter = new ApolloPathogenCodeSetter(edu.pitt.apollo.types.v4_0.ApolloPathogenCode.class,((edu.pitt.apollo.types.v3_1_0.Contamination) oldTypeInstance).getPathogen());
+		ApolloPathogenCodeSetter setter = new ApolloPathogenCodeSetter(edu.pitt.apollo.types.v4_0_1.ApolloPathogenCode.class,((edu.pitt.apollo.types.v3_1_0.Contamination) oldTypeInstance).getPathogen());
 		setter.set();
 		newTypeInstance.setPathogen(setter.getNewTypeInstance());
 	}
 
 	protected void setAbioticThing() throws MigrationException {
-		newTypeInstance.setAbioticThing(edu.pitt.apollo.types.v4_0.AbioticThingEnum.valueOf(((edu.pitt.apollo.types.v3_1_0.Contamination) oldTypeInstance).getAbioticThing().toString()));
+		if (((edu.pitt.apollo.types.v3_1_0.Contamination) oldTypeInstance).getAbioticThing() != null) {
+			newTypeInstance.setAbioticThing(edu.pitt.apollo.types.v4_0_1.AbioticThingEnum.valueOf(((edu.pitt.apollo.types.v3_1_0.Contamination) oldTypeInstance).getAbioticThing().toString()));
+		}
 	}
 
 	protected void setContaminationDuration() throws MigrationException {
@@ -28,9 +30,9 @@ public abstract class ContaminationSetter extends LContaminationSetter<edu.pitt.
 
 	protected void setContaminationAcquisition() throws MigrationException {
 		for (edu.pitt.apollo.types.v3_1_0.ContaminationAcquisition oldObj : ((edu.pitt.apollo.types.v3_1_0.Contamination) oldTypeInstance).getContaminationAcquisition()) {
-			ContaminationAcquisitionSetter setter = new ContaminationAcquisitionSetter(edu.pitt.apollo.types.v4_0.ContaminationAcquisition.class,oldObj);
+			ContaminationAcquisitionSetter setter = new ContaminationAcquisitionSetter(edu.pitt.apollo.types.v4_0_1.ContaminationAcquisition.class,oldObj);
 			setter.set();
-			edu.pitt.apollo.types.v4_0.ContaminationAcquisition newObj = setter.getNewTypeInstance();
+			edu.pitt.apollo.types.v4_0_1.ContaminationAcquisition newObj = setter.getNewTypeInstance();
 			newTypeInstance.getContaminationAcquisition().add(newObj);
 		}
 
@@ -45,6 +47,11 @@ public abstract class ContaminationSetter extends LContaminationSetter<edu.pitt.
 			setContaminationDuration();
 			setContaminationAcquisition();
 		}
+	}
+
+	@Override
+	public T getNewTypeInstance() {
+		return newTypeInstance;
 	}
 
 }

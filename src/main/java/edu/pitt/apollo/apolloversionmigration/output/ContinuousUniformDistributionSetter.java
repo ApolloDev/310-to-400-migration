@@ -1,8 +1,8 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class ContinuousUniformDistributionSetter extends ContinuousParametricProbabilityDistributionSetter<edu.pitt.apollo.types.v4_0.ContinuousUniformDistribution> {
+public class ContinuousUniformDistributionSetter extends ContinuousParametricProbabilityDistributionSetter<edu.pitt.apollo.types.v4_0_1.ContinuousUniformDistribution> {
 
-	public ContinuousUniformDistributionSetter(Class<edu.pitt.apollo.types.v4_0.ContinuousUniformDistribution> newTypeClass, Object oldTypeInstance) throws MigrationException {
+	public ContinuousUniformDistributionSetter(Class<edu.pitt.apollo.types.v4_0_1.ContinuousUniformDistribution> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}

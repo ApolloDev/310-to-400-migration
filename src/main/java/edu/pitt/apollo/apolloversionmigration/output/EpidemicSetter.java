@@ -1,24 +1,24 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class EpidemicSetter extends ApolloIndexableItemSetter<edu.pitt.apollo.types.v4_0.Epidemic> {
+public class EpidemicSetter extends ApolloIndexableItemSetter<edu.pitt.apollo.types.v4_0_1.Epidemic> {
 
-	public EpidemicSetter(Class<edu.pitt.apollo.types.v4_0.Epidemic> newTypeClass, Object oldTypeInstance) throws MigrationException {
+	public EpidemicSetter(Class<edu.pitt.apollo.types.v4_0_1.Epidemic> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}
 
 	protected void setCausalPathogens() throws MigrationException {
 		for (edu.pitt.apollo.types.v3_1_0.ApolloPathogenCode oldObj : ((edu.pitt.apollo.types.v3_1_0.Epidemic) oldTypeInstance).getCausalPathogens()) {
-			ApolloPathogenCodeSetter setter = new ApolloPathogenCodeSetter(edu.pitt.apollo.types.v4_0.ApolloPathogenCode.class,oldObj);
+			ApolloPathogenCodeSetter setter = new ApolloPathogenCodeSetter(edu.pitt.apollo.types.v4_0_1.ApolloPathogenCode.class,oldObj);
 			setter.set();
-			edu.pitt.apollo.types.v4_0.ApolloPathogenCode newObj = setter.getNewTypeInstance();
+			edu.pitt.apollo.types.v4_0_1.ApolloPathogenCode newObj = setter.getNewTypeInstance();
 			newTypeInstance.getCausalPathogens().add(newObj);
 		}
 
 	}
 
 	protected void setEpidemicPeriod() throws MigrationException {
-		EpidemicPeriodSetter setter = new EpidemicPeriodSetter(edu.pitt.apollo.types.v4_0.EpidemicPeriod.class,((edu.pitt.apollo.types.v3_1_0.Epidemic) oldTypeInstance).getEpidemicPeriod());
+		EpidemicPeriodSetter setter = new EpidemicPeriodSetter(edu.pitt.apollo.types.v4_0_1.EpidemicPeriod.class,((edu.pitt.apollo.types.v3_1_0.Epidemic) oldTypeInstance).getEpidemicPeriod());
 		setter.set();
 		newTypeInstance.setEpidemicPeriod(setter.getNewTypeInstance());
 	}
@@ -39,25 +39,25 @@ public class EpidemicSetter extends ApolloIndexableItemSetter<edu.pitt.apollo.ty
 
 	protected void setInfections() throws MigrationException {
 		for (edu.pitt.apollo.types.v3_1_0.Infection oldObj : ((edu.pitt.apollo.types.v3_1_0.Epidemic) oldTypeInstance).getInfections()) {
-			InfectionSetter setter = new InfectionSetter(edu.pitt.apollo.types.v4_0.Infection.class,oldObj);
+			InfectionSetter setter = new InfectionSetter(edu.pitt.apollo.types.v4_0_1.Infection.class,oldObj);
 			setter.set();
-			edu.pitt.apollo.types.v4_0.Infection newObj = setter.getNewTypeInstance();
+			edu.pitt.apollo.types.v4_0_1.Infection newObj = setter.getNewTypeInstance();
 			newTypeInstance.getInfections().add(newObj);
 		}
 
 	}
 
 	protected void setPreEpidemicCensus() throws MigrationException {
-		PreEpidemicEcosystemCensusSetter setter = new PreEpidemicEcosystemCensusSetter(edu.pitt.apollo.types.v4_0.PreEpidemicEcosystemCensus.class,((edu.pitt.apollo.types.v3_1_0.Epidemic) oldTypeInstance).getPreEpidemicCensus());
+		PreEpidemicEcosystemCensusSetter setter = new PreEpidemicEcosystemCensusSetter(edu.pitt.apollo.types.v4_0_1.PreEpidemicEcosystemCensus.class,((edu.pitt.apollo.types.v3_1_0.Epidemic) oldTypeInstance).getPreEpidemicCensus());
 		setter.set();
 		newTypeInstance.setPreEpidemicCensus(setter.getNewTypeInstance());
 	}
 
 	protected void setPopulationSerologySurveys() throws MigrationException {
 		for (edu.pitt.apollo.types.v3_1_0.PopulationSerologySurvey oldObj : ((edu.pitt.apollo.types.v3_1_0.Epidemic) oldTypeInstance).getPopulationSerologySurveys()) {
-			PopulationSerologySurveySetter setter = new PopulationSerologySurveySetter(edu.pitt.apollo.types.v4_0.PopulationSerologySurvey.class,oldObj);
+			PopulationSerologySurveySetter setter = new PopulationSerologySurveySetter(edu.pitt.apollo.types.v4_0_1.PopulationSerologySurvey.class,oldObj);
 			setter.set();
-			edu.pitt.apollo.types.v4_0.PopulationSerologySurvey newObj = setter.getNewTypeInstance();
+			edu.pitt.apollo.types.v4_0_1.PopulationSerologySurvey newObj = setter.getNewTypeInstance();
 			newTypeInstance.getPopulationSerologySurveys().add(newObj);
 		}
 
@@ -65,9 +65,9 @@ public class EpidemicSetter extends ApolloIndexableItemSetter<edu.pitt.apollo.ty
 
 	protected void setPopulationInfectionSurveys() throws MigrationException {
 		for (edu.pitt.apollo.types.v3_1_0.PopulationInfectionSurvey oldObj : ((edu.pitt.apollo.types.v3_1_0.Epidemic) oldTypeInstance).getPopulationInfectionSurveys()) {
-			PopulationInfectionSurveySetter setter = new PopulationInfectionSurveySetter(edu.pitt.apollo.types.v4_0.PopulationInfectionSurvey.class,oldObj);
+			PopulationInfectionSurveySetter setter = new PopulationInfectionSurveySetter(edu.pitt.apollo.types.v4_0_1.PopulationInfectionSurvey.class,oldObj);
 			setter.set();
-			edu.pitt.apollo.types.v4_0.PopulationInfectionSurvey newObj = setter.getNewTypeInstance();
+			edu.pitt.apollo.types.v4_0_1.PopulationInfectionSurvey newObj = setter.getNewTypeInstance();
 			newTypeInstance.getPopulationInfectionSurveys().add(newObj);
 		}
 
@@ -75,9 +75,9 @@ public class EpidemicSetter extends ApolloIndexableItemSetter<edu.pitt.apollo.ty
 
 	protected void setInfectiousDiseaseControlStrategies() throws MigrationException {
 		for (edu.pitt.apollo.types.v3_1_0.InfectiousDiseaseControlMeasure oldObj : ((edu.pitt.apollo.types.v3_1_0.Epidemic) oldTypeInstance).getInfectiousDiseaseControlStrategies()) {
-			InfectiousDiseaseControlMeasureSetter setter = new InfectiousDiseaseControlMeasureSetter(edu.pitt.apollo.types.v4_0.InfectiousDiseaseControlMeasure.class,oldObj);
+			InfectiousDiseaseControlMeasureSetter setter = new InfectiousDiseaseControlMeasureSetter(edu.pitt.apollo.types.v4_0_1.InfectiousDiseaseControlMeasure.class,oldObj);
 			setter.set();
-			edu.pitt.apollo.types.v4_0.InfectiousDiseaseControlMeasure newObj = setter.getNewTypeInstance();
+			edu.pitt.apollo.types.v4_0_1.InfectiousDiseaseControlMeasure newObj = setter.getNewTypeInstance();
 			newTypeInstance.getInfectiousDiseaseControlStrategies().add(newObj);
 		}
 
@@ -85,9 +85,9 @@ public class EpidemicSetter extends ApolloIndexableItemSetter<edu.pitt.apollo.ty
 
 	protected void setCaseDefinitions() throws MigrationException {
 		for (edu.pitt.apollo.types.v3_1_0.CaseDefinition oldObj : ((edu.pitt.apollo.types.v3_1_0.Epidemic) oldTypeInstance).getCaseDefinitions()) {
-			CaseDefinitionSetter setter = new CaseDefinitionSetter(edu.pitt.apollo.types.v4_0.CaseDefinition.class,oldObj);
+			CaseDefinitionSetter setter = new CaseDefinitionSetter(edu.pitt.apollo.types.v4_0_1.CaseDefinition.class,oldObj);
 			setter.set();
-			edu.pitt.apollo.types.v4_0.CaseDefinition newObj = setter.getNewTypeInstance();
+			edu.pitt.apollo.types.v4_0_1.CaseDefinition newObj = setter.getNewTypeInstance();
 			newTypeInstance.getCaseDefinitions().add(newObj);
 		}
 
@@ -95,9 +95,9 @@ public class EpidemicSetter extends ApolloIndexableItemSetter<edu.pitt.apollo.ty
 
 	protected void setContactDefinitions() throws MigrationException {
 		for (edu.pitt.apollo.types.v3_1_0.ContactDefinition oldObj : ((edu.pitt.apollo.types.v3_1_0.Epidemic) oldTypeInstance).getContactDefinitions()) {
-			ContactDefinitionSetter setter = new ContactDefinitionSetter(edu.pitt.apollo.types.v4_0.ContactDefinition.class,oldObj);
+			ContactDefinitionSetter setter = new ContactDefinitionSetter(edu.pitt.apollo.types.v4_0_1.ContactDefinition.class,oldObj);
 			setter.set();
-			edu.pitt.apollo.types.v4_0.ContactDefinition newObj = setter.getNewTypeInstance();
+			edu.pitt.apollo.types.v4_0_1.ContactDefinition newObj = setter.getNewTypeInstance();
 			newTypeInstance.getContactDefinitions().add(newObj);
 		}
 
@@ -105,27 +105,27 @@ public class EpidemicSetter extends ApolloIndexableItemSetter<edu.pitt.apollo.ty
 
 	protected void setCaseLists() throws MigrationException {
 		for (edu.pitt.apollo.types.v3_1_0.CaseList oldObj : ((edu.pitt.apollo.types.v3_1_0.Epidemic) oldTypeInstance).getCaseLists()) {
-			CaseListSetter setter = new CaseListSetter(edu.pitt.apollo.types.v4_0.CaseList.class,oldObj);
+			CaseListSetter setter = new CaseListSetter(edu.pitt.apollo.types.v4_0_1.CaseList.class,oldObj);
 			setter.set();
-			edu.pitt.apollo.types.v4_0.CaseList newObj = setter.getNewTypeInstance();
+			edu.pitt.apollo.types.v4_0_1.CaseList newObj = setter.getNewTypeInstance();
 			newTypeInstance.getCaseLists().add(newObj);
 		}
 
 	}
 
 	protected void setEpidemicCaseCounts() throws MigrationException {
-			EpidemicCaseCountsSetter setter = new EpidemicCaseCountsSetter(edu.pitt.apollo.types.v4_0.EpidemicCaseCounts.class,((edu.pitt.apollo.types.v3_1_0.Epidemic)oldTypeInstance).getEpidemicCaseCounts());
+			EpidemicCaseCountsSetter setter = new EpidemicCaseCountsSetter(edu.pitt.apollo.types.v4_0_1.EpidemicCaseCounts.class,((edu.pitt.apollo.types.v3_1_0.Epidemic) oldTypeInstance).getEpidemicCaseCounts());
 			setter.set();
-			edu.pitt.apollo.types.v4_0.EpidemicCaseCounts newObj = setter.getNewTypeInstance();
+			edu.pitt.apollo.types.v4_0_1.EpidemicCaseCounts newObj = setter.getNewTypeInstance();
 			newTypeInstance.getEpidemicCaseCounts().add(newObj);
 
 	}
 
 	protected void setTransmissionTrees() throws MigrationException {
 		for (edu.pitt.apollo.types.v3_1_0.TransmissionTree oldObj : ((edu.pitt.apollo.types.v3_1_0.Epidemic) oldTypeInstance).getTransmissionTrees()) {
-			TransmissionTreeSetter setter = new TransmissionTreeSetter(edu.pitt.apollo.types.v4_0.TransmissionTree.class,oldObj);
+			TransmissionTreeSetter setter = new TransmissionTreeSetter(edu.pitt.apollo.types.v4_0_1.TransmissionTree.class,oldObj);
 			setter.set();
-			edu.pitt.apollo.types.v4_0.TransmissionTree newObj = setter.getNewTypeInstance();
+			edu.pitt.apollo.types.v4_0_1.TransmissionTree newObj = setter.getNewTypeInstance();
 			newTypeInstance.getTransmissionTrees().add(newObj);
 		}
 
@@ -133,9 +133,9 @@ public class EpidemicSetter extends ApolloIndexableItemSetter<edu.pitt.apollo.ty
 
 	protected void setRelativeRiskDataSets() throws MigrationException {
 		for (edu.pitt.apollo.types.v3_1_0.RelativeRiskDataSet oldObj : ((edu.pitt.apollo.types.v3_1_0.Epidemic) oldTypeInstance).getRelativeRiskDataSets()) {
-			RelativeRiskDataSetSetter setter = new RelativeRiskDataSetSetter(edu.pitt.apollo.types.v4_0.RelativeRiskDataSet.class,oldObj);
+			RelativeRiskDataSetSetter setter = new RelativeRiskDataSetSetter(edu.pitt.apollo.types.v4_0_1.RelativeRiskDataSet.class,oldObj);
 			setter.set();
-			edu.pitt.apollo.types.v4_0.RelativeRiskDataSet newObj = setter.getNewTypeInstance();
+			edu.pitt.apollo.types.v4_0_1.RelativeRiskDataSet newObj = setter.getNewTypeInstance();
 			newTypeInstance.getRelativeRiskDataSets().add(newObj);
 		}
 
@@ -150,9 +150,9 @@ public class EpidemicSetter extends ApolloIndexableItemSetter<edu.pitt.apollo.ty
 
 	protected void setReferences() throws MigrationException {
 		for (edu.pitt.apollo.types.v3_1_0.Reference oldObj : ((edu.pitt.apollo.types.v3_1_0.Epidemic) oldTypeInstance).getReferences()) {
-			ReferenceSetter setter = new ReferenceSetter(edu.pitt.apollo.types.v4_0.Reference.class,oldObj);
+			ReferenceSetter setter = new ReferenceSetter(edu.pitt.apollo.types.v4_0_1.Reference.class,oldObj);
 			setter.set();
-			edu.pitt.apollo.types.v4_0.Reference newObj = setter.getNewTypeInstance();
+			edu.pitt.apollo.types.v4_0_1.Reference newObj = setter.getNewTypeInstance();
 			newTypeInstance.getReferences().add(newObj);
 		}
 

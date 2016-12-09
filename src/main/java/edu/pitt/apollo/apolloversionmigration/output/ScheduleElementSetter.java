@@ -1,8 +1,8 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class ScheduleElementSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0.ScheduleElement> {
+public class ScheduleElementSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0_1.ScheduleElement> {
 
-	public ScheduleElementSetter(Class<edu.pitt.apollo.types.v4_0.ScheduleElement> newTypeClass, Object oldTypeInstance) throws MigrationException {
+	public ScheduleElementSetter(Class<edu.pitt.apollo.types.v4_0_1.ScheduleElement> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}

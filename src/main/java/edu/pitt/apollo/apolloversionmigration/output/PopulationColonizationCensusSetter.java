@@ -1,8 +1,8 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class PopulationColonizationCensusSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0.PopulationColonizationCensus> {
+public class PopulationColonizationCensusSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0_1.PopulationColonizationCensus> {
 
-	public PopulationColonizationCensusSetter(Class<edu.pitt.apollo.types.v4_0.PopulationColonizationCensus> newTypeClass, Object oldTypeInstance) throws MigrationException {
+	public PopulationColonizationCensusSetter(Class<edu.pitt.apollo.types.v4_0_1.PopulationColonizationCensus> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}

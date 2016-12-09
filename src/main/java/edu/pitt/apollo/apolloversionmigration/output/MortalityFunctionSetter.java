@@ -1,6 +1,6 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class MortalityFunctionSetter<T extends edu.pitt.apollo.types.v4_0.MortalityFunction> extends AbstractSetter<T> {
+public class MortalityFunctionSetter<T extends edu.pitt.apollo.types.v4_0_1.MortalityFunction> extends AbstractSetter<T> {
 
 	public MortalityFunctionSetter(Class<T> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);

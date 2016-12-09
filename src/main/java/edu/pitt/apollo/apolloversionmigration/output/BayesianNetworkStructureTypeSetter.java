@@ -1,8 +1,8 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class BayesianNetworkStructureTypeSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0.BayesianNetworkStructureType> {
+public class BayesianNetworkStructureTypeSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0_1.BayesianNetworkStructureType> {
 
-	public BayesianNetworkStructureTypeSetter(Class<edu.pitt.apollo.types.v4_0.BayesianNetworkStructureType> newTypeClass, Object oldTypeInstance) throws MigrationException {
+	public BayesianNetworkStructureTypeSetter(Class<edu.pitt.apollo.types.v4_0_1.BayesianNetworkStructureType> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}

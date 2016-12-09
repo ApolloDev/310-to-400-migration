@@ -1,8 +1,8 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class TravelRestrictionControlMeasureSetter extends InfectiousDiseaseControlMeasureSetter<edu.pitt.apollo.types.v4_0.TravelRestrictionControlMeasure> {
+public class TravelRestrictionControlMeasureSetter extends InfectiousDiseaseControlMeasureSetter<edu.pitt.apollo.types.v4_0_1.TravelRestrictionControlMeasure> {
 
-	public TravelRestrictionControlMeasureSetter(Class<edu.pitt.apollo.types.v4_0.TravelRestrictionControlMeasure> newTypeClass, Object oldTypeInstance) throws MigrationException {
+	public TravelRestrictionControlMeasureSetter(Class<edu.pitt.apollo.types.v4_0_1.TravelRestrictionControlMeasure> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}
@@ -12,7 +12,7 @@ public class TravelRestrictionControlMeasureSetter extends InfectiousDiseaseCont
 	}
 
 	protected void setCompliance() throws MigrationException {
-		ProbabilisticParameterSetter setter = new ProbabilisticParameterSetter(edu.pitt.apollo.types.v4_0.ProbabilisticParameter.class,((edu.pitt.apollo.types.v3_1_0.TravelRestrictionControlMeasure) oldTypeInstance).getCompliance());
+		ProbabilisticParameterSetter setter = new ProbabilisticParameterSetter(edu.pitt.apollo.types.v4_0_1.ProbabilisticParameter.class,((edu.pitt.apollo.types.v3_1_0.TravelRestrictionControlMeasure) oldTypeInstance).getCompliance());
 		setter.set();
 		newTypeInstance.setCompliance(setter.getNewTypeInstance());
 	}

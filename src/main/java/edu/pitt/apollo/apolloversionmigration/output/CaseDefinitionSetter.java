@@ -1,14 +1,16 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class CaseDefinitionSetter extends CategoryDefinitionSetter<edu.pitt.apollo.types.v4_0.CaseDefinition> {
+public class CaseDefinitionSetter extends CategoryDefinitionSetter<edu.pitt.apollo.types.v4_0_1.CaseDefinition> {
 
-	public CaseDefinitionSetter(Class<edu.pitt.apollo.types.v4_0.CaseDefinition> newTypeClass, Object oldTypeInstance) throws MigrationException {
+	public CaseDefinitionSetter(Class<edu.pitt.apollo.types.v4_0_1.CaseDefinition> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}
 
 	protected void setApolloLabel() throws MigrationException {
-		newTypeInstance.setApolloLabel(edu.pitt.apollo.types.v4_0.CaseDefinitionEnum.valueOf(((edu.pitt.apollo.types.v3_1_0.CaseDefinition) oldTypeInstance).getApolloLabel().toString()));
+		if (((edu.pitt.apollo.types.v3_1_0.CaseDefinition) oldTypeInstance).getApolloLabel() != null) {
+			newTypeInstance.setApolloLabel(edu.pitt.apollo.types.v4_0_1.CaseDefinitionEnum.valueOf(((edu.pitt.apollo.types.v3_1_0.CaseDefinition) oldTypeInstance).getApolloLabel().toString()));
+		}
 	}
 
 	protected void setInvestigationLabel() throws MigrationException {

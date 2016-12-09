@@ -1,8 +1,8 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class ProbabilisticParameterSetter extends ParameterValueSetter<edu.pitt.apollo.types.v4_0.ProbabilisticParameter> {
+public class ProbabilisticParameterSetter extends ParameterValueSetter<edu.pitt.apollo.types.v4_0_1.ProbabilisticParameter> {
 
-	public ProbabilisticParameterSetter(Class<edu.pitt.apollo.types.v4_0.ProbabilisticParameter> newTypeClass, Object oldTypeInstance) throws MigrationException {
+	public ProbabilisticParameterSetter(Class<edu.pitt.apollo.types.v4_0_1.ProbabilisticParameter> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}

@@ -1,8 +1,8 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public abstract class CategoricalVariableNodeSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0.CategoricalVariableNode> {
+public abstract class CategoricalVariableNodeSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0_1.CategoricalVariableNode> {
 
-	public CategoricalVariableNodeSetter(Class<edu.pitt.apollo.types.v4_0.CategoricalVariableNode> newTypeClass, Object oldTypeInstance) throws MigrationException {
+	public CategoricalVariableNodeSetter(Class<edu.pitt.apollo.types.v4_0_1.CategoricalVariableNode> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}

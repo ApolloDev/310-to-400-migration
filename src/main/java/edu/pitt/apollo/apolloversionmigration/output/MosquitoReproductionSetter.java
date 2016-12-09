@@ -1,8 +1,8 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class MosquitoReproductionSetter extends ReproductionSetter<edu.pitt.apollo.types.v4_0.MosquitoReproduction> {
+public class MosquitoReproductionSetter extends ReproductionSetter<edu.pitt.apollo.types.v4_0_1.MosquitoReproduction> {
 
-	public MosquitoReproductionSetter(Class<edu.pitt.apollo.types.v4_0.MosquitoReproduction> newTypeClass, Object oldTypeInstance) throws MigrationException {
+	public MosquitoReproductionSetter(Class<edu.pitt.apollo.types.v4_0_1.MosquitoReproduction> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}
@@ -25,7 +25,7 @@ public class MosquitoReproductionSetter extends ReproductionSetter<edu.pitt.apol
 	}
 
 	protected void setAgeDependentFecundityReduction() throws MigrationException {
-		RateSetter setter = new RateSetter(edu.pitt.apollo.types.v4_0.Rate.class,((edu.pitt.apollo.types.v3_1_0.MosquitoReproduction) oldTypeInstance).getAgeDependentFecundityReduction());
+		RateSetter setter = new RateSetter(edu.pitt.apollo.types.v4_0_1.Rate.class,((edu.pitt.apollo.types.v3_1_0.MosquitoReproduction) oldTypeInstance).getAgeDependentFecundityReduction());
 		setter.set();
 		newTypeInstance.setAgeDependentFecundityReduction(setter.getNewTypeInstance());
 	}

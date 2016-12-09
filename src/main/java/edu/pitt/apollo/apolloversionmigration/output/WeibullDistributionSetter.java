@@ -1,8 +1,8 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class WeibullDistributionSetter extends ContinuousParametricProbabilityDistributionSetter<edu.pitt.apollo.types.v4_0.WeibullDistribution> {
+public class WeibullDistributionSetter extends ContinuousParametricProbabilityDistributionSetter<edu.pitt.apollo.types.v4_0_1.WeibullDistribution> {
 
-	public WeibullDistributionSetter(Class<edu.pitt.apollo.types.v4_0.WeibullDistribution> newTypeClass, Object oldTypeInstance) throws MigrationException {
+	public WeibullDistributionSetter(Class<edu.pitt.apollo.types.v4_0_1.WeibullDistribution> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}

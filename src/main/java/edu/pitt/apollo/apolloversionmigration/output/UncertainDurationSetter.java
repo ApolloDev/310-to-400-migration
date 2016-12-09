@@ -1,17 +1,17 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class UncertainDurationSetter extends DurationSetter<edu.pitt.apollo.types.v4_0.UncertainDuration> {
+public class UncertainDurationSetter extends DurationSetter<edu.pitt.apollo.types.v4_0_1.UncertainDuration> {
 
-	public UncertainDurationSetter(Class<edu.pitt.apollo.types.v4_0.UncertainDuration> newTypeClass, Object oldTypeInstance) throws MigrationException {
+	public UncertainDurationSetter(Class<edu.pitt.apollo.types.v4_0_1.UncertainDuration> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}
 
-	protected void setProbabilityDistribution() throws MigrationException {
+	protected void setUncertainValue() throws MigrationException {
 		if (((edu.pitt.apollo.types.v3_1_0.UncertainDuration) oldTypeInstance).getProbabilityDistribution() != null) {
-			ProbabilityDistributionSetter setter = ProbabilityDistributionSetterFactory.getSetter(((edu.pitt.apollo.types.v3_1_0.UncertainDuration) oldTypeInstance).getProbabilityDistribution());
+			UncertainValueSetter setter = UncertainValueSetterFactory.getSetter(((edu.pitt.apollo.types.v3_1_0.UncertainDuration) oldTypeInstance).getProbabilityDistribution());
 			setter.set();
-			newTypeInstance.setProbabilityDistribution(setter.getNewTypeInstance());
+			newTypeInstance.setUncertainValue(setter.getNewTypeInstance());
 		}
 
 	}
@@ -20,7 +20,7 @@ public class UncertainDurationSetter extends DurationSetter<edu.pitt.apollo.type
 	public void set() throws MigrationException {
 		if (oldTypeInstance != null) {
 			super.set();
-			setProbabilityDistribution();
+			setUncertainValue();
 		}
 	}
 

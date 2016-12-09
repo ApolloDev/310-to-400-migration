@@ -1,11 +1,11 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-import edu.pitt.apollo.types.v4_0.Bound;
-import edu.pitt.apollo.types.v4_0.FiniteBoundaryTypeEnum;
+import edu.pitt.apollo.types.v4_0_1.Bound;
+import edu.pitt.apollo.types.v4_0_1.FiniteBoundaryTypeEnum;
 
 public class AgeRangeCategoryDefinitionSetterImpl extends AgeRangeCategoryDefinitionSetter {
 
-	public AgeRangeCategoryDefinitionSetterImpl(Class<edu.pitt.apollo.types.v4_0.AgeRangeCategoryDefinition> newTypeClass, Object oldTypeInstance) throws MigrationException {
+	public AgeRangeCategoryDefinitionSetterImpl(Class<edu.pitt.apollo.types.v4_0_1.AgeRangeCategoryDefinition> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}
@@ -17,7 +17,9 @@ public class AgeRangeCategoryDefinitionSetterImpl extends AgeRangeCategoryDefini
 
 	@Override
 	protected void setUnitOfTimeForLowerBound() throws MigrationException {
-		newTypeInstance.setUnitOfTimeForLowerBound(edu.pitt.apollo.types.v4_0.UnitOfTimeEnum.fromValue(((edu.pitt.apollo.types.v3_1_0.AgeRangeCategoryDefinition)oldTypeInstance).getUnitOfTimeForLowerBound().toString()));
+        if(((edu.pitt.apollo.types.v3_1_0.AgeRangeCategoryDefinition)oldTypeInstance).getUnitOfTimeForLowerBound() != null) {
+            newTypeInstance.setUnitOfTimeForLowerBound(edu.pitt.apollo.types.v4_0_1.UnitOfTimeEnum.valueOf(((edu.pitt.apollo.types.v3_1_0.AgeRangeCategoryDefinition) oldTypeInstance).getUnitOfTimeForLowerBound().toString()));
+        }
 
 	}
 
@@ -32,14 +34,18 @@ public class AgeRangeCategoryDefinitionSetterImpl extends AgeRangeCategoryDefini
 
 	@Override
 	protected void setUnitOfTimeForUpperBound() throws MigrationException {
-		newTypeInstance.setUnitOfTimeForUpperBound(edu.pitt.apollo.types.v4_0.UnitOfTimeEnum.fromValue(((edu.pitt.apollo.types.v3_1_0.AgeRangeCategoryDefinition)oldTypeInstance).getUnitOfTimeForUpperBound().toString()));
+		if(((edu.pitt.apollo.types.v3_1_0.AgeRangeCategoryDefinition)oldTypeInstance).getUnitOfTimeForUpperBound() != null) {
+			newTypeInstance.setUnitOfTimeForUpperBound(edu.pitt.apollo.types.v4_0_1.UnitOfTimeEnum.valueOf(((edu.pitt.apollo.types.v3_1_0.AgeRangeCategoryDefinition) oldTypeInstance).getUnitOfTimeForUpperBound().toString()));
+		}
 
 	}
 
 	@Override
 	protected void setUpperBound() throws MigrationException {
 		Bound bound = new Bound();
-		bound.setFiniteBoundary(((edu.pitt.apollo.types.v3_1_0.AgeRangeCategoryDefinition)oldTypeInstance).getUpperBound().doubleValue());
+        if(((edu.pitt.apollo.types.v3_1_0.AgeRangeCategoryDefinition)oldTypeInstance).getUpperBound() != null) {
+            bound.setFiniteBoundary(((edu.pitt.apollo.types.v3_1_0.AgeRangeCategoryDefinition) oldTypeInstance).getUpperBound().doubleValue());
+        }
 		bound.setFiniteBoundaryType(FiniteBoundaryTypeEnum.INCLUSIVE);
 		bound.setInfiniteBoundary(null);
 		newTypeInstance.setUpperBound(bound);

@@ -1,6 +1,6 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class TreatmentEfficacySetter<T extends edu.pitt.apollo.types.v4_0.TreatmentEfficacy> extends AbstractSetter<T> {
+public class TreatmentEfficacySetter<T extends edu.pitt.apollo.types.v4_0_1.TreatmentEfficacy> extends AbstractSetter<T> {
 
 	public TreatmentEfficacySetter(Class<T> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
@@ -12,13 +12,15 @@ public class TreatmentEfficacySetter<T extends edu.pitt.apollo.types.v4_0.Treatm
 	}
 
 	protected void setStrainIdentifier() throws MigrationException {
-		ApolloPathogenCodeSetter setter = new ApolloPathogenCodeSetter(edu.pitt.apollo.types.v4_0.ApolloPathogenCode.class,((edu.pitt.apollo.types.v3_1_0.TreatmentEfficacy) oldTypeInstance).getStrainIdentifier());
+		ApolloPathogenCodeSetter setter = new ApolloPathogenCodeSetter(edu.pitt.apollo.types.v4_0_1.ApolloPathogenCode.class,((edu.pitt.apollo.types.v3_1_0.TreatmentEfficacy) oldTypeInstance).getStrainIdentifier());
 		setter.set();
 		newTypeInstance.setStrainIdentifier(setter.getNewTypeInstance());
 	}
 
 	protected void setForTreatmentPreventableOutcome() throws MigrationException {
-		newTypeInstance.setForTreatmentPreventableOutcome(edu.pitt.apollo.types.v4_0.TreatmentPreventableOutcomeEnum.valueOf(((edu.pitt.apollo.types.v3_1_0.TreatmentEfficacy) oldTypeInstance).getForTreatmentPreventableOutcome().toString()));
+		if (((edu.pitt.apollo.types.v3_1_0.TreatmentEfficacy) oldTypeInstance).getForTreatmentPreventableOutcome() != null) {
+			newTypeInstance.setForTreatmentPreventableOutcome(edu.pitt.apollo.types.v4_0_1.TreatmentPreventableOutcomeEnum.valueOf(((edu.pitt.apollo.types.v3_1_0.TreatmentEfficacy) oldTypeInstance).getForTreatmentPreventableOutcome().toString()));
+		}
 	}
 
 	@Override

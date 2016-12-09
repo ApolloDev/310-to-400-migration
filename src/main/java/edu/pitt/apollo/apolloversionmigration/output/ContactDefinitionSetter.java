@@ -1,14 +1,16 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class ContactDefinitionSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0.ContactDefinition> {
+public class ContactDefinitionSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0_1.ContactDefinition> {
 
-	public ContactDefinitionSetter(Class<edu.pitt.apollo.types.v4_0.ContactDefinition> newTypeClass, Object oldTypeInstance) throws MigrationException {
+	public ContactDefinitionSetter(Class<edu.pitt.apollo.types.v4_0_1.ContactDefinition> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}
 
 	protected void setApolloLabel() throws MigrationException {
-		newTypeInstance.setApolloLabel(edu.pitt.apollo.types.v4_0.ContactDefinitionEnum.valueOf(((edu.pitt.apollo.types.v3_1_0.ContactDefinition) oldTypeInstance).getApolloLabel().toString()));
+		if (((edu.pitt.apollo.types.v3_1_0.ContactDefinition) oldTypeInstance).getApolloLabel() != null) {
+			newTypeInstance.setApolloLabel(edu.pitt.apollo.types.v4_0_1.ContactDefinitionEnum.valueOf(((edu.pitt.apollo.types.v3_1_0.ContactDefinition) oldTypeInstance).getApolloLabel().toString()));
+		}
 	}
 
 	protected void setInvestigationLabel() throws MigrationException {

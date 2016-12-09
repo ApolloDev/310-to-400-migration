@@ -1,14 +1,16 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class SourceOfInfectionCategoryDefinitionSetter extends CategoryDefinitionSetter<edu.pitt.apollo.types.v4_0.SourceOfInfectionCategoryDefinition> {
+public class SourceOfInfectionCategoryDefinitionSetter extends CategoryDefinitionSetter<edu.pitt.apollo.types.v4_0_1.SourceOfInfectionCategoryDefinition> {
 
-	public SourceOfInfectionCategoryDefinitionSetter(Class<edu.pitt.apollo.types.v4_0.SourceOfInfectionCategoryDefinition> newTypeClass, Object oldTypeInstance) throws MigrationException {
+	public SourceOfInfectionCategoryDefinitionSetter(Class<edu.pitt.apollo.types.v4_0_1.SourceOfInfectionCategoryDefinition> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}
 
 	protected void setSourceOfInfection() throws MigrationException {
-		newTypeInstance.setSourceOfInfection(edu.pitt.apollo.types.v4_0.SourceOfInfectionEnum.valueOf(((edu.pitt.apollo.types.v3_1_0.SourceOfInfectionCategoryDefinition) oldTypeInstance).getSourceOfInfection().toString()));
+		if (((edu.pitt.apollo.types.v3_1_0.SourceOfInfectionCategoryDefinition) oldTypeInstance).getSourceOfInfection() != null) {
+			newTypeInstance.setSourceOfInfection(edu.pitt.apollo.types.v4_0_1.SourceOfInfectionEnum.valueOf(((edu.pitt.apollo.types.v3_1_0.SourceOfInfectionCategoryDefinition) oldTypeInstance).getSourceOfInfection().toString()));
+		}
 	}
 
 	@Override

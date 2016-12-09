@@ -1,8 +1,8 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class PopulationSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0.Population> {
+public class PopulationSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0_1.Population> {
 
-	public PopulationSetter(Class<edu.pitt.apollo.types.v4_0.Population> newTypeClass, Object oldTypeInstance) throws MigrationException {
+	public PopulationSetter(Class<edu.pitt.apollo.types.v4_0_1.Population> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}
@@ -21,9 +21,9 @@ public class PopulationSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0.
 
 	protected void setInfectionAndImmunityCensuses() throws MigrationException {
 		for (edu.pitt.apollo.types.v3_1_0.PopulationInfectionAndImmunityCensus oldObj : ((edu.pitt.apollo.types.v3_1_0.Population) oldTypeInstance).getInfectionAndImmunityCensuses()) {
-			PopulationInfectionAndImmunityCensusSetter setter = new PopulationInfectionAndImmunityCensusSetter(edu.pitt.apollo.types.v4_0.PopulationInfectionAndImmunityCensus.class,oldObj);
+			PopulationInfectionAndImmunityCensusSetter setter = new PopulationInfectionAndImmunityCensusSetter(edu.pitt.apollo.types.v4_0_1.PopulationInfectionAndImmunityCensus.class,oldObj);
 			setter.set();
-			edu.pitt.apollo.types.v4_0.PopulationInfectionAndImmunityCensus newObj = setter.getNewTypeInstance();
+			edu.pitt.apollo.types.v4_0_1.PopulationInfectionAndImmunityCensus newObj = setter.getNewTypeInstance();
 			newTypeInstance.getInfectionAndImmunityCensuses().add(newObj);
 		}
 
@@ -31,28 +31,28 @@ public class PopulationSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0.
 
 	protected void setColonizationCensuses() throws MigrationException {
 		for (edu.pitt.apollo.types.v3_1_0.PopulationColonizationCensus oldObj : ((edu.pitt.apollo.types.v3_1_0.Population) oldTypeInstance).getColonizationCensuses()) {
-			PopulationColonizationCensusSetter setter = new PopulationColonizationCensusSetter(edu.pitt.apollo.types.v4_0.PopulationColonizationCensus.class,oldObj);
+			PopulationColonizationCensusSetter setter = new PopulationColonizationCensusSetter(edu.pitt.apollo.types.v4_0_1.PopulationColonizationCensus.class,oldObj);
 			setter.set();
-			edu.pitt.apollo.types.v4_0.PopulationColonizationCensus newObj = setter.getNewTypeInstance();
+			edu.pitt.apollo.types.v4_0_1.PopulationColonizationCensus newObj = setter.getNewTypeInstance();
 			newTypeInstance.getColonizationCensuses().add(newObj);
 		}
 
 	}
 
 	protected void setIndividualsAndHouseholds() throws MigrationException {
-		IndividualsAndHouseholdsSetter setter = new IndividualsAndHouseholdsSetter(edu.pitt.apollo.types.v4_0.IndividualsAndHouseholds.class,((edu.pitt.apollo.types.v3_1_0.Population) oldTypeInstance).getIndividualsAndHouseholds());
+		IndividualsAndHouseholdsSetter setter = new IndividualsAndHouseholdsSetter(edu.pitt.apollo.types.v4_0_1.IndividualsAndHouseholds.class,((edu.pitt.apollo.types.v3_1_0.Population) oldTypeInstance).getIndividualsAndHouseholds());
 		setter.set();
 		newTypeInstance.setIndividualsAndHouseholds(setter.getNewTypeInstance());
 	}
 
 	protected void setPointerToIndividualsAndHouseholds() throws MigrationException {
-		PointerToDataSetter setter = new PointerToDataSetter(edu.pitt.apollo.types.v4_0.PointerToData.class,((edu.pitt.apollo.types.v3_1_0.Population) oldTypeInstance).getPointerToIndividualsAndHouseholds());
+		PointerToDataSetter setter = new PointerToDataSetter(edu.pitt.apollo.types.v4_0_1.PointerToData.class,((edu.pitt.apollo.types.v3_1_0.Population) oldTypeInstance).getPointerToIndividualsAndHouseholds());
 		setter.set();
 		newTypeInstance.setPointerToIndividualsAndHouseholds(setter.getNewTypeInstance());
 	}
 
 	protected void setIndividualBiologyAndBehavior() throws MigrationException {
-		IndividualBiologyAndBehaviorSetter setter = new IndividualBiologyAndBehaviorSetter(edu.pitt.apollo.types.v4_0.IndividualBiologyAndBehavior.class,((edu.pitt.apollo.types.v3_1_0.Population) oldTypeInstance).getIndividualBiologyAndBehavior());
+		IndividualBiologyAndBehaviorSetter setter = new IndividualBiologyAndBehaviorSetter(edu.pitt.apollo.types.v4_0_1.IndividualBiologyAndBehavior.class,((edu.pitt.apollo.types.v3_1_0.Population) oldTypeInstance).getIndividualBiologyAndBehavior());
 		setter.set();
 		newTypeInstance.setIndividualBiologyAndBehavior(setter.getNewTypeInstance());
 	}

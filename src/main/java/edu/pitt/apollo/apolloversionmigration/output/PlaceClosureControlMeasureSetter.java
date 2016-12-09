@@ -1,8 +1,8 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class PlaceClosureControlMeasureSetter extends InfectiousDiseaseControlMeasureSetter<edu.pitt.apollo.types.v4_0.PlaceClosureControlMeasure> {
+public class PlaceClosureControlMeasureSetter extends InfectiousDiseaseControlMeasureSetter<edu.pitt.apollo.types.v4_0_1.PlaceClosureControlMeasure> {
 
-	public PlaceClosureControlMeasureSetter(Class<edu.pitt.apollo.types.v4_0.PlaceClosureControlMeasure> newTypeClass, Object oldTypeInstance) throws MigrationException {
+	public PlaceClosureControlMeasureSetter(Class<edu.pitt.apollo.types.v4_0_1.PlaceClosureControlMeasure> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}

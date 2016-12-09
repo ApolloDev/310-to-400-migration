@@ -1,8 +1,8 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class PreEpidemicEcosystemCensusSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0.PreEpidemicEcosystemCensus> {
+public class PreEpidemicEcosystemCensusSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0_1.PreEpidemicEcosystemCensus> {
 
-	public PreEpidemicEcosystemCensusSetter(Class<edu.pitt.apollo.types.v4_0.PreEpidemicEcosystemCensus> newTypeClass, Object oldTypeInstance) throws MigrationException {
+	public PreEpidemicEcosystemCensusSetter(Class<edu.pitt.apollo.types.v4_0_1.PreEpidemicEcosystemCensus> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}
@@ -33,9 +33,9 @@ public class PreEpidemicEcosystemCensusSetter extends AbstractSetter<edu.pitt.ap
 
 	protected void setSubLocationCensuses() throws MigrationException {
 		for (edu.pitt.apollo.types.v3_1_0.PreEpidemicEcosystemCensus oldObj : ((edu.pitt.apollo.types.v3_1_0.PreEpidemicEcosystemCensus) oldTypeInstance).getSubLocationCensuses()) {
-			PreEpidemicEcosystemCensusSetter setter = new PreEpidemicEcosystemCensusSetter(edu.pitt.apollo.types.v4_0.PreEpidemicEcosystemCensus.class,oldObj);
+			PreEpidemicEcosystemCensusSetter setter = new PreEpidemicEcosystemCensusSetter(edu.pitt.apollo.types.v4_0_1.PreEpidemicEcosystemCensus.class,oldObj);
 			setter.set();
-			edu.pitt.apollo.types.v4_0.PreEpidemicEcosystemCensus newObj = setter.getNewTypeInstance();
+			edu.pitt.apollo.types.v4_0_1.PreEpidemicEcosystemCensus newObj = setter.getNewTypeInstance();
 			newTypeInstance.getSubLocationCensuses().add(newObj);
 		}
 

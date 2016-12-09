@@ -1,8 +1,8 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class TemporalCountArrayWithUniformIntervalsSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0.TemporalCountArrayWithUniformIntervals> {
+public class TemporalCountArrayWithUniformIntervalsSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0_1.TemporalCountArrayWithUniformIntervals> {
 
-	public TemporalCountArrayWithUniformIntervalsSetter(Class<edu.pitt.apollo.types.v4_0.TemporalCountArrayWithUniformIntervals> newTypeClass, Object oldTypeInstance) throws MigrationException {
+	public TemporalCountArrayWithUniformIntervalsSetter(Class<edu.pitt.apollo.types.v4_0_1.TemporalCountArrayWithUniformIntervals> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}
@@ -16,7 +16,7 @@ public class TemporalCountArrayWithUniformIntervalsSetter extends AbstractSetter
 	}
 
 	protected void setFirstArrayAxis() throws MigrationException {
-		CategoricalVariableNodeSetter setter = new CategoricalVariableNodeSetterImpl(edu.pitt.apollo.types.v4_0.CategoricalVariableNode.class,((edu.pitt.apollo.types.v3_1_0.TemporalCountArrayWithUniformIntervals) oldTypeInstance).getFirstArrayAxis());
+		CategoricalVariableNodeSetter setter = new CategoricalVariableNodeSetterImpl(edu.pitt.apollo.types.v4_0_1.CategoricalVariableNode.class,((edu.pitt.apollo.types.v3_1_0.TemporalCountArrayWithUniformIntervals) oldTypeInstance).getFirstArrayAxis());
 		setter.set();
 		newTypeInstance.setFirstArrayAxis(setter.getNewTypeInstance());
 	}

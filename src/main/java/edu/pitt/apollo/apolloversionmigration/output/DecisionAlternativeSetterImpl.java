@@ -2,7 +2,7 @@ package edu.pitt.apollo.apolloversionmigration.output;
 
 public class DecisionAlternativeSetterImpl extends DecisionAlternativeSetter {
 
-    public DecisionAlternativeSetterImpl(Class<edu.pitt.apollo.types.v4_0.DecisionAlternative> newTypeClass, Object oldTypeInstance) throws MigrationException {
+    public DecisionAlternativeSetterImpl(Class<edu.pitt.apollo.types.v4_0_1.DecisionAlternative> newTypeClass, Object oldTypeInstance) throws MigrationException {
         super(newTypeClass, oldTypeInstance);
 
     }

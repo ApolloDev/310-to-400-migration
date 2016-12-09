@@ -1,6 +1,6 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class DurationSetter<T extends edu.pitt.apollo.types.v4_0.Duration> extends ParameterValueSetter<T> {
+public class DurationSetter<T extends edu.pitt.apollo.types.v4_0_1.Duration> extends ParameterValueSetter<T> {
 
 	public DurationSetter(Class<T> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
@@ -8,7 +8,9 @@ public class DurationSetter<T extends edu.pitt.apollo.types.v4_0.Duration> exten
 	}
 
 	protected void setUnitOfTime() throws MigrationException {
-		newTypeInstance.setUnitOfTime(edu.pitt.apollo.types.v4_0.UnitOfTimeEnum.valueOf(((edu.pitt.apollo.types.v3_1_0.Duration) oldTypeInstance).getUnitOfTime().toString()));
+		if (((edu.pitt.apollo.types.v3_1_0.Duration) oldTypeInstance).getUnitOfTime() != null) {
+			newTypeInstance.setUnitOfTime(edu.pitt.apollo.types.v4_0_1.UnitOfTimeEnum.valueOf(((edu.pitt.apollo.types.v3_1_0.Duration) oldTypeInstance).getUnitOfTime().toString()));
+		}
 	}
 
 	protected void setReferenceId() throws MigrationException {

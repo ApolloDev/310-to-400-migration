@@ -1,8 +1,8 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public abstract class LContaminationSetter<T extends edu.pitt.apollo.types.v4_0.LContamination> extends ApolloIndexableItemSetter<T> {
+public abstract class LContaminationSetter extends ContaminationSetter<edu.pitt.apollo.types.v4_0_1.LContamination> {
 
-	public LContaminationSetter(Class<T> newTypeClass, Object oldTypeInstance) throws MigrationException {
+	public LContaminationSetter(Class<edu.pitt.apollo.types.v4_0_1.LContamination> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}
@@ -14,11 +14,6 @@ public abstract class LContaminationSetter<T extends edu.pitt.apollo.types.v4_0.
 			super.set();
 			setXxx();
 		}
-	}
-
-	@Override
-	public T getNewTypeInstance() {
-		return newTypeInstance;
 	}
 
 }

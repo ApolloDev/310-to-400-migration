@@ -1,6 +1,6 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class VectorControlMeasureSetter<T extends edu.pitt.apollo.types.v4_0.VectorControlMeasure> extends InfectiousDiseaseControlMeasureSetter<T> {
+public class VectorControlMeasureSetter<T extends edu.pitt.apollo.types.v4_0_1.VectorControlMeasure> extends InfectiousDiseaseControlMeasureSetter<T> {
 
 	public VectorControlMeasureSetter(Class<T> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);

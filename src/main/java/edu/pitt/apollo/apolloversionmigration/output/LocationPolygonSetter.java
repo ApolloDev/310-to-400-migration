@@ -1,8 +1,8 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class LocationPolygonSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0.LocationPolygon> {
+public class LocationPolygonSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0_1.LocationPolygon> {
 
-	public LocationPolygonSetter(Class<edu.pitt.apollo.types.v4_0.LocationPolygon> newTypeClass, Object oldTypeInstance) throws MigrationException {
+	public LocationPolygonSetter(Class<edu.pitt.apollo.types.v4_0_1.LocationPolygon> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}

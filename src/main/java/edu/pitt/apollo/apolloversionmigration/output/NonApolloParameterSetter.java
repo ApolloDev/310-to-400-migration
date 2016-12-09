@@ -1,8 +1,8 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class NonApolloParameterSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0.NonApolloParameter> {
+public class NonApolloParameterSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0_1.NonApolloParameter> {
 
-	public NonApolloParameterSetter(Class<edu.pitt.apollo.types.v4_0.NonApolloParameter> newTypeClass, Object oldTypeInstance) throws MigrationException {
+	public NonApolloParameterSetter(Class<edu.pitt.apollo.types.v4_0_1.NonApolloParameter> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}

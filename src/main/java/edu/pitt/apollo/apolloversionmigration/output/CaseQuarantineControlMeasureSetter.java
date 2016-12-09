@@ -1,8 +1,8 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class CaseQuarantineControlMeasureSetter extends InfectiousDiseaseControlMeasureSetter<edu.pitt.apollo.types.v4_0.CaseQuarantineControlMeasure> {
+public class CaseQuarantineControlMeasureSetter extends InfectiousDiseaseControlMeasureSetter<edu.pitt.apollo.types.v4_0_1.CaseQuarantineControlMeasure> {
 
-	public CaseQuarantineControlMeasureSetter(Class<edu.pitt.apollo.types.v4_0.CaseQuarantineControlMeasure> newTypeClass, Object oldTypeInstance) throws MigrationException {
+	public CaseQuarantineControlMeasureSetter(Class<edu.pitt.apollo.types.v4_0_1.CaseQuarantineControlMeasure> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}
@@ -17,7 +17,7 @@ public class CaseQuarantineControlMeasureSetter extends InfectiousDiseaseControl
 	}
 
 	protected void setCompliance() throws MigrationException {
-		ProbabilisticParameterSetter setter = new ProbabilisticParameterSetter(edu.pitt.apollo.types.v4_0.ProbabilisticParameter.class,((edu.pitt.apollo.types.v3_1_0.CaseQuarantineControlMeasure) oldTypeInstance).getCompliance());
+		ProbabilisticParameterSetter setter = new ProbabilisticParameterSetter(edu.pitt.apollo.types.v4_0_1.ProbabilisticParameter.class,((edu.pitt.apollo.types.v3_1_0.CaseQuarantineControlMeasure) oldTypeInstance).getCompliance());
 		setter.set();
 		newTypeInstance.setCompliance(setter.getNewTypeInstance());
 	}

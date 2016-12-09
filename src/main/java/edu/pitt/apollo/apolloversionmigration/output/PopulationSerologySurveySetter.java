@@ -1,8 +1,8 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class PopulationSerologySurveySetter extends AbstractSetter<edu.pitt.apollo.types.v4_0.PopulationSerologySurvey> {
+public class PopulationSerologySurveySetter extends AbstractSetter<edu.pitt.apollo.types.v4_0_1.PopulationSerologySurvey> {
 
-	public PopulationSerologySurveySetter(Class<edu.pitt.apollo.types.v4_0.PopulationSerologySurvey> newTypeClass, Object oldTypeInstance) throws MigrationException {
+	public PopulationSerologySurveySetter(Class<edu.pitt.apollo.types.v4_0_1.PopulationSerologySurvey> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}

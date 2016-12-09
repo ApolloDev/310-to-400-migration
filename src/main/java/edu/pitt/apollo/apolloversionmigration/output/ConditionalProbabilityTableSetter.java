@@ -1,14 +1,14 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class ConditionalProbabilityTableSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0.ConditionalProbabilityTable> {
+public class ConditionalProbabilityTableSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0_1.ConditionalProbabilityTable> {
 
-	public ConditionalProbabilityTableSetter(Class<edu.pitt.apollo.types.v4_0.ConditionalProbabilityTable> newTypeClass, Object oldTypeInstance) throws MigrationException {
+	public ConditionalProbabilityTableSetter(Class<edu.pitt.apollo.types.v4_0_1.ConditionalProbabilityTable> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}
 
 	protected void setAxisDefinitions() throws MigrationException {
-		ArrayDimensionsDefinitionSetter setter = new ArrayDimensionsDefinitionSetter(edu.pitt.apollo.types.v4_0.ArrayDimensionsDefinition.class,((edu.pitt.apollo.types.v3_1_0.ConditionalProbabilityTable) oldTypeInstance).getAxisDefinitions());
+		ArrayDimensionsDefinitionSetter setter = new ArrayDimensionsDefinitionSetter(edu.pitt.apollo.types.v4_0_1.ArrayDimensionsDefinition.class,((edu.pitt.apollo.types.v3_1_0.ConditionalProbabilityTable) oldTypeInstance).getAxisDefinitions());
 		setter.set();
 		newTypeInstance.setAxisDefinitions(setter.getNewTypeInstance());
 	}

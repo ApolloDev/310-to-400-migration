@@ -1,8 +1,8 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class MeanMedianMinimumMaximumSetter extends UncertainValueSetter<edu.pitt.apollo.types.v4_0.MeanMedianMinimumMaximum> {
+public class MeanMedianMinimumMaximumSetter extends UncertainValueSetter<edu.pitt.apollo.types.v4_0_1.MeanMedianMinimumMaximum> {
 
-	public MeanMedianMinimumMaximumSetter(Class<edu.pitt.apollo.types.v4_0.MeanMedianMinimumMaximum> newTypeClass, Object oldTypeInstance) throws MigrationException {
+	public MeanMedianMinimumMaximumSetter(Class<edu.pitt.apollo.types.v4_0_1.MeanMedianMinimumMaximum> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}

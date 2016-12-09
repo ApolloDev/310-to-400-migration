@@ -1,8 +1,8 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class UtilityFunctionSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0.UtilityFunction> {
+public class UtilityFunctionSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0_1.UtilityFunction> {
 
-	public UtilityFunctionSetter(Class<edu.pitt.apollo.types.v4_0.UtilityFunction> newTypeClass, Object oldTypeInstance) throws MigrationException {
+	public UtilityFunctionSetter(Class<edu.pitt.apollo.types.v4_0_1.UtilityFunction> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}

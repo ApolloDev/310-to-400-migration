@@ -1,8 +1,8 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class EpidemicPeriodSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0.EpidemicPeriod> {
+public class EpidemicPeriodSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0_1.EpidemicPeriod> {
 
-	public EpidemicPeriodSetter(Class<edu.pitt.apollo.types.v4_0.EpidemicPeriod> newTypeClass, Object oldTypeInstance) throws MigrationException {
+	public EpidemicPeriodSetter(Class<edu.pitt.apollo.types.v4_0_1.EpidemicPeriod> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}
@@ -12,7 +12,9 @@ public class EpidemicPeriodSetter extends AbstractSetter<edu.pitt.apollo.types.v
 	}
 
 	protected void setStartDateDefinition() throws MigrationException {
-		newTypeInstance.setStartDateDefinition(edu.pitt.apollo.types.v4_0.EpidemicPeriodStartDefinitionEnum.valueOf(((edu.pitt.apollo.types.v3_1_0.EpidemicPeriod) oldTypeInstance).getStartDateDefinition().toString()));
+		if (((edu.pitt.apollo.types.v3_1_0.EpidemicPeriod) oldTypeInstance).getStartDateDefinition() != null) {
+			newTypeInstance.setStartDateDefinition(edu.pitt.apollo.types.v4_0_1.EpidemicPeriodStartDefinitionEnum.valueOf(((edu.pitt.apollo.types.v3_1_0.EpidemicPeriod) oldTypeInstance).getStartDateDefinition().toString()));
+		}
 	}
 
 	protected void setEndDate() throws MigrationException {
@@ -20,7 +22,9 @@ public class EpidemicPeriodSetter extends AbstractSetter<edu.pitt.apollo.types.v
 	}
 
 	protected void setEndDateDefinition() throws MigrationException {
-		newTypeInstance.setEndDateDefinition(edu.pitt.apollo.types.v4_0.EpidemicPeriodEndDefinitionEnum.valueOf(((edu.pitt.apollo.types.v3_1_0.EpidemicPeriod) oldTypeInstance).getEndDateDefinition().toString()));
+		if (((edu.pitt.apollo.types.v3_1_0.EpidemicPeriod) oldTypeInstance).getEndDateDefinition() != null) {
+			newTypeInstance.setEndDateDefinition(edu.pitt.apollo.types.v4_0_1.EpidemicPeriodEndDefinitionEnum.valueOf(((edu.pitt.apollo.types.v3_1_0.EpidemicPeriod) oldTypeInstance).getEndDateDefinition().toString()));
+		}
 	}
 
 	@Override

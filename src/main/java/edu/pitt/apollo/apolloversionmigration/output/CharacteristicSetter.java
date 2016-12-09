@@ -1,14 +1,16 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class CharacteristicSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0.Characteristic> {
+public class CharacteristicSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0_1.Characteristic> {
 
-	public CharacteristicSetter(Class<edu.pitt.apollo.types.v4_0.Characteristic> newTypeClass, Object oldTypeInstance) throws MigrationException {
+	public CharacteristicSetter(Class<edu.pitt.apollo.types.v4_0_1.Characteristic> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}
 
 	protected void setEnumeratedName() throws MigrationException {
-		newTypeInstance.setEnumeratedName(edu.pitt.apollo.types.v4_0.CharacteristicEnum.valueOf(((edu.pitt.apollo.types.v3_1_0.Characteristic) oldTypeInstance).getEnumeratedName().toString()));
+		if (((edu.pitt.apollo.types.v3_1_0.Characteristic) oldTypeInstance).getEnumeratedName() != null) {
+			newTypeInstance.setEnumeratedName(edu.pitt.apollo.types.v4_0_1.CharacteristicEnum.valueOf(((edu.pitt.apollo.types.v3_1_0.Characteristic) oldTypeInstance).getEnumeratedName().toString()));
+		}
 	}
 
 	protected void setUserInventedName() throws MigrationException {

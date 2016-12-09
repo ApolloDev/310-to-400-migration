@@ -1,8 +1,8 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class RealDateSpanCategoryDefinitionSetter extends CategoryDefinitionSetter<edu.pitt.apollo.types.v4_0.RealDateSpanCategoryDefinition> {
+public class RealDateSpanCategoryDefinitionSetter extends CategoryDefinitionSetter<edu.pitt.apollo.types.v4_0_1.RealDateSpanCategoryDefinition> {
 
-	public RealDateSpanCategoryDefinitionSetter(Class<edu.pitt.apollo.types.v4_0.RealDateSpanCategoryDefinition> newTypeClass, Object oldTypeInstance) throws MigrationException {
+	public RealDateSpanCategoryDefinitionSetter(Class<edu.pitt.apollo.types.v4_0_1.RealDateSpanCategoryDefinition> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}

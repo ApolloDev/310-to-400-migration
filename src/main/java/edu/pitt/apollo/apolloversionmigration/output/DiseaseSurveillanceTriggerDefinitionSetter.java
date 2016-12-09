@@ -1,8 +1,8 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class DiseaseSurveillanceTriggerDefinitionSetter extends TriggerDefinitionSetter<edu.pitt.apollo.types.v4_0.DiseaseSurveillanceTriggerDefinition> {
+public class DiseaseSurveillanceTriggerDefinitionSetter extends TriggerDefinitionSetter<edu.pitt.apollo.types.v4_0_1.DiseaseSurveillanceTriggerDefinition> {
 
-	public DiseaseSurveillanceTriggerDefinitionSetter(Class<edu.pitt.apollo.types.v4_0.DiseaseSurveillanceTriggerDefinition> newTypeClass, Object oldTypeInstance) throws MigrationException {
+	public DiseaseSurveillanceTriggerDefinitionSetter(Class<edu.pitt.apollo.types.v4_0_1.DiseaseSurveillanceTriggerDefinition> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}
@@ -16,15 +16,19 @@ public class DiseaseSurveillanceTriggerDefinitionSetter extends TriggerDefinitio
 	}
 
 	protected void setUnitOfMeasureForThreshold() throws MigrationException {
-		newTypeInstance.setUnitOfMeasureForThreshold(edu.pitt.apollo.types.v4_0.UnitOfMeasureEnum.valueOf(((edu.pitt.apollo.types.v3_1_0.DiseaseSurveillanceTriggerDefinition) oldTypeInstance).getUnitOfMeasureForThreshold().toString()));
+		if (((edu.pitt.apollo.types.v3_1_0.DiseaseSurveillanceTriggerDefinition) oldTypeInstance).getUnitOfMeasureForThreshold() != null) {
+			newTypeInstance.setUnitOfMeasureForThreshold(edu.pitt.apollo.types.v4_0_1.UnitOfMeasureEnum.valueOf(((edu.pitt.apollo.types.v3_1_0.DiseaseSurveillanceTriggerDefinition) oldTypeInstance).getUnitOfMeasureForThreshold().toString()));
+		}
 	}
 
 	protected void setReactiveControlMeasureOperator() throws MigrationException {
-		newTypeInstance.setReactiveControlMeasureOperator(edu.pitt.apollo.types.v4_0.OperatorEnum.valueOf(((edu.pitt.apollo.types.v3_1_0.DiseaseSurveillanceTriggerDefinition) oldTypeInstance).getReactiveControlMeasureOperator().toString()));
+		if (((edu.pitt.apollo.types.v3_1_0.DiseaseSurveillanceTriggerDefinition) oldTypeInstance).getReactiveControlMeasureOperator() != null) {
+			newTypeInstance.setReactiveControlMeasureOperator(edu.pitt.apollo.types.v4_0_1.OperatorEnum.valueOf(((edu.pitt.apollo.types.v3_1_0.DiseaseSurveillanceTriggerDefinition) oldTypeInstance).getReactiveControlMeasureOperator().toString()));
+		}
 	}
 
 	protected void setDiseaseSurveillanceCapability() throws MigrationException {
-		DiseaseSurveillanceCapabilitySetter setter = new DiseaseSurveillanceCapabilitySetter(edu.pitt.apollo.types.v4_0.DiseaseSurveillanceCapability.class,((edu.pitt.apollo.types.v3_1_0.DiseaseSurveillanceTriggerDefinition) oldTypeInstance).getDiseaseSurveillanceCapability());
+		DiseaseSurveillanceCapabilitySetter setter = new DiseaseSurveillanceCapabilitySetter(edu.pitt.apollo.types.v4_0_1.DiseaseSurveillanceCapability.class,((edu.pitt.apollo.types.v3_1_0.DiseaseSurveillanceTriggerDefinition) oldTypeInstance).getDiseaseSurveillanceCapability());
 		setter.set();
 		newTypeInstance.setDiseaseSurveillanceCapability(setter.getNewTypeInstance());
 	}

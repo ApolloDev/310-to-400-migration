@@ -1,8 +1,8 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class MeanWithConfidenceIntervalSetter extends UncertainValueSetter<edu.pitt.apollo.types.v4_0.MeanWithConfidenceInterval> {
+public class MeanWithConfidenceIntervalSetter extends UncertainValueSetter<edu.pitt.apollo.types.v4_0_1.MeanWithConfidenceInterval> {
 
-	public MeanWithConfidenceIntervalSetter(Class<edu.pitt.apollo.types.v4_0.MeanWithConfidenceInterval> newTypeClass, Object oldTypeInstance) throws MigrationException {
+	public MeanWithConfidenceIntervalSetter(Class<edu.pitt.apollo.types.v4_0_1.MeanWithConfidenceInterval> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}

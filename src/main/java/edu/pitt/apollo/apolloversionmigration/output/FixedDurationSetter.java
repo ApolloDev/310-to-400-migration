@@ -1,8 +1,8 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class FixedDurationSetter extends DurationSetter<edu.pitt.apollo.types.v4_0.FixedDuration> {
+public class FixedDurationSetter extends DurationSetter<edu.pitt.apollo.types.v4_0_1.FixedDuration> {
 
-	public FixedDurationSetter(Class<edu.pitt.apollo.types.v4_0.FixedDuration> newTypeClass, Object oldTypeInstance) throws MigrationException {
+	public FixedDurationSetter(Class<edu.pitt.apollo.types.v4_0_1.FixedDuration> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}

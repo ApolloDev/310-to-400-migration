@@ -1,18 +1,22 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class RateSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0.Rate> {
+public class RateSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0_1.Rate> {
 
-	public RateSetter(Class<edu.pitt.apollo.types.v4_0.Rate> newTypeClass, Object oldTypeInstance) throws MigrationException {
+	public RateSetter(Class<edu.pitt.apollo.types.v4_0_1.Rate> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}
 
 	protected void setNumeratorUnitOfMeasure() throws MigrationException {
-		newTypeInstance.setNumeratorUnitOfMeasure(edu.pitt.apollo.types.v4_0.UnitOfMeasureEnum.valueOf(((edu.pitt.apollo.types.v3_1_0.Rate) oldTypeInstance).getNumeratorUnitOfMeasure().toString()));
+		if (((edu.pitt.apollo.types.v3_1_0.Rate) oldTypeInstance).getNumeratorUnitOfMeasure() != null) {
+			newTypeInstance.setNumeratorUnitOfMeasure(edu.pitt.apollo.types.v4_0_1.UnitOfMeasureEnum.valueOf(((edu.pitt.apollo.types.v3_1_0.Rate) oldTypeInstance).getNumeratorUnitOfMeasure().toString()));
+		}
 	}
 
 	protected void setDenominatorUnitOfMeasure() throws MigrationException {
-		newTypeInstance.setDenominatorUnitOfMeasure(edu.pitt.apollo.types.v4_0.UnitOfMeasureEnum.valueOf(((edu.pitt.apollo.types.v3_1_0.Rate) oldTypeInstance).getDenominatorUnitOfMeasure().toString()));
+		if (((edu.pitt.apollo.types.v3_1_0.Rate) oldTypeInstance).getDenominatorUnitOfMeasure() != null) {
+			newTypeInstance.setDenominatorUnitOfMeasure(edu.pitt.apollo.types.v4_0_1.UnitOfMeasureEnum.valueOf(((edu.pitt.apollo.types.v3_1_0.Rate) oldTypeInstance).getDenominatorUnitOfMeasure().toString()));
+		}
 	}
 
 	protected void setValue() throws MigrationException {

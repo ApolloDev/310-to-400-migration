@@ -1,8 +1,8 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class AntiviralTreatmentEfficacySetter extends TreatmentEfficacySetter<edu.pitt.apollo.types.v4_0.AntiviralTreatmentEfficacy> {
+public class AntiviralTreatmentEfficacySetter extends TreatmentEfficacySetter<edu.pitt.apollo.types.v4_0_1.AntiviralTreatmentEfficacy> {
 
-	public AntiviralTreatmentEfficacySetter(Class<edu.pitt.apollo.types.v4_0.AntiviralTreatmentEfficacy> newTypeClass, Object oldTypeInstance) throws MigrationException {
+	public AntiviralTreatmentEfficacySetter(Class<edu.pitt.apollo.types.v4_0_1.AntiviralTreatmentEfficacy> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
 
 	}
