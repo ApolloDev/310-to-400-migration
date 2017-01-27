@@ -9,7 +9,7 @@ public class InfectiousDiseaseControlStrategySetter extends AbstractSetter<edu.p
 
 	protected void setControlMeasures() throws MigrationException {
 		for (edu.pitt.apollo.types.v3_1_0.InfectiousDiseaseControlMeasure oldObj : ((edu.pitt.apollo.types.v3_1_0.InfectiousDiseaseControlStrategy) oldTypeInstance).getControlMeasures()) {
-			InfectiousDiseaseControlMeasureSetter setter = new InfectiousDiseaseControlMeasureSetter(edu.pitt.apollo.types.v4_0_1.InfectiousDiseaseControlMeasure.class,oldObj);
+			InfectiousDiseaseControlMeasureSetter setter = InfectiousDiseaseControlMeasureSetterFactory.getSetter(oldObj);
 			setter.set();
 			edu.pitt.apollo.types.v4_0_1.InfectiousDiseaseControlMeasure newObj = setter.getNewTypeInstance();
 			newTypeInstance.getControlMeasures().add(newObj);

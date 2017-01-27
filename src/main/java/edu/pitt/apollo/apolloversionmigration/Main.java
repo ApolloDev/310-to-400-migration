@@ -10,16 +10,17 @@ import edu.pitt.apollo.types.v4_0_1.Duration;
  */
 public class Main {
 
-	private static final String NEW_VERSION = "4_0";
-	private static final String OLD_VERSION = "3_1_0";
-	private static final String NEW_LINE = "\n";
-	public static StringBuffer sb = new StringBuffer();
-	
 	public static void main(String args[]) throws Exception {
         MigrationUtility.classHasSubclasses(Duration.class);
 
-		Class newClass = edu.pitt.apollo.types.v4_0_1.Epidemic.class;
-		Class oldClass = edu.pitt.apollo.types.v3_1_0.Epidemic.class;
+//		Class newClass = edu.pitt.apollo.library_service_types.v4_0_1.LibraryCollection.class;
+//		Class oldClass = edu.pitt.apollo.library_service_types.v3_1_0.LibraryCollection.class;
+
+//		Class newClass = edu.pitt.apollo.types.v4_0_1.Epidemic.class;
+//		Class oldClass = edu.pitt.apollo.types.v3_1_0.Epidemic.class;
+
+		Class newClass = edu.pitt.apollo.types.v4_0_1.CaseSeries.class;
+		Class oldClass = edu.pitt.apollo.types.v3_1_0.CaseSeries.class;
 
         String packageName = "edu.pitt.apollo.apolloversionmigration.output";
 		String outputDirectory = "./src/main/java/edu/pitt/apollo/apolloversionmigration/output";

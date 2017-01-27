@@ -14,6 +14,11 @@ public class UnconditionalProbabilityDistributionSetterFactory {
 			return ParametricProbabilityDistributionSetterFactory.getSetter(oldTypeInstance);
 		}
 
+		if (oldTypeInstance instanceof edu.pitt.apollo.types.v3_1_0.UnconditionalProbabilityDistribution) {
+
+			return new UnconditionalProbabilityDistributionSetter(edu.pitt.apollo.types.v4_0_1.UnconditionalProbabilityDistribution.class, oldTypeInstance);
+		}
+
 		throw new UnsupportedTypeException("Type " + oldTypeInstance.getClass().getCanonicalName() + " is not supported");
 
 	}

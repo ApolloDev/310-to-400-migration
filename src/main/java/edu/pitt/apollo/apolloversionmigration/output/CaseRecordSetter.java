@@ -15,6 +15,19 @@ public class CaseRecordSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0_
 		newTypeInstance.setAgeInYears(((edu.pitt.apollo.types.v3_1_0.CaseRecord) oldTypeInstance).getAgeInYears());
 	}
 
+	protected void setSex() throws MigrationException {
+		if (((edu.pitt.apollo.types.v3_1_0.CaseRecord) oldTypeInstance).getSex() != null) {
+			newTypeInstance.setSex(edu.pitt.apollo.types.v4_0_1.GenderEnum.valueOf(((edu.pitt.apollo.types.v3_1_0.CaseRecord) oldTypeInstance).getSex().toString()));
+		}
+	}
+
+	protected void setRace() throws MigrationException {
+		for (java.lang.String oldObj : ((edu.pitt.apollo.types.v3_1_0.CaseRecord) oldTypeInstance).getRace()) {
+			newTypeInstance.getRace().add(oldObj);
+		}
+
+	}
+
 	protected void setOccupations() throws MigrationException {
 		for (edu.pitt.apollo.types.v3_1_0.OccupationEnum oldObj : ((edu.pitt.apollo.types.v3_1_0.CaseRecord) oldTypeInstance).getOccupations()) {
 			newTypeInstance.getOccupations().add(edu.pitt.apollo.types.v4_0_1.OccupationEnum.valueOf(oldObj.toString()));
@@ -60,17 +73,85 @@ public class CaseRecordSetter extends AbstractSetter<edu.pitt.apollo.types.v4_0_
 		newTypeInstance.setPathogenGeneSequence(((edu.pitt.apollo.types.v3_1_0.CaseRecord) oldTypeInstance).getPathogenGeneSequence());
 	}
 
+	protected void setReferences() throws MigrationException {
+		for (edu.pitt.apollo.types.v3_1_0.Reference oldObj : ((edu.pitt.apollo.types.v3_1_0.CaseRecord) oldTypeInstance).getReferences()) {
+			ReferenceSetter setter = new ReferenceSetter(edu.pitt.apollo.types.v4_0_1.Reference.class,oldObj);
+			setter.set();
+			edu.pitt.apollo.types.v4_0_1.Reference newObj = setter.getNewTypeInstance();
+			newTypeInstance.getReferences().add(newObj);
+		}
+
+	}
+
+	protected void setLocation() throws MigrationException {
+		for (java.lang.String oldObj : ((edu.pitt.apollo.types.v3_1_0.CaseRecord) oldTypeInstance).getLocation()) {
+			newTypeInstance.getLocation().add(oldObj);
+		}
+
+	}
+
+	protected void setCaseDefinition() throws MigrationException {
+		CaseDefinitionSetter setter = new CaseDefinitionSetter(edu.pitt.apollo.types.v4_0_1.CaseDefinition.class,((edu.pitt.apollo.types.v3_1_0.CaseRecord) oldTypeInstance).getCaseDefinition());
+		setter.set();
+		newTypeInstance.setCaseDefinition(setter.getNewTypeInstance());
+	}
+
+	protected void setCausalPathogen() throws MigrationException {
+		ApolloPathogenCodeSetter setter = new ApolloPathogenCodeSetter(edu.pitt.apollo.types.v4_0_1.ApolloPathogenCode.class,((edu.pitt.apollo.types.v3_1_0.CaseRecord) oldTypeInstance).getCausalPathogen());
+		setter.set();
+		newTypeInstance.setCausalPathogen(setter.getNewTypeInstance());
+	}
+
+	protected void setTreatment() throws MigrationException {
+		for (edu.pitt.apollo.types.v3_1_0.Treatment oldObj : ((edu.pitt.apollo.types.v3_1_0.CaseRecord) oldTypeInstance).getTreatment()) {
+			TreatmentSetter setter = TreatmentSetterFactory.getSetter(oldObj);
+			setter.set();
+			edu.pitt.apollo.types.v4_0_1.Treatment newObj = setter.getNewTypeInstance();
+			newTypeInstance.getTreatment().add(newObj);
+		}
+
+	}
+
+	protected void setInfectionSource() throws MigrationException {
+		for (edu.pitt.apollo.types.v3_1_0.InfectionSource oldObj : ((edu.pitt.apollo.types.v3_1_0.CaseRecord) oldTypeInstance).getInfectionSource()) {
+			InfectionSourceSetter setter = new InfectionSourceSetter(edu.pitt.apollo.types.v4_0_1.InfectionSource.class,oldObj);
+			setter.set();
+			edu.pitt.apollo.types.v4_0_1.InfectionSource newObj = setter.getNewTypeInstance();
+			newTypeInstance.getInfectionSource().add(newObj);
+		}
+
+	}
+
+	protected void setControlMeasures() throws MigrationException {
+		for (edu.pitt.apollo.types.v3_1_0.InfectiousDiseaseControlMeasure oldObj : ((edu.pitt.apollo.types.v3_1_0.CaseRecord) oldTypeInstance).getControlMeasures()) {
+			InfectiousDiseaseControlMeasureSetter setter = InfectiousDiseaseControlMeasureSetterFactory.getSetter(oldObj);
+			setter.set();
+			edu.pitt.apollo.types.v4_0_1.InfectiousDiseaseControlMeasure newObj = setter.getNewTypeInstance();
+			newTypeInstance.getControlMeasures().add(newObj);
+		}
+
+	}
+
 	@Override
 	public void set() throws MigrationException {
 		if (oldTypeInstance != null) {
 			setCaseId();
 			setAgeInYears();
+			setSex();
+			setRace();
 			setOccupations();
 			setPlacesVisitedWhileSusceptibleOrInfectious();
 			setInfectionAcquiredFromCaseId();
 			setDiseaseOutcomesWithLocationDateTime();
 			setLabTestsAndResults();
 			setPathogenGeneSequence();
+			setReferences();
+			setLocation();
+			setCaseDefinition();
+			setCausalPathogen();
+			setTreatment();
+			setInfectionSource();
+			setControlMeasures();
 		}
 	}
 

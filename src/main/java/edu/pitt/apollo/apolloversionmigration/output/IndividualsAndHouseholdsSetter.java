@@ -9,7 +9,7 @@ public class IndividualsAndHouseholdsSetter extends AbstractSetter<edu.pitt.apol
 
 	protected void setIndividuals() throws MigrationException {
 		for (edu.pitt.apollo.types.v3_1_0.Individual oldObj : ((edu.pitt.apollo.types.v3_1_0.IndividualsAndHouseholds) oldTypeInstance).getIndividuals()) {
-			IndividualSetter setter = new IndividualSetter(edu.pitt.apollo.types.v4_0_1.Individual.class,oldObj);
+			IndividualSetter setter = IndividualSetterFactory.getSetter(oldObj);
 			setter.set();
 			edu.pitt.apollo.types.v4_0_1.Individual newObj = setter.getNewTypeInstance();
 			newTypeInstance.getIndividuals().add(newObj);

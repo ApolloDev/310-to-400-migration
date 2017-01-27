@@ -29,7 +29,7 @@ public class InfectiousDiseaseScenarioSetter extends ApolloIndexableItemSetter<e
 
 	protected void setInfections() throws MigrationException {
 		for (edu.pitt.apollo.types.v3_1_0.Infection oldObj : ((edu.pitt.apollo.types.v3_1_0.InfectiousDiseaseScenario) oldTypeInstance).getInfections()) {
-			InfectionSetter setter = new InfectionSetter(edu.pitt.apollo.types.v4_0_1.Infection.class,oldObj);
+			InfectionSetter setter = InfectionSetterFactory.getSetter(oldObj);
 			setter.set();
 			edu.pitt.apollo.types.v4_0_1.Infection newObj = setter.getNewTypeInstance();
 			newTypeInstance.getInfections().add(newObj);
@@ -49,7 +49,7 @@ public class InfectiousDiseaseScenarioSetter extends ApolloIndexableItemSetter<e
 
 	protected void setContaminations() throws MigrationException {
 		for (edu.pitt.apollo.types.v3_1_0.Contamination oldObj : ((edu.pitt.apollo.types.v3_1_0.InfectiousDiseaseScenario) oldTypeInstance).getContaminations()) {
-			ContaminationSetter setter = new ContaminationSetter(edu.pitt.apollo.types.v4_0_1.Contamination.class,oldObj);
+			ContaminationSetter setter = ContaminationSetterFactory.getSetter(oldObj);
 			setter.set();
 			edu.pitt.apollo.types.v4_0_1.Contamination newObj = setter.getNewTypeInstance();
 			newTypeInstance.getContaminations().add(newObj);
@@ -69,7 +69,7 @@ public class InfectiousDiseaseScenarioSetter extends ApolloIndexableItemSetter<e
 
 	protected void setAbioticThingCensuses() throws MigrationException {
 		for (edu.pitt.apollo.types.v3_1_0.AbioticThingCensus oldObj : ((edu.pitt.apollo.types.v3_1_0.InfectiousDiseaseScenario) oldTypeInstance).getAbioticThingCensuses()) {
-			AbioticThingCensusSetter setter = new AbioticThingCensusSetter(edu.pitt.apollo.types.v4_0_1.AbioticThingCensus.class,oldObj);
+			AbioticThingCensusSetter setter = AbioticThingCensusSetterFactory.getSetter(oldObj);
 			setter.set();
 			edu.pitt.apollo.types.v4_0_1.AbioticThingCensus newObj = setter.getNewTypeInstance();
 			newTypeInstance.getAbioticThingCensuses().add(newObj);
@@ -79,7 +79,7 @@ public class InfectiousDiseaseScenarioSetter extends ApolloIndexableItemSetter<e
 
 	protected void setInfectiousDiseaseControlStrategies() throws MigrationException {
 		for (edu.pitt.apollo.types.v3_1_0.InfectiousDiseaseControlMeasure oldObj : ((edu.pitt.apollo.types.v3_1_0.InfectiousDiseaseScenario) oldTypeInstance).getInfectiousDiseaseControlStrategies()) {
-			InfectiousDiseaseControlMeasureSetter setter = new InfectiousDiseaseControlMeasureSetter(edu.pitt.apollo.types.v4_0_1.InfectiousDiseaseControlMeasure.class,oldObj);
+			InfectiousDiseaseControlMeasureSetter setter = InfectiousDiseaseControlMeasureSetterFactory.getSetter(oldObj);
 			setter.set();
 			edu.pitt.apollo.types.v4_0_1.InfectiousDiseaseControlMeasure newObj = setter.getNewTypeInstance();
 			newTypeInstance.getInfectiousDiseaseControlStrategies().add(newObj);

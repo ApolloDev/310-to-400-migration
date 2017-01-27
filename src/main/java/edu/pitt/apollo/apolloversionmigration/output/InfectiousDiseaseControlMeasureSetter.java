@@ -19,7 +19,7 @@ public class InfectiousDiseaseControlMeasureSetter<T extends edu.pitt.apollo.typ
 
 	protected void setControlMeasureStartTime() throws MigrationException {
 		for (edu.pitt.apollo.types.v3_1_0.TriggerDefinition oldObj : ((edu.pitt.apollo.types.v3_1_0.InfectiousDiseaseControlMeasure) oldTypeInstance).getControlMeasureStartTime()) {
-			TriggerDefinitionSetter setter = new TriggerDefinitionSetter(edu.pitt.apollo.types.v4_0_1.TriggerDefinition.class,oldObj);
+			TriggerDefinitionSetter setter = TriggerDefinitionSetterFactory.getSetter(oldObj);
 			setter.set();
 			edu.pitt.apollo.types.v4_0_1.TriggerDefinition newObj = setter.getNewTypeInstance();
 			newTypeInstance.getControlMeasureStartTime().add(newObj);
@@ -29,7 +29,7 @@ public class InfectiousDiseaseControlMeasureSetter<T extends edu.pitt.apollo.typ
 
 	protected void setControlMeasureStopTime() throws MigrationException {
 		for (edu.pitt.apollo.types.v3_1_0.TriggerDefinition oldObj : ((edu.pitt.apollo.types.v3_1_0.InfectiousDiseaseControlMeasure) oldTypeInstance).getControlMeasureStopTime()) {
-			TriggerDefinitionSetter setter = new TriggerDefinitionSetter(edu.pitt.apollo.types.v4_0_1.TriggerDefinition.class,oldObj);
+			TriggerDefinitionSetter setter = TriggerDefinitionSetterFactory.getSetter(oldObj);
 			setter.set();
 			edu.pitt.apollo.types.v4_0_1.TriggerDefinition newObj = setter.getNewTypeInstance();
 			newTypeInstance.getControlMeasureStopTime().add(newObj);

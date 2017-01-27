@@ -19,7 +19,7 @@ public class InfectionSetter<T extends edu.pitt.apollo.types.v4_0_1.Infection> e
 
 	protected void setInfectiousDiseases() throws MigrationException {
 		for (edu.pitt.apollo.types.v3_1_0.InfectiousDisease oldObj : ((edu.pitt.apollo.types.v3_1_0.Infection) oldTypeInstance).getInfectiousDiseases()) {
-			InfectiousDiseaseSetter setter = new InfectiousDiseaseSetter(edu.pitt.apollo.types.v4_0_1.InfectiousDisease.class,oldObj);
+			InfectiousDiseaseSetter setter = InfectiousDiseaseSetterFactory.getSetter(oldObj);
 			setter.set();
 			edu.pitt.apollo.types.v4_0_1.InfectiousDisease newObj = setter.getNewTypeInstance();
 			newTypeInstance.getInfectiousDiseases().add(newObj);

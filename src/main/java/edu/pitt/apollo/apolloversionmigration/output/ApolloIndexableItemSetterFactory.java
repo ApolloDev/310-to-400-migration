@@ -4,14 +4,9 @@ public class ApolloIndexableItemSetterFactory {
 
 	public static ApolloIndexableItemSetter getSetter(Object oldTypeInstance) throws MigrationException {
 
-		if (oldTypeInstance instanceof edu.pitt.apollo.types.v3_1_0.InfectiousDiseaseScenario) {
+		if (oldTypeInstance instanceof edu.pitt.apollo.types.v3_1_0.Treatment) {
 
-			return new InfectiousDiseaseScenarioSetter(edu.pitt.apollo.types.v4_0_1.InfectiousDiseaseScenario.class, oldTypeInstance);
-		}
-
-		if (oldTypeInstance instanceof edu.pitt.apollo.types.v3_1_0.Epidemic) {
-
-			return new EpidemicSetter(edu.pitt.apollo.types.v4_0_1.Epidemic.class, oldTypeInstance);
+			return TreatmentSetterFactory.getSetter(oldTypeInstance);
 		}
 
 		if (oldTypeInstance instanceof edu.pitt.apollo.types.v3_1_0.InfectiousDiseaseDecisionAnalysisSpecificationAndResults) {
@@ -19,14 +14,24 @@ public class ApolloIndexableItemSetterFactory {
 			return new InfectiousDiseaseDecisionAnalysisSpecificationAndResultsSetter(edu.pitt.apollo.types.v4_0_1.InfectiousDiseaseDecisionAnalysisSpecificationAndResults.class, oldTypeInstance);
 		}
 
-		if (oldTypeInstance instanceof edu.pitt.apollo.types.v3_1_0.Contamination) {
+		if (oldTypeInstance instanceof edu.pitt.apollo.types.v3_1_0.Epidemic) {
 
-			return ContaminationSetterFactory.getSetter(oldTypeInstance);
+			return new EpidemicSetter(edu.pitt.apollo.types.v4_0_1.Epidemic.class, oldTypeInstance);
 		}
 
-		if (oldTypeInstance instanceof edu.pitt.apollo.types.v3_1_0.InfectiousDiseaseControlDecisionModel) {
+		if (oldTypeInstance instanceof edu.pitt.apollo.types.v3_1_0.InfectiousDiseaseTransmissionExperimentSpecification) {
 
-			return new InfectiousDiseaseControlDecisionModelSetter(edu.pitt.apollo.types.v4_0_1.InfectiousDiseaseControlDecisionModel.class, oldTypeInstance);
+			return new InfectiousDiseaseTransmissionExperimentSpecificationSetter(edu.pitt.apollo.types.v4_0_1.InfectiousDiseaseTransmissionExperimentSpecification.class, oldTypeInstance);
+		}
+
+		if (oldTypeInstance instanceof edu.pitt.apollo.types.v3_1_0.CensusData) {
+
+			return CensusDataSetterFactory.getSetter(oldTypeInstance);
+		}
+
+		if (oldTypeInstance instanceof edu.pitt.apollo.types.v3_1_0.InfectiousDisease) {
+
+			return InfectiousDiseaseSetterFactory.getSetter(oldTypeInstance);
 		}
 
 		if (oldTypeInstance instanceof edu.pitt.apollo.types.v3_1_0.Census) {
@@ -39,19 +44,14 @@ public class ApolloIndexableItemSetterFactory {
 			return InfectiousDiseaseControlMeasureSetterFactory.getSetter(oldTypeInstance);
 		}
 
-		if (oldTypeInstance instanceof edu.pitt.apollo.types.v3_1_0.Treatment) {
+		if (oldTypeInstance instanceof edu.pitt.apollo.types.v3_1_0.Contamination) {
 
-			return TreatmentSetterFactory.getSetter(oldTypeInstance);
+			return ContaminationSetterFactory.getSetter(oldTypeInstance);
 		}
 
-		if (oldTypeInstance instanceof edu.pitt.apollo.types.v3_1_0.Colonization) {
+		if (oldTypeInstance instanceof edu.pitt.apollo.types.v3_1_0.Infection) {
 
-			return new ColonizationSetter(edu.pitt.apollo.types.v4_0_1.Colonization.class, oldTypeInstance);
-		}
-
-		if (oldTypeInstance instanceof edu.pitt.apollo.types.v3_1_0.InfectiousDiseaseTransmissionExperimentSpecification) {
-
-			return new InfectiousDiseaseTransmissionExperimentSpecificationSetter(edu.pitt.apollo.types.v4_0_1.InfectiousDiseaseTransmissionExperimentSpecification.class, oldTypeInstance);
+			return InfectionSetterFactory.getSetter(oldTypeInstance);
 		}
 
 		if (oldTypeInstance instanceof edu.pitt.apollo.types.v3_1_0.SensitivityAnalysisSpecificationAndResult) {
@@ -59,14 +59,19 @@ public class ApolloIndexableItemSetterFactory {
 			return new SensitivityAnalysisSpecificationAndResultSetter(edu.pitt.apollo.types.v4_0_1.SensitivityAnalysisSpecificationAndResult.class, oldTypeInstance);
 		}
 
-		if (oldTypeInstance instanceof edu.pitt.apollo.types.v3_1_0.InfectiousDisease) {
+		if (oldTypeInstance instanceof edu.pitt.apollo.types.v3_1_0.InfectiousDiseaseControlDecisionModel) {
 
-			return InfectiousDiseaseSetterFactory.getSetter(oldTypeInstance);
+			return new InfectiousDiseaseControlDecisionModelSetter(edu.pitt.apollo.types.v4_0_1.InfectiousDiseaseControlDecisionModel.class, oldTypeInstance);
 		}
 
-		if (oldTypeInstance instanceof edu.pitt.apollo.types.v3_1_0.CensusData) {
+		if (oldTypeInstance instanceof edu.pitt.apollo.types.v3_1_0.Colonization) {
 
-			return CensusDataSetterFactory.getSetter(oldTypeInstance);
+			return new ColonizationSetter(edu.pitt.apollo.types.v4_0_1.Colonization.class, oldTypeInstance);
+		}
+
+		if (oldTypeInstance instanceof edu.pitt.apollo.types.v3_1_0.CaseSeries) {
+
+			return new CaseSeriesSetter(edu.pitt.apollo.types.v4_0_1.CaseSeries.class, oldTypeInstance);
 		}
 
 		if (oldTypeInstance instanceof edu.pitt.apollo.types.v3_1_0.EpidemicCaseCounts) {
@@ -74,9 +79,14 @@ public class ApolloIndexableItemSetterFactory {
 			return new EpidemicCaseCountsSetter(edu.pitt.apollo.types.v4_0_1.EpidemicCaseCounts.class, oldTypeInstance);
 		}
 
-		if (oldTypeInstance instanceof edu.pitt.apollo.types.v3_1_0.Infection) {
+		if (oldTypeInstance instanceof edu.pitt.apollo.types.v3_1_0.InfectiousDiseaseScenario) {
 
-			return InfectionSetterFactory.getSetter(oldTypeInstance);
+			return new InfectiousDiseaseScenarioSetter(edu.pitt.apollo.types.v4_0_1.InfectiousDiseaseScenario.class, oldTypeInstance);
+		}
+
+		if (oldTypeInstance instanceof edu.pitt.apollo.types.v3_1_0.ApolloIndexableItem) {
+
+			return new ApolloIndexableItemSetter(edu.pitt.apollo.types.v4_0_1.ApolloIndexableItem.class, oldTypeInstance);
 		}
 
 		throw new UnsupportedTypeException("Type " + oldTypeInstance.getClass().getCanonicalName() + " is not supported");

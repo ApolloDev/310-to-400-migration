@@ -35,7 +35,7 @@ public class InfectiousDiseaseTransmissionExperimentSpecificationSetter extends 
 
 	protected void setSensitivityAnalyses() throws MigrationException {
 		for (edu.pitt.apollo.types.v3_1_0.SensitivityAnalysisSpecification oldObj : ((edu.pitt.apollo.types.v3_1_0.InfectiousDiseaseTransmissionExperimentSpecification) oldTypeInstance).getSensitivityAnalyses()) {
-			SensitivityAnalysisSpecificationSetter setter = new SensitivityAnalysisSpecificationSetter(edu.pitt.apollo.types.v4_0_1.SensitivityAnalysisSpecification.class,oldObj);
+			SensitivityAnalysisSpecificationSetter setter = SensitivityAnalysisSpecificationSetterFactory.getSetter(oldObj);
 			setter.set();
 			edu.pitt.apollo.types.v4_0_1.SensitivityAnalysisSpecification newObj = setter.getNewTypeInstance();
 			newTypeInstance.getSensitivityAnalyses().add(newObj);

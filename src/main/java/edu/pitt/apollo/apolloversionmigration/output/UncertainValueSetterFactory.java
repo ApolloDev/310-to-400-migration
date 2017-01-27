@@ -19,6 +19,11 @@ public class UncertainValueSetterFactory {
 			return new MeanMedianMinimumMaximumSetter(edu.pitt.apollo.types.v4_0_1.MeanMedianMinimumMaximum.class, oldTypeInstance);
 		}
 
+		if (oldTypeInstance instanceof edu.pitt.apollo.types.v3_1_0.UncertainValue) {
+
+			return new UncertainValueSetter(edu.pitt.apollo.types.v4_0_1.UncertainValue.class, oldTypeInstance);
+		}
+
 		if (oldTypeInstance instanceof edu.pitt.apollo.types.v3_1_0.ProbabilityDistribution) {
 
 			return ProbabilityDistributionSetterFactory.getSetter(oldTypeInstance);

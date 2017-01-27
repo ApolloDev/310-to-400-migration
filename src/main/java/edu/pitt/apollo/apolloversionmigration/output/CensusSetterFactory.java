@@ -4,6 +4,11 @@ public class CensusSetterFactory {
 
 	public static CensusSetter getSetter(Object oldTypeInstance) throws MigrationException {
 
+		if (oldTypeInstance instanceof edu.pitt.apollo.types.v3_1_0.AbioticThingCensus) {
+
+			return AbioticThingCensusSetterFactory.getSetter(oldTypeInstance);
+		}
+
 		if (oldTypeInstance instanceof edu.pitt.apollo.types.v3_1_0.PopulationTreatmentCensus) {
 
 			return new PopulationTreatmentCensusSetter(edu.pitt.apollo.types.v4_0_1.PopulationTreatmentCensus.class, oldTypeInstance);
@@ -19,9 +24,9 @@ public class CensusSetterFactory {
 			return new PopulationInfectionAndImmunityCensusSetter(edu.pitt.apollo.types.v4_0_1.PopulationInfectionAndImmunityCensus.class, oldTypeInstance);
 		}
 
-		if (oldTypeInstance instanceof edu.pitt.apollo.types.v3_1_0.AbioticThingCensus) {
+		if (oldTypeInstance instanceof edu.pitt.apollo.types.v3_1_0.Census) {
 
-			return AbioticThingCensusSetterFactory.getSetter(oldTypeInstance);
+			return new CensusSetter(edu.pitt.apollo.types.v4_0_1.Census.class, oldTypeInstance);
 		}
 
 		throw new UnsupportedTypeException("Type " + oldTypeInstance.getClass().getCanonicalName() + " is not supported");
