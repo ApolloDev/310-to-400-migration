@@ -69,9 +69,9 @@ public class MigrationTool {
                         newLibraryCollection.setName(name);
                         newLibraryCollection.setDescription(description);
                         if(classType.equals("Epidemic"))
-                            newLibraryCollection.setJavaClassNameOfMembers("edu.putt.apollo.types.v4_0_1.Epidemic");
+                            newLibraryCollection.setJavaClassNameOfMembers("edu.pitt.apollo.types.v4_0_1.Epidemic");
                         else
-                            newLibraryCollection.setJavaClassNameOfMembers("edu.putt.apollo.types.v4_0_1.CaseSeries");
+                            newLibraryCollection.setJavaClassNameOfMembers("edu.pitt.apollo.types.v4_0_1.CaseSeries");
 
                         migrateLibraryCollection(getLibraryItemContainerResult, newLibDBUtils, newLibraryCollection, true);
                     }

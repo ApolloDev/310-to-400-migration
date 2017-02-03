@@ -19,14 +19,14 @@ public class VectorControlMeasureSetterFactory {
 			return new LarvicideControlMeasureSetter(edu.pitt.apollo.types.v4_0_1.LarvicideControlMeasure.class, oldTypeInstance);
 		}
 
-		if (oldTypeInstance instanceof edu.pitt.apollo.types.v3_1_0.InsecticideTreatedNetControlMeasure) {
-
-			return new InsecticideTreatedNetControlMeasureSetter(edu.pitt.apollo.types.v4_0_1.InsecticideTreatedNetControlMeasure.class, oldTypeInstance);
-		}
-
 		if (oldTypeInstance instanceof edu.pitt.apollo.types.v3_1_0.IndoorResidualSprayingVectorControlMeasure) {
 
 			return new IndoorResidualSprayingVectorControlMeasureSetter(edu.pitt.apollo.types.v4_0_1.IndoorResidualSprayingVectorControlMeasure.class, oldTypeInstance);
+		}
+
+		if (oldTypeInstance instanceof edu.pitt.apollo.types.v3_1_0.InsecticideTreatedNetControlMeasure) {
+
+			return new InsecticideTreatedNetControlMeasureSetter(edu.pitt.apollo.types.v4_0_1.InsecticideTreatedNetControlMeasure.class, oldTypeInstance);
 		}
 
 		if (oldTypeInstance instanceof edu.pitt.apollo.types.v3_1_0.VectorControlMeasure) {

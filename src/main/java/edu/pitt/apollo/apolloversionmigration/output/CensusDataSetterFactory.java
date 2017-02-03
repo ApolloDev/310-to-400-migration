@@ -9,14 +9,14 @@ public class CensusDataSetterFactory {
 			return new PopulationTreatmentCensusDataSetter(edu.pitt.apollo.types.v4_0_1.PopulationTreatmentCensusData.class, oldTypeInstance);
 		}
 
-		if (oldTypeInstance instanceof edu.pitt.apollo.types.v3_1_0.PopulationInfectionAndImmunityCensusData) {
-
-			return new PopulationInfectionAndImmunityCensusDataSetter(edu.pitt.apollo.types.v4_0_1.PopulationInfectionAndImmunityCensusData.class, oldTypeInstance);
-		}
-
 		if (oldTypeInstance instanceof edu.pitt.apollo.types.v3_1_0.ContaminatedThingCensusData) {
 
 			return new ContaminatedThingCensusDataSetter(edu.pitt.apollo.types.v4_0_1.ContaminatedThingCensusData.class, oldTypeInstance);
+		}
+
+		if (oldTypeInstance instanceof edu.pitt.apollo.types.v3_1_0.PopulationInfectionAndImmunityCensusData) {
+
+			return new PopulationInfectionAndImmunityCensusDataSetter(edu.pitt.apollo.types.v4_0_1.PopulationInfectionAndImmunityCensusData.class, oldTypeInstance);
 		}
 
 		if (oldTypeInstance instanceof edu.pitt.apollo.types.v3_1_0.CensusData) {

@@ -9,14 +9,14 @@ public class TriggerDefinitionSetterFactory {
 			return new TemporalTriggerDefinitionSetter(edu.pitt.apollo.types.v4_0_1.TemporalTriggerDefinition.class, oldTypeInstance);
 		}
 
-		if (oldTypeInstance instanceof edu.pitt.apollo.types.v3_1_0.TreatmentSurveillanceTriggerDefinition) {
-
-			return new TreatmentSurveillanceTriggerDefinitionSetter(edu.pitt.apollo.types.v4_0_1.TreatmentSurveillanceTriggerDefinition.class, oldTypeInstance);
-		}
-
 		if (oldTypeInstance instanceof edu.pitt.apollo.types.v3_1_0.DiseaseSurveillanceTriggerDefinition) {
 
 			return new DiseaseSurveillanceTriggerDefinitionSetter(edu.pitt.apollo.types.v4_0_1.DiseaseSurveillanceTriggerDefinition.class, oldTypeInstance);
+		}
+
+		if (oldTypeInstance instanceof edu.pitt.apollo.types.v3_1_0.TreatmentSurveillanceTriggerDefinition) {
+
+			return new TreatmentSurveillanceTriggerDefinitionSetter(edu.pitt.apollo.types.v4_0_1.TreatmentSurveillanceTriggerDefinition.class, oldTypeInstance);
 		}
 
 		if (oldTypeInstance instanceof edu.pitt.apollo.types.v3_1_0.TriggerDefinition) {

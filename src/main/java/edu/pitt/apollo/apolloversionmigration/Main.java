@@ -16,11 +16,11 @@ public class Main {
 //		Class newClass = edu.pitt.apollo.library_service_types.v4_0_1.LibraryCollection.class;
 //		Class oldClass = edu.pitt.apollo.library_service_types.v3_1_0.LibraryCollection.class;
 
-//		Class newClass = edu.pitt.apollo.types.v4_0_1.Epidemic.class;
-//		Class oldClass = edu.pitt.apollo.types.v3_1_0.Epidemic.class;
+		Class newClass = edu.pitt.apollo.types.v4_0_1.Epidemic.class;
+		Class oldClass = edu.pitt.apollo.types.v3_1_0.Epidemic.class;
 
-		Class newClass = edu.pitt.apollo.types.v4_0_1.CaseSeries.class;
-		Class oldClass = edu.pitt.apollo.types.v3_1_0.CaseSeries.class;
+//		Class newClass = edu.pitt.apollo.types.v4_0_1.CaseSeries.class;
+//		Class oldClass = edu.pitt.apollo.types.v3_1_0.CaseSeries.class;
 
         String packageName = "edu.pitt.apollo.apolloversionmigration.output";
 		String outputDirectory = "./src/main/java/edu/pitt/apollo/apolloversionmigration/output";

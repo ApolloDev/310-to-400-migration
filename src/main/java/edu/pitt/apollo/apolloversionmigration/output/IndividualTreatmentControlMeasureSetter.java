@@ -1,6 +1,6 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class IndividualTreatmentControlMeasureSetter<T extends edu.pitt.apollo.types.v4_0_1.IndividualTreatmentControlMeasure> extends InfectiousDiseaseControlMeasureSetter<T> {
+public abstract class IndividualTreatmentControlMeasureSetter<T extends edu.pitt.apollo.types.v4_0_1.IndividualTreatmentControlMeasure> extends InfectiousDiseaseControlMeasureSetter<T> {
 
 	public IndividualTreatmentControlMeasureSetter(Class<T> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);
@@ -47,12 +47,8 @@ public class IndividualTreatmentControlMeasureSetter<T extends edu.pitt.apollo.t
 
 	}
 
-	protected void setTargetPopulationsAndPrioritizations() throws MigrationException {
-		ControlMeasureTargetPopulationsAndPrioritizationSetter setter = new ControlMeasureTargetPopulationsAndPrioritizationSetter(edu.pitt.apollo.types.v4_0_1.ControlMeasureTargetPopulationsAndPrioritization.class,((edu.pitt.apollo.types.v3_1_0.IndividualTreatmentControlMeasure) oldTypeInstance).getTargetPopulationsAndPrioritizations());
-		setter.set();
-		newTypeInstance.setTargetPopulationsAndPrioritizations(setter.getNewTypeInstance());
-	}
-
+	protected abstract void setTreatmentSystemLogistics() throws MigrationException;
+	protected abstract void setTargetPopulationsAndPrioritizations() throws MigrationException;
 	@Override
 	public void set() throws MigrationException {
 		if (oldTypeInstance != null) {
@@ -63,6 +59,7 @@ public class IndividualTreatmentControlMeasureSetter<T extends edu.pitt.apollo.t
 			setPopulationTreatmentCensus();
 			setCompliance();
 			setDelayFromSymptomsToTreatment();
+			setTreatmentSystemLogistics();
 			setTargetPopulationsAndPrioritizations();
 		}
 	}

@@ -4,9 +4,14 @@ public class ContinuousParametricProbabilityDistributionSetterFactory {
 
 	public static ContinuousParametricProbabilityDistributionSetter getSetter(Object oldTypeInstance) throws MigrationException {
 
-		if (oldTypeInstance instanceof edu.pitt.apollo.types.v3_1_0.LogNormalDistribution) {
+		if (oldTypeInstance instanceof edu.pitt.apollo.types.v3_1_0.WeibullDistribution) {
 
-			return new LogNormalDistributionSetter(edu.pitt.apollo.types.v4_0_1.LogNormalDistribution.class, oldTypeInstance);
+			return new WeibullDistributionSetter(edu.pitt.apollo.types.v4_0_1.WeibullDistribution.class, oldTypeInstance);
+		}
+
+		if (oldTypeInstance instanceof edu.pitt.apollo.types.v3_1_0.ContinuousUniformDistribution) {
+
+			return new ContinuousUniformDistributionSetter(edu.pitt.apollo.types.v4_0_1.ContinuousUniformDistribution.class, oldTypeInstance);
 		}
 
 		if (oldTypeInstance instanceof edu.pitt.apollo.types.v3_1_0.GammaDistribution) {
@@ -14,19 +19,14 @@ public class ContinuousParametricProbabilityDistributionSetterFactory {
 			return new GammaDistributionSetter(edu.pitt.apollo.types.v4_0_1.GammaDistribution.class, oldTypeInstance);
 		}
 
-		if (oldTypeInstance instanceof edu.pitt.apollo.types.v3_1_0.WeibullDistribution) {
-
-			return new WeibullDistributionSetter(edu.pitt.apollo.types.v4_0_1.WeibullDistribution.class, oldTypeInstance);
-		}
-
 		if (oldTypeInstance instanceof edu.pitt.apollo.types.v3_1_0.NormalDistribution) {
 
 			return new NormalDistributionSetter(edu.pitt.apollo.types.v4_0_1.NormalDistribution.class, oldTypeInstance);
 		}
 
-		if (oldTypeInstance instanceof edu.pitt.apollo.types.v3_1_0.ContinuousUniformDistribution) {
+		if (oldTypeInstance instanceof edu.pitt.apollo.types.v3_1_0.LogNormalDistribution) {
 
-			return new ContinuousUniformDistributionSetter(edu.pitt.apollo.types.v4_0_1.ContinuousUniformDistribution.class, oldTypeInstance);
+			return new LogNormalDistributionSetter(edu.pitt.apollo.types.v4_0_1.LogNormalDistribution.class, oldTypeInstance);
 		}
 
 		if (oldTypeInstance instanceof edu.pitt.apollo.types.v3_1_0.ContinuousParametricProbabilityDistribution) {

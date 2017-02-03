@@ -1,6 +1,6 @@
 package edu.pitt.apollo.apolloversionmigration.output;
 
-public class DecolonizationControlMeasureSetter extends IndividualTreatmentControlMeasureSetter<edu.pitt.apollo.types.v4_0_1.DecolonizationControlMeasure> {
+public abstract class DecolonizationControlMeasureSetter extends IndividualTreatmentControlMeasureSetter<edu.pitt.apollo.types.v4_0_1.DecolonizationControlMeasure> {
 
 	public DecolonizationControlMeasureSetter(Class<edu.pitt.apollo.types.v4_0_1.DecolonizationControlMeasure> newTypeClass, Object oldTypeInstance) throws MigrationException {
 		super(newTypeClass, oldTypeInstance);

@@ -17,6 +17,10 @@ public class EpidemicPeriodSetter extends AbstractSetter<edu.pitt.apollo.types.v
 		}
 	}
 
+	protected void setStartDateReferenceId() throws MigrationException {
+		newTypeInstance.setStartDateReferenceId(((edu.pitt.apollo.types.v3_1_0.EpidemicPeriod) oldTypeInstance).getStartDateReferenceId());
+	}
+
 	protected void setEndDate() throws MigrationException {
 		newTypeInstance.setEndDate(((edu.pitt.apollo.types.v3_1_0.EpidemicPeriod) oldTypeInstance).getEndDate());
 	}
@@ -27,13 +31,19 @@ public class EpidemicPeriodSetter extends AbstractSetter<edu.pitt.apollo.types.v
 		}
 	}
 
+	protected void setEndDateReferenceId() throws MigrationException {
+		newTypeInstance.setEndDateReferenceId(((edu.pitt.apollo.types.v3_1_0.EpidemicPeriod) oldTypeInstance).getEndDateReferenceId());
+	}
+
 	@Override
 	public void set() throws MigrationException {
 		if (oldTypeInstance != null) {
 			setStartDate();
 			setStartDateDefinition();
+			setStartDateReferenceId();
 			setEndDate();
 			setEndDateDefinition();
+			setEndDateReferenceId();
 		}
 	}
 
